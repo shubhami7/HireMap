@@ -2,24 +2,43 @@
 
 ## Job Application Tracker
 
-This feature will display an overview of each application submitted by the user. For each application, users can select their current status, such as "Applied," "Interviewing," "Offer," or "Rejected." Users will have the ability to update the status of each application. This functionality will give users a quick view of their progress, allowing them not to have to sort through various websites and emails.
+This feature will display an overview of each application submitted by the user, including key details such as company name, position, and the date of when the user applied. For each application, users can select their current status, such as "Applied," "Interviewing," "Offer," or "Rejected." Users will have the ability to update the status of each application. This functionality will give users a quick view of their progress, allowing them not to have to sort through various websites and emails.
 
 **Assigned to**: ...
   
-## Interview Notes
+## Interview Notes and Questions
 
-For each application, users can record details about interview dates, formats (over the phone, technical exams, on-site interviews), and what questions they were asked. This way users can review past interview questions to prepare for future interviews and improve their performance.
-
-**Assigned to**: ...
-
-## Cover Letter and Resume Upload
-
-This feature will allow users to upload and store different versions of their cover letters and resumes that are submitted to each company. This makes it easier for users to reference which documents were tailored to which jobs, which might be helpful during the interview process. 
+For each application, users can record details about interview dates, the format (over the phone, technical exams, on-site interviews), and what questions they were asked during the interview process. This feature would allow users to review past interview questions to prepare for future interviews and improve their performance.
 
 **Assigned to**: ...
 
-## Company Benefits Search and Filter
 
-This feature will allow users to search and filter companies they have applied to based on benefits. This will allow users to compare companies that they’ve applied to and prioritize top choices based on their personal preferences. 
+## Company Benefits Tracker
+
+This feature will allow users to record and and compare the benefits offered by companies. Users can add and view this information for each application, making it easier to compare different benefits that various companies offer. This can help users make informed decisions about which companies to focus on, especially when weighing multiple options. 
+
+**Assigned to**: ...
+
+## Deadline Reminders and Notifications
+
+Users can set reminders for application deadlines, interviews and follow-ups. These reminders would be displayed in-app and would help keep users organized and make sure they do not miss important deadlines.
+
+**Assigned to**: ...
+
+## Priority Applications
+
+This feature helps users mark and focus on their most desired job applications. Users can "star" or "flag" certain applications, moving them to a priority position or list. This will help them focus their time and energy on the most important applications. 
+
+**Assigned to**: ...
+
+## Job Search and Interviewing Tips Repository
+
+A section that offers tips about the job search and interview process, tailored to each stage of the application. For example, users in the "Interviewing" stage, could reference behavioral interview tips, while someone in the "Applied" stage could reference tips discussing how to follow up. This would help users at each stage of the process. 
+
+**Assigned to**: ...
+
+## Alumni Job Connect 
+
+Users can view alumni, with public profiles, from their university who have previously applied to the same company. They could then reach out for advice or potential referrals. This encourages networking and might improve the users chances of being hired at a company.
 
 **Assigned to**: ...
