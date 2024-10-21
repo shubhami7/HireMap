@@ -17,9 +17,9 @@
 ## Lauren Shea - Note-Taker
 - **Role**: Records detailed notes during meetings and ensures that action items are clearly communicated. Lauren is responsible for distributing meeting minutes to the team after each session.
 - **Top 3 Commits**:
-  1. [Commit 1](Include Link): took notes on what was discussed during the meeting
-  2. [Commit 2](Include Link): summarized the next steps to finish milestone 2
-  3. [Commit 3](Include Link): sent completed notes to each group member
+  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/655392a84eb029096f6f03a952994db17aa84a25): Took notes on what was discussed during the meeting
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/d806d8da093c4c8c69a8479fd391ebc6c886ab03): Summarized the next steps to finish milestone 2
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/8efdce63fe734451aa5cc0394be1f419689d36de): Sent completed notes to each group member
  
 ## Sofia Simonoff - Task Manager
 - **Role**: Responsible for organizing and tracking team tasks. Sofia manages the team’s Trello board and ensures that all tasks are properly assigned and completed on time.
