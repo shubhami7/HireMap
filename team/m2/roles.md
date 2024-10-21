@@ -14,8 +14,8 @@
   2. [Commit 2](Include Link): 
   3. [Commit 3](Include Link):
  
-## ... - Note-Taker
-- **Role**: Records detailed notes during meetings and ensures that action items are clearly communicated. Carol is responsible for distributing meeting minutes to the team after each session.
+## Lauren Shea - Note-Taker
+- **Role**: Records detailed notes during meetings and ensures that action items are clearly communicated. Lauren is responsible for distributing meeting minutes to the team after each session.
 - **Top 3 Commits**:
   1. [Commit 1](Include Link): 
   2. [Commit 2](Include Link): 
