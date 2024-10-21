@@ -16,3 +16,4 @@
 
 - **Task 3**: Sent out meeting notes to group members.
 - **Details**: Sent completed meeting notes to group members outlining what we talked about during the meeting and what the next steps are.
+- **Link to Commit**: https://github.com/edwintran235/326-team9/commit/8efdce63fe734451aa5cc0394be1f419689d36de
