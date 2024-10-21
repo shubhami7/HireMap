@@ -3,9 +3,9 @@
 ## Mohammad Kiyani - Project Manager
 - **Role**: Oversees the overall project timeline, ensures that milestones are met, and coordinates the team’s efforts. ... is responsible for setting meeting agendas and ensuring that the team stays focused on project goals.
 - **Top 3 Commits**:
-  1. [Commit 1](): worked with team on designing ui for milestone 2 
-  2. [Commit 2](): worked with team on designing images for milestone 2
-  3. [Commit 3](): worked with team for new feature ideas for milestone 2
+  1. [Commit 1](https://github.com/edwintran235/326-team9/tree/milestone2/problem.md_update): gave rough draft for problem.md (now overwritten) 
+  2. [Commit 2](https://github.com/edwintran235/326-team9/tree/milestone2/features.md/update/shahab): implemented new features in feature.md
+  3. [Commit 3](https://github.com/edwintran235/326-team9/blob/main/team/m2/ui-diagrams.md): collaborated with edwin in person to give rough draft design on pictures for ui-diagrams.md
 
 ## Shubham Inavolu - Timekeeper
 - **Role**: Manages the timing of all team activities. ... ensures that meetings start and end on time, keeps track of deadlines, and reminds the team of upcoming due dates.
