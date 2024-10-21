@@ -1,0 +1,33 @@
+# HireMap - Job Application Management Tool
+
+## Overview
+
+HireMap is a web-based application designed to help job seekers, especially college students, recent graduates, professionals, and freelancers, manage their job applications efficiently. With features to track the application process, record interview notes, compare company benefits, and more, HireMap simplifies the often overwhelming task of applying to multiple jobs. It provides a centralized platform to keep users organized and prepared throughout the job search journey.
+
+## Key Features
+
+- **Job Application Tracker**: Track the status of your job applications (e.g., Applied, Interviewing, Offer, Rejected) and see an overview of your progress.
+- **Interview Notes and Questions**: Record details of interviews, including dates, formats, and questions asked, to help you prepare for future interviews.
+- **Company Benefits Tracker**: Compare key company benefits such as salary, healthcare, PTO, and remote options across your applications.
+- **Deadline Reminders and Notifications**: Set reminders for application deadlines, interviews, and follow-up tasks to stay on top of important dates.
+- **Priority Applications**: Mark top-choice applications to prioritize your focus and energy on the most desired job opportunities.
+- **Job Search and Interview Tips Repository**: Access tips tailored to each stage of the job search and interview process, from applying to following up.
+- **Alumni Job Connect**: Network with alumni who have previously applied to the same companies and improve your chances of securing referrals.
+
+## Getting Started
+
+### Prerequisites
+
+To get started with HireMap, you will need:
+
+- A web browser (Google Chrome, Firefox, etc.)
+- A GitHub account (for project contributions)
+- A text editor (e.g., Visual Studio Code) if you want to contribute to the codebase.
+
+### Setup
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/326-team9.git
+
