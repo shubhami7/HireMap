@@ -45,11 +45,18 @@ HomePage:
     
 
 Job Page:
-    here, users can create a new job application or view one they have applied to
-        Create job:
+    here, users can view a job they have applied to
+        View job:
             clicking a button on Navbar sends you here, where you can fill out information on:
             company name 
             when you applied
+            status of the job
+            resume used
+            CV used
+            important links to keep track of
+            deadlines (if you have interviews or assessments to do)
             upcoming OA's
             company notes
+            benefits
+        You will be able to edit any of these on the page, and they will remain blank if nothing is filled out for it
             
