@@ -42,7 +42,7 @@
   2. [Commit 2](Include Link): 
   3. [Commit 3](Include Link): 
 
-## ... - Documentation Lead
+## Krish Sharma - Documentation Lead
 - **Role**: Responsible for overseeing the organization and maintenance of all project documentation. ... ensures that all documents are up to date, well-organized, and accessible to team members.
 - **Top 3 Commits**:
   1. [Commit 1](Include Link): 
