@@ -45,7 +45,7 @@ A user who wants to track the progress of their Job/Interview processes would lo
 
 ## Application Information Screen
 
-<img width="677" alt="image" src="https://github.com/user-attachments/assets/34bbcdd4-a9d2-4ecf-b1a6-42014870fb24">
+<img width="865" alt="image" src="https://github.com/user-attachments/assets/c493878a-e0b8-4a9d-abad-95ca1140955f">
 
 
 Login/ Create Account Page:
