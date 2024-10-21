@@ -28,8 +28,9 @@
   2. [Commit 2](https://trello.com/b/g72RmbXm/group-9-hiremap-web-application): Assigned tasks to team members based on discussions during the team’s planning meetings and updated Trello with new assignments.
   3. [Commit 3](https://trello.com/b/g72RmbXm/group-9-hiremap-web-application): Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
 
-## ... - Communication Lead
-- **Role**: Facilitates communication within the team...
+## Edwin Tran - Communication Lead
+- **Role**: Facilitates communication within the team. Edwin makes sure that people are communicated efficiently and everyone is actively participating 
+in team discussions
 - **Top 3 Commits**:
   1. [Commit 1](Include Link): 
   2. [Commit 2](Include Link): 
