@@ -4,7 +4,7 @@
 
 The **Login Page** is the landing page when initially loaded. Here, the users must log in or create an account in order to access the homepage and interact with our system. This page is simple with two inputs for username and password and our logo.
 
-![Login Page Placeholder](...)
+<img width="696" alt="image" src="https://github.com/user-attachments/assets/9f0d670b-ea01-48f6-9b15-eaac10f7c507">
 
 **Use Case**:
 
@@ -105,6 +105,5 @@ Job Page:
         You will be able to edit any of these on the page, and they will remain blank if nothing is filled out for it
 
 
-[Milestone #2_ UI Diagrams.pdf](https://github.com/user-attachments/files/17467843/Milestone.2_.UI.Diagrams.pdf)
 
             
