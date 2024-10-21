@@ -47,5 +47,5 @@ in team discussions
 - **Role**: Responsible for overseeing the organization and maintenance of all project documentation. ... ensures that all documents are up to date, well-organized, and accessible to team members.
 - **Top 3 Commits**:
   1. [Commit 1]((https://github.com/edwintran235/326-team9/tree/975515d9f21d0857c8776ed59a65bcac8942a3fd)):Organized and formatted the problem.md file to enhance clarity, ensuring that the problem statement and solution are easy to read and follow. Structured the document for better presentation and navigation on GitHub.
-  2. [Commit 2](Include Link): 
-  3. [Commit 3](Include Link): 
+  2. [Commit 2](Include Link): Streamlined and reformatted the users.md file for improved readability, ensuring user needs and key insights are clearly outlined for better understanding on GitHub.
+  3. [Commit 3](Include Link): Revised the project's README.md file with comprehensive setup and usage instructions, ensuring clarity for all team members on how to contribute effectively to the repository.
