@@ -103,4 +103,8 @@ Job Page:
             company notes
             benefits
         You will be able to edit any of these on the page, and they will remain blank if nothing is filled out for it
+
+
+[Milestone #2_ UI Diagrams.pdf](https://github.com/user-attachments/files/17467843/Milestone.2_.UI.Diagrams.pdf)
+
             
