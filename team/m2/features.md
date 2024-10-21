@@ -42,3 +42,9 @@ A section that offers tips about the job search and interview process, tailored 
 Users can view alumni, with public profiles, from their university who have previously applied to the same company. They could then reach out for advice or potential referrals. This encourages networking and might improve the users chances of being hired at a company.
 
 **Assigned to**: ...
+
+## Login/Create Account Page 
+
+Users can login or create account. Login allows users to enter a email and password and if it is correct they get sent to the homepage, else it prompts an error message. On the create account page, users can enter an email and a password twice to make an account on the web page
+
+**Assigned to**: ...
