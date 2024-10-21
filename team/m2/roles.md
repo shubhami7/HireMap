@@ -32,8 +32,8 @@
 - **Role**: Facilitates communication within the team. Edwin makes sure that people are communicated efficiently and everyone is actively participating 
 in team discussions
 - **Top 3 Commits**:
-  1. [Commit 1](Include Link): Facilitated the group chat and established guidelines for communications
-  2. [Commit 2](Include Link): 
+  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/8508d8f954834ff546045138fc6ebf0f7af6a506): Facilitated the group chat and established guidelines for communications
+  2. [Commit 2](Include Link): Set up time and location to meet and complete Milestone 2
   3. [Commit 3](Include Link): 
 
 ## Macy Graves - Quality Control
