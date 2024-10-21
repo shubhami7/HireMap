@@ -35,7 +35,7 @@
   2. [Commit 2](Include Link): 
   3. [Commit 3](Include Link): 
 
-## ... - Quality Control
+## Macy Graves - Quality Control
 - **Role**: Reviews team submissions and ensures that all deliverables meet the necessary quality standards. ... is responsible for proofreading and ensuring the accuracy of all documents before submission.
 - **Top 3 Commits**:
   1. [Commit 1](Include Link): 
