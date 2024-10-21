@@ -33,8 +33,8 @@
 in team discussions
 - **Top 3 Commits**:
   1. [Commit 1](https://github.com/edwintran235/326-team9/commit/8508d8f954834ff546045138fc6ebf0f7af6a506): Facilitated the group chat and established guidelines for communications
-  2. [Commit 2](Include Link): Set up time and location to meet and complete Milestone 2
-  3. [Commit 3](Include Link): 
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/51e061a9225e2586dd8811d4083150a6bdf6d94c): Set up time and location to meet and complete Milestone 2
+  3. [Commit 3](Include Link): Made sure everyone's opinions and ideas were heard during the meeting, incorporating different aspects of each others' ideas to compromise
 
 ## Macy Graves - Quality Control
 - **Role**: Reviews team submissions and ensures that all deliverables meet the necessary quality standards. ... is responsible for proofreading and ensuring the accuracy of all documents before submission.
