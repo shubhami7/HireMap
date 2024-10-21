@@ -1,6 +1,6 @@
 # ApplicationData
 
-## 1.UserProfile
+## 1.User Profile
 
 ```
 ● Description :Contains personal information about the user such as login information, resumes, and cover letters.
@@ -11,7 +11,7 @@
   ○ resume(pdf required):user’s resume
   ○ coverLetter(pdf):user’s cover letter
 ```
-## 2.ApplicationEntry
+## 2.Application Entry
 
 ```
 ● Description: Contains information about a completed application.
