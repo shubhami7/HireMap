@@ -15,4 +15,4 @@ This application will also be useful to anyone in the workforce applying to a ne
 ## Why These Users Matter
 
 These users, especially college students and recent graduates, are necessary for the success of HireMap as they will get the most benefit from each feature. Applying to jobs is a learning process and college students and those fresh out of college are most likely at the beginning stages of that process. After graduating college, most people are probably unsure of what they are looking for in a job/company. As a result, they are probably applying for a wide range of positions that are all looking for different qualifications and have a variety of requirements. HireMap will keep track of the specificities of each position to ensure that the user is as prepared as possible. 
-HireMap will take care of the organization that is vital to the success of landing a new job.
+HireMap will take care of the organization that is vital to the success of landing a new job, allowing applicants to focus on preparing as well as they can.
