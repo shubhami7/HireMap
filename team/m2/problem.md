@@ -1,29 +1,21 @@
-Idea: Job Application Management Tool
+# Problem Statement
 
-Description: Those looking for jobs often apply to multiple positions, and each position has its own process. It’s hard to keep track of each stage of the process, the details of the interviews, and which companies offer the best benefits… location, salary (if provided), etc. It would be really helpful to have an app that could centralize all this information, helping users/applicants stay organized. This app could also include a feature that provides practice interview questions, and have a page with interview tips and things to remember when applying to jobs or interviewing. 
+## Problem Description
+Job seekers, especially college students, recent graduates, and professionals, frequently apply to multiple positions, each with its own process and requirements. This makes it difficult to keep track of application stages, interview details, and company benefits such as salary, location, and perks. Without a centralized system, applicants often rely on scattered emails, spreadsheets, or company websites, leading to disorganization, missed deadlines, and lost opportunities. Managing job applications can be overwhelming, particularly for those new to the job market.
 
-Core Features: 
-Job Application Tracker 
-A view of each stage of each application (Kanban style?). For example, “Applied”, “Interviewing”, “Offer”, “Rejected”). You can adjust each application as you move through the stages of the process. This provides a quick view of their progress, without having to navigate through company websites or emails. 
-Interview Notes
-For each application, users can record details about interview dates, formats (over the phone, technical exams, on-site interviews), and what questions they were asked. This way users can review past interview questions to prepare for future interviews and improve their performance.
-Company Benefits
-A section to track key benefits (salary, healthcare, pto, remote/hybrid/in office). Users can tag companies with benefits, and sort/filter their preferences. This will allow users to compare companies that they’ve applied to and prioritize top choices based on their personal preferences. 
-Tips on Interviewing and the Job Search
-A repository of interview and job search tips… maybe certain tips suggested when a user/applicant is at a specific stage… interviewing (behavioral tips) or technical exams (technical tips). This would give them practical advice at the right time.
-Prioritize Applications
-Users are able to mark their top choice of company to help them prioritize and focus their energies on their most desired employers.
-Deadline Reminders and Notifications
-Users can input application deadlines, interview dates, and follow-up reminders, to help them stay on top of important dates.
-Alumni job connect
-You can see who previously applied to a job and get their contact information to see if they can refer you, and since this application is designed for umass students you will be communicating with alumni so you are more likely for a referral
-Possibly: Share job search progress with mentors, friends, or career advisors… for advice?
-Provide statistics on the user's job process (number of applications submitted, response rates, interview conversion rates) to give insights.
+## Proposed Solution
+Our web application, **HireMap**, is designed to provide a comprehensive, user-friendly solution for managing job applications. HireMap simplifies the process by helping users track their applications, interview progress, deadlines, and important job-related details. It offers tools that allow users to prioritize applications, stay organized, and make informed decisions when comparing job offers.
 
-Target Audience: Recent graduates, professionals, freelancers actively applying to jobs…
+### Key features include:
+- **Job Application Tracker**: Users can log their applications, update their status (e.g., Applied, Interviewing, Offer, Rejected), and see an overview of their progress.
+- **Interview Notes and Questions**: Users can record interview details, such as dates, formats, and questions asked, to help them prepare for future interviews.
+- **Company Benefits Tracker**: A tool to compare company benefits like salary, healthcare, PTO, and remote options, making it easier to weigh different offers.
+- **Deadline Reminders and Notifications**: Users can set reminders for application deadlines, interviews, and follow-up tasks to stay organized.
+- **Priority Applications**: Users can mark top-choice applications to focus their efforts on the most desired job opportunities.
+- **Job Search and Interview Tips Repository**: A section providing stage-specific tips for job searching and interviewing, helping users at each step.
+- **Alumni Job Connect**: Users can connect with alumni who have applied to similar companies, improving networking opportunities and chances for referrals.
 
-Meets Requirements:
-→ Solves a clear problem… managing job search, applications, and interview prep
-→ Each feature provides a significant benefit to the user, making the process easier and more organized
-→ Offers interactivity through tracking, saving, tagging, and analytics.
-→ We can start with core features (tracking applications, storing interview details) and add more advanced ones if we want (comparing companies, providing analytics)...
+By providing an intuitive and organized way to manage the job application process, HireMap aims to alleviate the stress that comes with tracking multiple applications.
+
+## Why This Matters
+In today’s competitive job market, staying organized and informed is essential for success. For college students and recent graduates, applying to jobs and internships is often a new and daunting process. Similarly, professionals transitioning between jobs face the challenge of managing multiple applications while comparing benefits and offers. By addressing these pain points, HireMap empowers users to better manage their job search, improve their interview preparation, and make more informed decisions about which positions to pursue. In the long run, this results in a smoother, more efficient job application process, offering peace of mind to applicants at every stage.

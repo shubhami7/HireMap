@@ -28,12 +28,13 @@
   2. [Commit 2](https://trello.com/b/g72RmbXm/group-9-hiremap-web-application): Assigned tasks to team members based on discussions during the team’s planning meetings and updated Trello with new assignments.
   3. [Commit 3](https://trello.com/b/g72RmbXm/group-9-hiremap-web-application): Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
 
-## ... - Communication Lead
-- **Role**: Facilitates communication within the team...
+## Edwin Tran - Communication Lead
+- **Role**: Facilitates communication within the team. Edwin makes sure that people are communicated efficiently and everyone is actively participating 
+in team discussions
 - **Top 3 Commits**:
-  1. [Commit 1](Include Link): 
-  2. [Commit 2](Include Link): 
-  3. [Commit 3](Include Link): 
+  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/8508d8f954834ff546045138fc6ebf0f7af6a506): Facilitated the group chat and established guidelines for communications
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/51e061a9225e2586dd8811d4083150a6bdf6d94c): Set up time and location to meet and complete Milestone 2
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/96ba7932f10c723033e852a862ffaa7c40c2fa14): Made sure everyone's opinions and ideas were heard during the meeting, incorporating different aspects of each others' ideas to compromise
 
 ## Macy Graves - Quality Control
 - **Role**: Reviews team submissions and ensures that all deliverables meet the necessary quality standards. ... is responsible for proofreading and ensuring the accuracy of all documents before submission.
@@ -45,6 +46,6 @@
 ## Krish Sharma - Documentation Lead
 - **Role**: Responsible for overseeing the organization and maintenance of all project documentation. ... ensures that all documents are up to date, well-organized, and accessible to team members.
 - **Top 3 Commits**:
-  1. [Commit 1](Include Link): 
+  1. [Commit 1]((https://github.com/edwintran235/326-team9/tree/975515d9f21d0857c8776ed59a65bcac8942a3fd)):Organized and formatted the problem.md file to enhance clarity, ensuring that the problem statement and solution are easy to read and follow. Structured the document for better presentation and navigation on GitHub.
   2. [Commit 2](Include Link): 
   3. [Commit 3](Include Link): 
