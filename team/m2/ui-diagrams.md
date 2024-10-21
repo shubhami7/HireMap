@@ -6,6 +6,7 @@ The **Login Page** is the landing page when initially loaded. Here, the users mu
 
 <img width="696" alt="image" src="https://github.com/user-attachments/assets/9f0d670b-ea01-48f6-9b15-eaac10f7c507">
 
+
 **Use Case**:
 
 The user wants to track their job application process by using our service. In order to use our service, they must log in. The user sets a username and password the first time that they log in. After logging in, the user will land on the **User Applications Screen** where they can interact with our service. All of the user's interactions are saved under the user's profile, so that every time they log in their information is there.
@@ -14,7 +15,7 @@ The user wants to track their job application process by using our service. In o
 
 The **Profile Page** is where users can enter their information. This information will be important in other features
 
-![Profile Page Placeholder](...)
+<img width="672" alt="image" src="https://github.com/user-attachments/assets/2566a1b1-1214-4654-b65b-3f2376d9389f">
 
 The profile page will include a picture of the user, a description/bio, their resume, contact information, and user settings. The user has the opportunity to edit any of this information after it is saved.
 
@@ -26,7 +27,7 @@ A user who just logged in wants to personalize their account. When they go to th
 
 The **User Application Screen** is the homepage that users will be directed to after logging in. It includes all of the users current applications, interviews, offers, and to-dos which will be organized into four columns. The job names that fall under each category will be listed, each with a link to the **Notes** page with more information on that job. There is a navigation bar at the top where users can be directed to the **Profile Page** or the **Login Page** after logging out. There are buttons for adding new applications which will be filled out in a pop-up.
 
-![User Applications Placeholder](...)
+<img width="674" alt="image" src="https://github.com/user-attachments/assets/ace96ba0-3cc2-4af8-bb63-5d4396c8a40a">
 
 On this screen, users can interact with their applications:
 
@@ -44,7 +45,7 @@ A user who wants to track the progress of their Job/Interview processes would lo
 
 ## Application Information Screen
 
-
+<img width="677" alt="image" src="https://github.com/user-attachments/assets/34bbcdd4-a9d2-4ecf-b1a6-42014870fb24">
 
 
 Login/ Create Account Page:
