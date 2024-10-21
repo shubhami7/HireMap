@@ -3,9 +3,9 @@
 ## Mohammad Kiyani - Project Manager
 - **Role**: Oversees the overall project timeline, ensures that milestones are met, and coordinates the team’s efforts. ... is responsible for setting meeting agendas and ensuring that the team stays focused on project goals.
 - **Top 3 Commits**:
-  1. [Commit 1](): worked with team on designing ui for milestone 2 
-  2. [Commit 2](): worked with team on designing images for milestone 2
-  3. [Commit 3](): worked with team for new feature ideas for milestone 2
+  1. [Commit 1](https://github.com/edwintran235/326-team9/tree/milestone2/problem.md_update): gave rough draft for problem.md (now overwritten) 
+  2. [Commit 2](https://github.com/edwintran235/326-team9/tree/milestone2/features.md/update/shahab): implemented new features in feature.md
+  3. [Commit 3](https://github.com/edwintran235/326-team9/blob/main/team/m2/ui-diagrams.md): collaborated with edwin in person to give rough draft design on pictures for ui-diagrams.md
 
 ## Shubham Inavolu - Timekeeper
 - **Role**: Manages the timing of all team activities. ... ensures that meetings start and end on time, keeps track of deadlines, and reminds the team of upcoming due dates.
@@ -17,9 +17,9 @@
 ## Lauren Shea - Note-Taker
 - **Role**: Records detailed notes during meetings and ensures that action items are clearly communicated. Lauren is responsible for distributing meeting minutes to the team after each session.
 - **Top 3 Commits**:
-  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/655392a84eb029096f6f03a952994db17aa84a25): Took notes on what was discussed during the meeting
-  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/d806d8da093c4c8c69a8479fd391ebc6c886ab03): Summarized the next steps to finish milestone 2
-  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/8efdce63fe734451aa5cc0394be1f419689d36de): Sent completed notes to each group member
+  1. [Commit 1](Include Link): took notes on what was discussed during the meeting
+  2. [Commit 2](Include Link): summarized the next steps to finish milestone 2
+  3. [Commit 3](Include Link): sent completed notes to each group member
  
 ## Sofia Simonoff - Task Manager
 - **Role**: Responsible for organizing and tracking team tasks. Sofia manages the team’s Trello board and ensures that all tasks are properly assigned and completed on time.
@@ -39,13 +39,13 @@ in team discussions
 ## Macy Graves - Quality Control
 - **Role**: Reviews team submissions and ensures that all deliverables meet the necessary quality standards. ... is responsible for proofreading and ensuring the accuracy of all documents before submission.
 - **Top 3 Commits**:
-  1. [Commit 1](Include Link): 
-  2. [Commit 2](Include Link): 
-  3. [Commit 3](Include Link): 
+  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/b53a0bb0509b3f44edfe744892784dfcc50b9073): Added missing use cases to **ui-diagrams.md** file.
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/b95ac80dfd5ffd18785e55e27574ab46ca96c838): Proofread and revised the **ui-diagrams.md** file to enhance UI-diagram descriptions to ensure completeness and formal formatting.
+  3. [Commit 3](): Reviewed code examples given by TAs and professors of a completed milestones to check if work is up to standard. Shared these examples with the team.
 
 ## Krish Sharma - Documentation Lead
 - **Role**: Responsible for overseeing the organization and maintenance of all project documentation. ... ensures that all documents are up to date, well-organized, and accessible to team members.
 - **Top 3 Commits**:
   1. [Commit 1]((https://github.com/edwintran235/326-team9/tree/975515d9f21d0857c8776ed59a65bcac8942a3fd)):Organized and formatted the problem.md file to enhance clarity, ensuring that the problem statement and solution are easy to read and follow. Structured the document for better presentation and navigation on GitHub.
-  2. [Commit 2](Include Link): Streamlined and reformatted the users.md file for improved readability, ensuring user needs and key insights are clearly outlined for better understanding on GitHub.
-  3. [Commit 3](Include Link): Revised the project's README.md file with comprehensive setup and usage instructions, ensuring clarity for all team members on how to contribute effectively to the repository.
+  2. [Commit 2](Include Link): 
+  3. [Commit 3](Include Link): 
