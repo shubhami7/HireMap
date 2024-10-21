@@ -46,6 +46,6 @@ in team discussions
 ## Krish Sharma - Documentation Lead
 - **Role**: Responsible for overseeing the organization and maintenance of all project documentation. ... ensures that all documents are up to date, well-organized, and accessible to team members.
 - **Top 3 Commits**:
-  1. [Commit 1](Include Link): 
+  1. [Commit 1]((https://github.com/edwintran235/326-team9/tree/975515d9f21d0857c8776ed59a65bcac8942a3fd)):Organized and formatted the problem.md file to enhance clarity, ensuring that the problem statement and solution are easy to read and follow. Structured the document for better presentation and navigation on GitHub.
   2. [Commit 2](Include Link): 
   3. [Commit 3](Include Link): 
