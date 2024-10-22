@@ -19,7 +19,7 @@
   ○ companyName(String required): name of company applied to
   ○ jobDescription(String required): description of job
   ○ resumeUsed(pdf required): used resume for current application
-  ○ coverLetterUsed(pdf): used coverl etter for current application
+  ○ coverLetterUsed(pdf): used cover letter for current application
   ○ dateApplied(Date required): date of application completion/submission
   ○ status(integer required): integer between 0-3, inclusive, which corresponds to one of the four statuses.
   ○ questionsAsked(String[]): list of questions asked
