@@ -48,4 +48,4 @@ in team discussions
 - **Top 3 Commits**:
   1. [Commit 1](https://github.com/edwintran235/326-team9/commit/975515d9f21d0857c8776ed59a65bcac8942a3fd):Organized and formatted the problem.md file to enhance clarity, ensuring that the problem statement and solution are easy to read and follow. Structured the document for better presentation and navigation on GitHub.
   2. [Commit 2]([Include Link](https://github.com/edwintran235/326-team9/commit/ec27109f469c3bee5ac409e4d2cb51f4743ab959)): Revised the project's README.md file with comprehensive setup and usage instructions, ensuring clarity for all team members on how to contribute effectively to the repository
-  3. [Commit 3](Include Link): Streamlined and reformatted the users.md file for improved readability, ensuring user needs and key insights are clearly outlined for better understanding on GitHub.
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/66842cd58bec32d6af03e969f3605358cb9e7909): Streamlined and reformatted the users.md file for improved readability, ensuring user needs and key insights are clearly outlined for better understanding on GitHub.
