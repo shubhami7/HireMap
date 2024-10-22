@@ -5,7 +5,7 @@ Link to Commit: https://github.com/edwintran235/326-team9/commit/975515d9f21d085
 
 Task 2: Refined the users.md page.
 Details: Streamlined and reformatted the users.md page for better readability, ensuring that the user needs and insights are clearly outlined for easy understanding on GitHub.
-Link to Commit: 
+Link to Commit: https://github.com/edwintran235/326-team9/commit/66842cd58bec32d6af03e969f3605358cb9e7909
 
 Task 3: Revised the README.md file.
 Details: Updated the README.md with detailed setup and usage instructions, ensuring team members understand how to set up the project and contribute effectively.
