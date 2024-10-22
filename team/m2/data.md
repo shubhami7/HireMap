@@ -6,7 +6,7 @@
 ● Description: Contains personal information about the user such as login information, resumes, and cover letters.
 ● Attributes:
   ○ username(String required): login username for the account
-  ○ password(#String required): password, whichs hould be private, for the account
+  ○ password(#String required): password, which should be private, for the account
   ○ email(String required): email for the user
   ○ resume(pdf required): user’s resume
   ○ coverLetter(pdf): user’s cover letter
