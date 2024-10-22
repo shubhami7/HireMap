@@ -9,4 +9,4 @@ Link to Commit:
 
 Task 3: Revised the README.md file.
 Details: Updated the README.md with detailed setup and usage instructions, ensuring team members understand how to set up the project and contribute effectively.
-Link to Commit: 
+Link to Commit: https://github.com/edwintran235/326-team9/commit/ec27109f469c3bee5ac409e4d2cb51f4743ab959
