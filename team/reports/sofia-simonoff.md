@@ -17,6 +17,9 @@
 - **Task 1**: Set up the team’s Trello board.
 - **Details**: Add tasks in the team's Trello for Milestone #2, including task descriptions and deadlines.
 - **Link to Commit**: [Trello Link](https://trello.com/b/g72RmbXm/group-9-milestone-2)
-- - **Task 2**: Assigned tasks
+- **Task 2**: Assigned tasks
 - **Details**: Based on discussions, I assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
 - **Link to Commit**: [Trello Link](https://trello.com/b/g72RmbXm/group-9-milestone-2)
+- **Task 3**: Monitored task progress 
+- **Details:** Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
+- **Link to Commit:** [Trello Link](https://trello.com/b/g72RmbXm/group-9-milestone-2)
