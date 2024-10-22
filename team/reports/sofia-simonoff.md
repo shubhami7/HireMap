@@ -23,3 +23,7 @@
 - **Task 3**: Monitored task progress 
 - **Details:** Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
 - **Link**: [Trello Link](https://trello.com/b/g72RmbXm/group-9-milestone-2)
+- **Task 4**: UI Diagrams
+- **Details**: Helped draw some of the UI diagrams.
+- **Link to Commit**: https://github.com/edwintran235/326-team9/commit/8837a7502725e4ae3fbfacda433f379fa23bc113
+
