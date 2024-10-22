@@ -48,3 +48,7 @@ A user who wants to track the progress of their Job/Interview processes would lo
 The application information screen has the detailed information about a specific application. It will include information such as the company name, date applied, application status, resume and CV used, important links to keep track of, deadlines (if you have an interview or assessments to do), company notes, company benefits, etc. You will be able to edit the information on the page, and if it is empty, the sections will remain blank.
 
 <img width="677" alt="image" src="https://github.com/user-attachments/assets/34bbcdd4-a9d2-4ecf-b1a6-42014870fb24">
+
+**Use Case**:
+
+A user who wants to be reminded of the company name for a job that they applied for. The user clicks on the application name and is directed to the application page where they can see the name of the company.
