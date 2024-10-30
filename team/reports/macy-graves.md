@@ -9,3 +9,9 @@
 - **Details**: Created use cases for each ui-diagram.
 - **Link to Commit**: [Commit on UI-Diagrams Review](https://github.com/edwintran235/326-team9/commit/b53a0bb0509b3f44edfe744892784dfcc50b9073)
 
+### October 30, 2024
+**Task1**: Created branch for Application Information Page.
+- **Details**:
+- **Link to Commit**: [Commit on Application Information Page]()
+
+
