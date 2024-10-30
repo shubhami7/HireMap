@@ -1,0 +1,76 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 2px solid #ccc;
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    header .search-bar input {
+      padding: 5px;
+      font-size: 16px;
+    }
+    header .profile, .icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Main content layout */
+    .container {
+      display: flex;
+    }
+    .main-content {
+      flex: 3;
+      padding: 20px;
+    }
+    .sidebar {
+      flex: 1;
+      border-left: 2px solid #ccc;
+      padding: 20px;
+    }
+
+    /* Application Tracker Section */
+    .tracker-header, .resources {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .status-columns {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .status-column {
+      flex: 1;
+      text-align: center;
+    }
+    .status-column h3 {
+      text-decoration: underline;
+    }
+    .application-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    /* Sidebar */
+    .upcoming-dates h3 {
+      text-decoration: underline;
+      margin-bottom: 15px;
+    }
+    .upcoming-item {
+      margin-bottom: 15px;
+      height: 30px;
+      background-color: #f0f0f0;
+    }
