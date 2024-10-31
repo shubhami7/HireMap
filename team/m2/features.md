@@ -5,7 +5,19 @@
 This feature will display an overview of each application submitted by the user, including key details such as company name, position, and the date of when the user applied. For each application, users can select their current status, such as "Applied," "Interviewing," "Offer," or "Rejected." Users will have the ability to update the status of each application. This functionality will give users a quick view of their progress, allowing them not to have to sort through various websites and emails.
 
 **Assigned to**: Edwin Tran
-  
+
+## Navigation Button
+
+Hovering over an icon in the top corner of the page will show the different pages the user can go to, such as “Home” or “Profile”
+
+**Assigned to**: Edwin Tran
+
+## Trash Icon
+
+When a user wants to remove an application from the page, they will be able to drag it to a trash can icon, which will remove it and store all the deleted applications in a separate location
+
+**Assigned to**: Sofia Simonoff
+
 ## Interview Notes and Questions
 
 For each application, users can record details about interview dates, the format (over the phone, technical exams, on-site interviews), and what questions they were asked during the interview process. This feature would allow users to review past interview questions to prepare for future interviews and improve their performance.
