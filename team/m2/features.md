@@ -80,3 +80,15 @@ Users can login or create account. Login allows users to enter a email and passw
 **Point Value**: 3 points
 **Team Member**: Mohammad Kiyani
 
+## 'Add Job' Button
+
+There will be an ‘Add’ button displayed on the home page where users can click the button and add in a new job they are applying for. Clicking the button will prompt users to input information for a new job that will be accessible in the ‘Application Information’ page.
+
+**Assigned to**: Lauren Shea
+
+## Deadline Reminders and Notifications
+
+Users can select reminders for important deadlines and due dates coming up. Users will have to input what they want as a reminder and when they want to be reminded of it. The reminders will be displayed on the home page.
+
+**Assigned to**: Lauren Shea
+
