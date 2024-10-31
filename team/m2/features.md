@@ -48,3 +48,23 @@ Users can view alumni, with public profiles, from their university who have prev
 Users can login or create account. Login allows users to enter a email and password and if it is correct they get sent to the homepage, else it prompts an error message. On the create account page, users can enter an email and a password twice to make an account on the web page.
 
 **Assigned to**: Krish Sharma
+
+
+## Profile Pic Upload Button
+
+**Description**: A button that allows users to upload their pic to their profile, so that their page is customizable. Clicking the button will boot up the users files so they can select what to upload.
+**Point Value**: 3 points
+**Team Member**: Mohammad Kiyani
+
+## Resume Upload Button
+
+**Description**: A link that allows users to upload their resume to their profile, so that they can view it as a pdf. Clicking the button will boot up the users files so they can select what to upload.
+**Point Value**: 3 points
+**Team Member**: Mohammad Kiyani
+
+## Description/Bio box
+
+**Description**: form input section so users can place their typed ‘elevator pitch’ into an accessible region in their profile page
+**Point Value**: 3 points
+**Team Member**: Mohammad Kiyani
+
