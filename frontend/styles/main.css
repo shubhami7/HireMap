@@ -102,6 +102,12 @@
       margin: 10px 0;
     }
 
+    .application-info-column {
+      display: flex;
+      justify-content: left;
+      gap: 15px
+    }
+
     /* Sidebar */
     .upcoming-dates h3 {
       text-decoration: underline;
