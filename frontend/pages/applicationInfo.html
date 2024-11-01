@@ -26,17 +26,28 @@
     <!-- Application Info Column -->
     <div class="main-content">
         <div class="application-info-column">
+            <!-- TODO: Make this the company name of the application clicked on -->
             <h1>Company Name</h1><br><br>
         </div>
-        <p1>Position: </p1><br><br>
-        <p2>Location: </p2><br><br>
-        <p8>Contacts: </p8><br><br>
-        <p3>Description: </p3><br><br>
+        <!-- Turn into readonly inputs with labels -->
+        <label key="position" >Position: </label>
+        <input type='text' key="position" readonly/><br><br>
+        <label key="location" >Location: </label>
+        <input type='text' key="location" readonly /><br><br>
+        <label key="contacts" >Contacts: </label>
+        <input type='text' key="contacts" readonly /><br><br>
+        <label key="description" >Description: </label>
+        <input type='text' key="description" readonly /><br><br>
         <h2>Status</h2>
-        <p4>Date Applied:</p4><br><br>
-        <p5>Resume: </p5><br><br>
-        <p6>Cover Letter:</p6><br><br>
-        <p7>Interview Dates: </p7><br><br>
+        <label key="dateApplied" >Date Applied: </label>
+        <input type='datetime-local' key="dateApplied" readonly /><br><br>
+        <label key="interviewDate">Interview Dates: </label>
+        <input type='datetime-local' key="interviewDate" readonly /><br><br>
+        <!-- TODO: Resume and cover letter drop boxes and display -->
+        <label key="resume" >Resume: </label>
+        <input type='file' key="resume" readonly /><br><br>
+        <label key="coverLetter">Cover Letter:</label>
+        <input type='file' key="coverLetter" readonly /><br><br>
 
 </div>
 

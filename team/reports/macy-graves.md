@@ -19,5 +19,9 @@
 - **Link to Commit**: [Commit on Application Information Page](https://github.com/edwintran235/326-team9/commit/1dd42c28ad914e9bd3bb149ab3bdeee94f65446d)
 
 **Task3**: Met with the team to go over frontend implementation.
-- **Details**:
+- **Details**: Volunteered to implement IndexedDB for Sunday.
 
+### October 31, 2024
+**Task1**: Created a branch and started working on the application information form feature.
+- **Details**: Created inputs and labels for all of the information that will be displayed on the `applicationInfo.html` page.
+- **Link to Commit**: [Commit on Application Information Page]()
