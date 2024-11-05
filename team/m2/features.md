@@ -5,7 +5,19 @@
 This feature will display an overview of each application submitted by the user, including key details such as company name, position, and the date of when the user applied. For each application, users can select their current status, such as "Applied," "Interviewing," "Offer," or "Rejected." Users will have the ability to update the status of each application. This functionality will give users a quick view of their progress, allowing them not to have to sort through various websites and emails.
 
 **Assigned to**: Edwin Tran
-  
+
+## Navigation Button
+
+Hovering over an icon in the top corner of the page will show the different pages the user can go to, such as “Home” or “Profile”
+
+**Assigned to**: Edwin Tran
+
+## Trash Icon
+
+When a user wants to remove an application from the page, they will be able to drag it to a trash can icon, which will remove it and store all the deleted applications in a separate location
+
+**Assigned to**: Sofia Simonoff
+
 ## Interview Notes and Questions
 
 For each application, users can record details about interview dates, the format (over the phone, technical exams, on-site interviews), and what questions they were asked during the interview process. This feature would allow users to review past interview questions to prepare for future interviews and improve their performance.
@@ -48,3 +60,35 @@ Users can view alumni, with public profiles, from their university who have prev
 Users can login or create account. Login allows users to enter a email and password and if it is correct they get sent to the homepage, else it prompts an error message. On the create account page, users can enter an email and a password twice to make an account on the web page.
 
 **Assigned to**: Krish Sharma
+
+
+## Profile Pic Upload Button
+
+**Description**: A button that allows users to upload their pic to their profile, so that their page is customizable. Clicking the button will boot up the users files so they can select what to upload.
+**Point Value**: 3 points
+**Team Member**: Mohammad Kiyani
+
+## Resume Upload Button
+
+**Description**: A link that allows users to upload their resume to their profile, so that they can view it as a pdf. Clicking the button will boot up the users files so they can select what to upload.
+**Point Value**: 3 points
+**Team Member**: Mohammad Kiyani
+
+## Description/Bio box
+
+**Description**: form input section so users can place their typed ‘elevator pitch’ into an accessible region in their profile page
+**Point Value**: 3 points
+**Team Member**: Mohammad Kiyani
+
+## 'Add Job' Button
+
+There will be an ‘Add’ button displayed on the home page where users can click the button and add in a new job they are applying for. Clicking the button will prompt users to input information for a new job that will be accessible in the ‘Application Information’ page.
+
+**Assigned to**: Lauren Shea
+
+## Deadline Reminders and Notifications
+
+Users can select reminders for important deadlines and due dates coming up. Users will have to input what they want as a reminder and when they want to be reminded of it. The reminders will be displayed on the home page.
+
+**Assigned to**: Lauren Shea
+
