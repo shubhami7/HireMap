@@ -20,6 +20,10 @@ modal code to add in
             <label for="deadline">Application Submission Deadline:</label>
             <input type="date" id="deadline" name="deadline" required>
 
+            <!--Status -->
+            <label for=status">Application Status:</label>
+            <input type="text" id="status" name="status" required>
+
             <!-- Submit Button -->
             <button id="submit">Submit</button>
 
