@@ -81,7 +81,7 @@
       gap: 10px;
     }
 
-    .new-job {
+    /* .new-job {
       display: none;
       position: fixed;
       top: 0;
@@ -105,7 +105,7 @@
       float: right;
       font-size: 20px;
       cursor: pointer;
-    }
+    }*/
     
     .status-columns {
       display: flex;
