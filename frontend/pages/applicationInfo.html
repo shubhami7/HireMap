@@ -1,75 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<div>
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Information</title>
     <link href="../styles/main.css" rel="stylesheet" />
-</head>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">HireMap</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." aria-label="Search applications">
+      </div>
+      <div class="profile">
+        <span aria-label="Profile Icon">👤</span>
+        <button aria-label="Menu">☰</button>
+      </div>
+    </header>
 
-<!-- Header -->
-<header>
-<div class="logo">HireMap</div>
-<div class="search-bar">
-    <input type="text" placeholder="Search...">
-</div>
-<div class="profile">
-    <span>👤</span>
-    <button>☰</button>
-</div>
-</header>
-
-<!-- Content Container -->
-<div class="container">
-    <!-- Application Info Column -->
-    <div class="main-content">
+    <!-- Content Container -->
+    <div class="container">
+      <!-- Application Info Column -->
+      <section class="main-content">
         <div class="application-info-column">
-            <h1>Company Name</h1><br><br>
+          <h1>Company Name</h1>
+          <p><strong>Position:</strong> [Position Title]</p>
+          <p><strong>Location:</strong> [Location]</p>
+          <p><strong>Contacts:</strong> [Contacts]</p>
+          <p><strong>Description:</strong> [Job Description]</p>
         </div>
-        <p1>Position: </p1><br><br>
-        <p2>Location: </p2><br><br>
-        <p8>Contacts: </p8><br><br>
-        <p3>Description: </p3><br><br>
-        <h2>Status</h2>
-        <p4>Date Applied:</p4><br><br>
-        <p5>Resume: </p5><br><br>
-        <p6>Cover Letter:</p6><br><br>
-        <p7>Interview Dates: </p7><br><br>
+        <article class="status-section">
+          <h2>Status</h2>
+          <p><strong>Date Applied:</strong> [Date]</p>
+          <p><strong>Resume:</strong> [Resume Link]</p>
+          <p><strong>Cover Letter:</strong> [Cover Letter Link]</p>
+          <p><strong>Interview Dates:</strong> [Interview Dates]</p>
+        </article>
+      </section>
 
-</div>
+      <!-- Sidebar for Upcoming Dates -->
+      <aside class="sidebar">
+        <div class="upcoming-dates">
+          <h3>Upcoming Dates</h3>
+          <div class="upcoming-item">[Event 1]</div>
+          <div class="upcoming-item">[Event 2]</div>
+          <div class="upcoming-item">[Event 3]</div>
+        </div>
+      </aside>
 
-<!-- Sidebar for Upcoming Dates -->
-<div class="sidebar">
-    <div class="upcoming-dates">
-        <h3>Upcoming Dates</h3>
-        <div class="upcoming-item"></div>
-        <div class="upcoming-item"></div>
-        <div class="upcoming-item"></div>
-    </div>
-    </div>
-</div>
-</div>
-
-<div class="interview-notes-section">
-    <h2>Interview Notes</h2>
-
-    <!-- Interview Date -->
-    <div class="interview-note">
-        <h3>Interview Date: <input type="date" /></h3>
-        <label for="interview-format-1">Interview Format:</label>
-        <select id="interview-format-1">
+      <!-- Interview Notes Section -->
+      <section class="interview-notes-section">
+        <h2>Interview Notes</h2>
+        <div class="interview-note">
+          <h3>Interview Date: <input type="date" aria-label="Select interview date" /></h3>
+          <label for="interview-format">Interview Format:</label>
+          <select id="interview-format">
             <option value="phone">Phone</option>
             <option value="technical">Technical Exam</option>
             <option value="onsite">On-Site</option>
-        </select><br><br>
-
-        <label for="interview-questions-1">Questions Asked:</label><br>
-        <textarea id="interview-questions-1" rows="4" placeholder="Notes..."></textarea><br><br>
+          </select>
+          <br><br>
+          <label for="interview-questions">Questions Asked:</label><br>
+          <textarea id="interview-questions" rows="4" placeholder="Notes on questions asked..." aria-label="Questions asked during interview"></textarea>
+        </div>
+      </section>
     </div>
-</div>
-
-
-</body>   
+  </body>
 </html>
