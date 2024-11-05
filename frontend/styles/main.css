@@ -97,10 +97,16 @@
       background-color: white;
       margin: 15% auto;
       padding: 20px;
-      border: 1px solid #888;
+      border: 1px;
       width: 80%; 
     }
 
+    .close {
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
     .status-columns {
       display: flex;
       justify-content: space-between;
