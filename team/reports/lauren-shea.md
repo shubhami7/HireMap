@@ -17,3 +17,11 @@
 - **Task 3**: Sent out meeting notes to group members.
 - **Details**: Sent completed meeting notes to group members outlining what we talked about during the meeting and what the next steps are.
 - **Link to Commit**: https://github.com/edwintran235/326-team9/commit/8efdce63fe734451aa5cc0394be1f419689d36de
+
+### November 4, 2024
+- **Task 1**: added code to make popup modal
+- **Details**: I added code to make a modal in the HTML file for the homepage so the user can input new information for a job
+- **Link to Commit**: 
+- **Task 2**: added CSS for the add button modal
+- **Details**: added the CSS styling for the modal to popup
+- **Link to Commit**:

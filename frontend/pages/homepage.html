@@ -26,7 +26,35 @@
     <div class="tracker-header">
       <h1>Application Tracker</h1>
       <div class="add-trash-buttons">
-        <button>Add</button>
+        <button id="add-button">Add</button>
+
+        <!--modal pop-up for new job-->
+        <div id="add-popup" class="new-job">
+          <div class="new-job-content">
+            <span class="close">&times</span>
+            <p>Please Enter Job Information:</p>
+
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" required>
+
+            <!-- Position Applied For -->
+            <label for="position">Position Applied For:</label>
+            <input type="text" id="position" name="position" required>
+
+            <!-- Date Applied -->
+            <label for="dateApplied">Date Applied:</label>
+            <input type="date" id="dateApplied" name="dateApplied" required>
+
+            <!-- Application Submission Deadline -->
+            <label for="deadline">Application Submission Deadline:</label>
+            <input type="date" id="deadline" name="deadline" required>
+
+            <!-- Submit Button -->
+            <button id="submit">Submit</button>
+
+          </div>
+        </div>
+
         <button>🗑</button>
       </div>
     </div>
