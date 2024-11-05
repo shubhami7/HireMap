@@ -1,76 +1,118 @@
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    /* Header */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px;
-      border-bottom: 2px solid #ccc;
-    }
-    header .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    header .search-bar input {
-      padding: 5px;
-      font-size: 16px;
-    }
-    header .profile, .icons {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Main content layout */
-    .container {
-      display: flex;
-    }
-    .main-content {
-      flex: 3;
-      padding: 20px;
-    }
-    .sidebar {
-      flex: 1;
-      border-left: 2px solid #ccc;
-      padding: 20px;
-    }
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: px solid #ccc;
+  background-color: rgb(73, 43, 222);
+}
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+header .search-bar input {
+  padding: 5px;
+  font-size: 16px;
+}
+header .profile, .icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    /* Application Tracker Section */
-    .tracker-header, .resources {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .status-columns {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .status-column {
-      flex: 1;
-      text-align: center;
-    }
-    .status-column h3 {
-      text-decoration: underline;
-    }
-    .application-box {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px 0;
-    }
+  /* Profile dropdown menu */
+.profile {
+  position: relative;
+}
+.profile-menu {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 100%; /* Position below the profile icon */
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 150px;
+  z-index: 1000;
+}
+.profile-menu a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #333;
+}
+.profile-menu a:hover {
+  background-color: #f0f0f0;
+}
 
-    /* Sidebar */
-    .upcoming-dates h3 {
-      text-decoration: underline;
-      margin-bottom: 15px;
-    }
-    .upcoming-item {
-      margin-bottom: 15px;
-      height: 30px;
-      background-color: #f0f0f0;
-    }
+/* Show the profile menu on hover */
+.profile:hover .profile-menu {
+  display: block;
+}
+
+/* Main content layout */
+.container {
+  display: flex;
+}
+.main-content {
+  flex: 3;
+  padding: 20px;
+}
+.sidebar {
+  flex: 1;
+  border-left: 2px solid #ccc;
+  padding: 20px;
+}
+  
+/* Application Tracker Section */
+.tracker-header, .resources {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.status-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.status-column {
+  flex: 1;
+  text-align: center;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  min-height: 150 px;
+}
+.status-column h3 {
+  text-decoration: underline;
+}
+.application-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  cursor: grab
+}
+.application-box:active {
+  cursor: grabbing;
+  opacity: .7;
+}
+
+/* Sidebar */
+.upcoming-dates h3 {
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+.upcoming-item {
+  margin-bottom: 15px;
+  height: 30px;
+  background-color: #f0f0f0;
+}

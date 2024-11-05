@@ -18,8 +18,12 @@
       <button>Trash</button>
     </div>
     <div class="profile">
-      <span>👤</span>
-      <button>☰</button>
+      <button>👤</button>
+      <div class="profile-menu">
+        <a href="Profile">Profile</a>
+        <a href="Settings">Settings</a>
+        <a href="Logout">Logout</a>
+      </div>
     </div>
   </header>
 
@@ -33,21 +37,20 @@
 
       <!-- Application Status Columns -->
       <div class="status-columns">
-        <div class="status-column">
+        <div class="status-column" id="interested">
           <h3>Interested</h3>
-          <div class="application-box">Amazon<br>• Software Engineer</div>
+          <div class="application-box" draggable="true" id="amazon">Amazon<br>• Software Engineer</div>
         </div>
-        <div class="status-column">
+        <div class="status-column" id="applied">
           <h3>Applied</h3>
-          <div class="application-box">Dell<br>• Software Engineer</div>
+          <div class="application-box" draggable="true" id="dell">Dell<br>• Software Engineer</div>
         </div>
-        <div class="status-column">
+        <div class="status-column" id="interviewing">
           <h3>Interviewing</h3>
-          <div class="application-box">Google<br>• Software Developer</div>
+          <div class="application-box" draggable="true" id="google">Google<br>• Software Developer</div>
         </div>
-        <div class="status-column">
+        <div class="status-column" id="offer">
           <h3>Offer</h3>
-          <div class="application-box">...</div>
         </div>
       </div>
 
@@ -68,5 +71,6 @@
       </div>
     </div>
   </div>
+  <script src="../components/script.js"></script>
 </body>
 </html>
