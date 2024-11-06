@@ -104,8 +104,31 @@ export class Database {
             };
         });
     }
-    
+
     // Create method to delete application by its name/id
+    async deleteApp(app) {
+
+        // Open the db, create a transaction on the object store
+        const db = await this.openDB();
+        const tx = db.transaction('applications', 'readonly');
+        const store = tx.objectStore('applications');
+        // retrieve the application using id parameter
+        const req = store.delete(app);
+
+        // return a promise that returns a status message
+        return new Promise((res, rej) => {
+            req.onsuccess = () => {
+              res("Application deleted successfully!");
+            };
+            req.onerror = (error) => {
+              if (error.name === "NotFoundError") {
+                res("Application does not exist.");
+              }
+              rej(`Error while deleting: ${error}`);
+            };
+          });
+    }
+    
     // Create method to update an application by its id
 
 }
