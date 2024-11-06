@@ -16,7 +16,7 @@ export class Database {
             }
 
             // attempt to open database using indexedDB
-            const req = indexedDB.open(this.name, 1);
+            const req = window.indexedDB.open(this.name, 1);
 
             // upgrade db if needed
             req.onupgradeneeded = (event) => {
@@ -63,24 +63,48 @@ export class Database {
     }
 
     // Create method to get all applications
-    async getAll() {
+    async getApps() {
+
+        // Open the db, create a transaction on the object store
         const db = await this.openDB();
         const tx = db.transaction('applications', 'readonly');
-        const store = tx.objectStore('applications')
+        const store = tx.objectStore('applications');
+        // retrieve all of the applications
         const req = store.getAll();
     
+        // return a promise that resolves with all of the applications or rejects with msg
         return new Promise((res, rej) => {
           req.onsuccess = () => {
             res(req.result);
           };
           req.onerror = (error) => {
-            rej(`Failure to get all tasks: ${error.message}`)
+            rej(`Failure to get all tasks: ${error.message}`);
           };
         });
     }
 
     // TODO: 
-    // Create method to get one application
+    // Create method to get one application by id
+    async getAppByID(app) {
+
+        // Open the db, create a transaction on the object store
+        const db = await this.openDB();
+        const tx = db.transaction('applications', 'readonly');
+        const store = tx.objectStore('applications');
+        // retrieve the application using id parameter
+        const req = store.get(app);
+
+        // return a promise that resolves with the desired applications or rejects with msg
+        return new Promise((res, rej) => {
+            req.onsuccess = () => {
+              res(req.result);
+            };
+            req.onerror = (error) => {
+              rej(`Failure to get desired task: ${error.message}`);
+            };
+        });
+    }
+    
     // Create method to delete application by its name/id
     // Create method to update an application by its id
 
