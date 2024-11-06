@@ -83,7 +83,6 @@ export class Database {
         });
     }
 
-    // TODO: 
     // Create method to get one application by id
     async getAppByID(app) {
 
@@ -128,7 +127,8 @@ export class Database {
             };
           });
     }
-    
-    // Create method to update an application by its id
 
+    // TODO:
+    // Create method to update an application by its id
+    
 }
