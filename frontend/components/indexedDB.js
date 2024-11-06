@@ -73,7 +73,7 @@ export class Database {
           req.onsuccess = () => {
             res(req.result);
           };
-          re.onerror = (error) => {
+          req.onerror = (error) => {
             rej(`Failure to get all tasks: ${error.message}`)
           };
         });
