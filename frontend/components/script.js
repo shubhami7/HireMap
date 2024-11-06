@@ -1,3 +1,10 @@
+// Import Database class
+import {Database} from './indexedDB';
+
+// Create and open a database for applications called appDB
+const appDB = new Database("appDB");
+appDB = await appDB.openDB();
+
 // Add event listeners to each application box
 const boxes = document.querySelectorAll(".application-box");
 const columns = document.querySelectorAll(".status-column");

@@ -1,7 +1,7 @@
 // Set up IndexedDB class for client-side data storage
 export class Database {
     constructor(name) {
-        this.name;
+        this.name = name;
     }
 
     // Create method for opening the db
@@ -79,6 +79,7 @@ export class Database {
         });
     }
 
+    // TODO: 
     // Create method to get one application
     // Create method to delete application by its name/id
     // Create method to update an application by its id
