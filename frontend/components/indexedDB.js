@@ -71,14 +71,14 @@ export class Database {
     
         return new Promise((res, rej) => {
           req.onsuccess = () => {
-            res(request.result);
+            res(req.result);
           };
           re.onerror = (error) => {
             rej(`Failure to get all tasks: ${error.message}`)
           };
         });
     }
-    
+
     // Create method to get one application
     // Create method to delete application by its name/id
     // Create method to update an application by its id
