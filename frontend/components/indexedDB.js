@@ -1,7 +1,7 @@
 // Set up IndexedDB class for client-side data storage
 export class Database {
     constructor(name) {
-        this.name;
+        this.name = name;
     }
 
     // Create method for opening the db
@@ -16,7 +16,7 @@ export class Database {
             }
 
             // attempt to open database using indexedDB
-            const req = indexedDB.open(this.name, 1);
+            const req = window.indexedDB.open(this.name, 1);
 
             // upgrade db if needed
             req.onupgradeneeded = (event) => {
@@ -63,8 +63,72 @@ export class Database {
     }
 
     // Create method to get all applications
-    // Create method to get one application
-    // Create method to delete application by its name/id
-    // Create method to update an application by its id
+    async getApps() {
 
+        // Open the db, create a transaction on the object store
+        const db = await this.openDB();
+        const tx = db.transaction('applications', 'readonly');
+        const store = tx.objectStore('applications');
+        // retrieve all of the applications
+        const req = store.getAll();
+    
+        // return a promise that resolves with all of the applications or rejects with msg
+        return new Promise((res, rej) => {
+          req.onsuccess = () => {
+            res(req.result);
+          };
+          req.onerror = (error) => {
+            rej(`Failure to get all tasks: ${error.message}`);
+          };
+        });
+    }
+
+    // Create method to get one application by id
+    async getAppByID(app) {
+
+        // Open the db, create a transaction on the object store
+        const db = await this.openDB();
+        const tx = db.transaction('applications', 'readonly');
+        const store = tx.objectStore('applications');
+        // retrieve the application using id parameter
+        const req = store.get(app);
+
+        // return a promise that resolves with the desired applications or rejects with msg
+        return new Promise((res, rej) => {
+            req.onsuccess = () => {
+              res(req.result);
+            };
+            req.onerror = (error) => {
+              rej(`Failure to get desired task: ${error.message}`);
+            };
+        });
+    }
+
+    // Create method to delete application by its name/id
+    async deleteApp(app) {
+
+        // Open the db, create a transaction on the object store
+        const db = await this.openDB();
+        const tx = db.transaction('applications', 'readonly');
+        const store = tx.objectStore('applications');
+        // retrieve the application using id parameter
+        const req = store.delete(app);
+
+        // return a promise that returns a status message
+        return new Promise((res, rej) => {
+            req.onsuccess = () => {
+              res("Application deleted successfully!");
+            };
+            req.onerror = (error) => {
+              if (error.name === "NotFoundError") {
+                res("Application does not exist.");
+              }
+              rej(`Error while deleting: ${error}`);
+            };
+          });
+    }
+
+    // TODO:
+    // Create method to update an application by its id
+    
 }
