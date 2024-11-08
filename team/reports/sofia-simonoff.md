@@ -27,3 +27,13 @@
 - **Details**: Helped draw some of the UI diagrams.
 - **Link to Commit**: [Link to UI diagram](https://github.com/edwintran235/326-team9/commit/8837a7502725e4ae3fbfacda433f379fa23bc113)
 
+### October 30, 2024
+- **Task**: Made edits to homepage functionality.
+- **Details**: Changed around some aspects of the homepage for more clear layout. Created a footnote section for Resources & Tips.
+- **Link 1 to Commit**: [Link to homepage html edits](https://github.com/edwintran235/326-team9/commit/8d115cf6ea6941075b35cee8308d48cfbaf74cc1)
+- **Link 2 to Commit**: [Link to homepage css edits](https://github.com/edwintran235/326-team9/commit/6f9439950a066b11cdfef955044b3a12ddae2521)
+
+### November 5, 2024
+- **Task**: Added 'Interview Notes' section.
+- **Details**: Created an 'Interview Notes' section to the Application Information name, for each company. Users have the option to add interview dates, format, and questions asked.
+- **Link 1 to Commit**: [Link to homepage html edits](https://github.com/edwintran235/326-team9/commit/4f947b498bf824690461317763875b03676a6b8e)
