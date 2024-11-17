@@ -15,13 +15,14 @@ Hovering over an icon in the top corner of the page will show the different page
 ## Trash Icon
 
 When a user wants to remove an application from the page, they will be able to drag it to a trash can icon, which will remove it and store all the deleted applications in a separate location
-
+**Assigned points**: 2
 **Assigned to**: Sofia Simonoff
+
 
 ## Interview Notes and Questions
 
 For each application, users can record details about interview dates, the format (over the phone, technical exams, on-site interviews), and what questions they were asked during the interview process. This feature would allow users to review past interview questions to prepare for future interviews and improve their performance.
-
+**Assigned points**: 3
 **Assigned to**: Sofia Simonoff
 
 
