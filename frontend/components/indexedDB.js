@@ -130,7 +130,7 @@ export class Database {
 
     // TODO:
     // Create method to update an application by its id
-    async updateApp(id, updatedData) {
+async updateApp(id, updatedData) {
     const db = await this.openDB();
     const tx = db.transaction('applications', 'readwrite');
     const store = tx.objectStore('applications');

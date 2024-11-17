@@ -4,15 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
-    <link rel="stylesheet" href="./styles/profilepage.css" />
+    <link rel="stylesheet" href="../styles/profilepage.css" />
   </head>
   <body>
-    <!-- Navigation Tabs -->
-    <div class="profile-tabs">
-      <button class="tab active">Overview</button>
-      <button class="tab">Activity</button>
-      <button class="tab">Settings</button>
-    </div>
+    <!-- Header -->
+    <header>
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <button onclick="window.location.href='homepage.html'">Home</button>
+        <button onclick="window.location.href='profilepage.html'">
+          Profile
+        </button>
+        <button onclick="window.location.href='applicationInfo.html'">
+          Application Info
+        </button>
+      </div>
+      <div class="profile">
+        <button>👤</button>
+      </div>
+    </header>
 
     <!-- Profile Name Input -->
     <div class="profile-name-create">
@@ -72,9 +82,10 @@
       </div>
     </div>
 
-    <script src="./scripts/profilepage.js"></script>
+    <script src="../scripts/profilepage.js"></script>
   </body>
 </html>
+
 
 
 <!--

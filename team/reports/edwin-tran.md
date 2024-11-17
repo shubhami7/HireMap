@@ -16,3 +16,8 @@
 - Created navigate bar
 
   Link: https://github.com/edwintran235/326-team9/commit/c99f6918f89ad468e9c5654596f489142044a8ab
+
+11/17
+- Updated nav-bar styling
+
+  Link: https://github.com/edwintran235/326-team9/commit/f895fbdfe6eae0ae05d4430f19aa27124023034a
