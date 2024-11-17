@@ -12,7 +12,7 @@
 - **Top 3 Commits**:
   1. [Commit 1](https://github.com/edwintran235/326-team9/commit/00b89d6c627e3a1a80d0e41bde2a98fd374af32a): made sure team members were present and ready to continue work on Milestone 2. 
   2. [Commit 2](https://github.com/edwintran235/326-team9/commit/c6dc2b8e81d9b5dfd2b0d693aabcfd43a823c801): made sure everyone understood upcoming Milestone 2 deadline and people understood their features.
-  3. [Commit 3](Include Link): Made sure tasks were completed on time, and the team was on track to completing the Milestone.
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/fdfe5bcfa1307990a50ed373f3b45d9004d27dc9): Made sure tasks were completed on time, and the team was on track to completing the Milestone.
  
 ## Lauren Shea - Note-Taker
 - **Role**: Records detailed notes during meetings and ensures that action items are clearly communicated. Lauren is responsible for distributing meeting minutes to the team after each session.
