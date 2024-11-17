@@ -1,136 +1,163 @@
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    /* Header */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px;
-      border-bottom: 2px solid #ccc;
-    }
-    header .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header .search-bar {
-      display: flex;
-      align-items: center;
-      margin-left: 20px 0;
-    }
-    
-    header .search-bar input {
-      padding: 4px;
-      font-size: 16px;
-      width: 400px;
-    }
-    
-    header .profile, .icons {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    header .profile span {
-      font-size: 24px;
-    }
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: px solid #ccc;
+  background-color: rgb(73, 43, 222);
+}
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+header .search-bar input {
+  padding: 5px;
+  font-size: 16px;
+}
+header .profile, .icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    header .profile button {
-      font-size: 15px; 
-      padding: 6px; 
-    } 
+  /* Profile dropdown menu */
+.profile {
+  position: relative;
+}
 
-    /* Main content layout */
-    .container {
-      display: flex;
-      justify-content: space-between;
+/* Main content layout */
+.container {
+  display: flex;
+}
+.main-content {
+  flex: 3;
+  padding: 20px;
+}
+.sidebar {
+  flex: 1;
+  border-left: 2px solid #ccc;
+  padding: 20px;
+}
+  
+/* Application Tracker Section */
+.tracker-header, .resources {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.status-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.status-column {
+  flex: 1;
+  text-align: center;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  min-height: 150 px;
+}
+.status-column h3 {
+  text-decoration: underline;
+}
+.application-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  cursor: grab
+}
+.application-box:active {
+  cursor: grabbing;
+  opacity: .7;
+}
 
-    }
-    .main-content {
-      flex: 3;
-      padding: 5px;
-      position: relative;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    
-    .sidebar {
-      flex: 1;
-      border-left: 2px solid #ccc;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-    }
+/* Sidebar */
+.upcoming-dates h3 {
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+.upcoming-item {
+  margin-bottom: 15px;
+  height: 30px;
+  background-color: #f0f0f0;
+}
 
-    /* Application Tracker Section */
-    .tracker-header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+/* Back Button */
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+/* Navigation Buttons */
+.nav-buttons button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.nav-buttons button:hover {
+  background-color: green;
+}
 
-    .add-trash-buttons {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      display: flex;
-      gap: 10px;
-    }
+/* add in a new job */
+.new-job {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-    .status-columns {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-    }
+/* Modal Content/Box */
+.new-job-content {
+  background-color: hsl(220, 90%, 76%);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  font-weight: bold;
+}
 
-    .status-column {
-      flex: 1;
-      text-align: center;
-    }
+/* The Close Button */
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-    .status-column h3 {
-      text-decoration: underline;
-    }
 
-    .application-box {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px 0;
-    }
-
-    .application-info-column {
-      display: flex;
-      justify-content: left;
-      gap: 15px
-    }
-
-    /* Sidebar */
-    .upcoming-dates h3 {
-      text-decoration: underline;
-    }
-
-    .upcoming-item {
-      margin-bottom: 15px;
-      height: 30px;
-      background-color: #f0f0f0;
-    }
-
-    /* Footer */
-    .footer-section {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; 
-      padding: 15px;
-      border-top: 2px solid #ccc;
-      margin-top: 0px;
-    }
-    
-    .footer-section h2 {
-      margin: 0; 
-      font-size: 20px; 
-      text-decoration: underline; 
-    }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
