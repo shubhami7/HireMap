@@ -42,9 +42,7 @@
         <h2>Status</h2>
         <label key="dateApplied" >Date Applied: </label>
         <input type='datetime-local' key="dateApplied" readonly /><br><br>
-        <label key="interviewDate">Interview Dates: </label>
-        <input type='datetime-local' key="interviewDate" readonly /><br><br>
-        <!-- TODO: Resume and cover letter drop boxes and display -->
+        <!-- Resume and cover letter drop boxes and display -->
         <label key="resume" >Resume: </label>
         <input type='file' key="resume" readonly /><br><br>
         <label key="coverLetter">Cover Letter:</label>
@@ -69,9 +67,10 @@
 
     <!-- Interview Date -->
     <div class="interview-note">
-        <h3>Interview Date: <input type="date" /></h3>
+        <h3>Interview Date: <input type="date" id="interview-date" /></h3>
         <label for="interview-format-1">Interview Format:</label>
         <select id="interview-format-1">
+            <option value="select">select value</option>
             <option value="phone">Phone</option>
             <option value="technical">Technical Exam</option>
             <option value="onsite">On-Site</option>
