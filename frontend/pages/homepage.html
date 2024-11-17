@@ -10,17 +10,14 @@
   <!-- Header -->
   <header>
     <div class="logo">HireMap</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search...">
+    < <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button onclick="window.location.href='homepage.html'">Home</button>
+      <button onclick="window.location.href='profilepage.html'">Profile</button>
+      <button onclick="window.location.href='applicationInfo.html'">Application Info</button>
     </div>
     <div class="profile">
-      <button>👤</button>
-      <div class="profile-menu">
-        <a href="Profile">Profile</a>
-        <a href="Settings">Settings</a>
-        <a href="Logout">Logout</a>
-      </div>
-    </div>
+      <button>👤</button></div>
   </header>
 
   <!-- Main Content Layout -->
@@ -33,7 +30,39 @@
         <button id="add-button">Add</button>
 
         <!-- add in modal code from modal.txt -->
+        <div id="add-popup" class="new-job">
+          <div class="new-job-content">
+            <span class="close">&times</span>
+            <p>Please Enter Job Information:</p>
 
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" required>
+
+            <!-- Position Applied For -->
+            <label for="position"><br>Position Applied For:</label>
+            <input type="text" id="position" name="position" required>
+
+            <!-- Date Applied -->
+            <label for="dateApplied"><br>Date Applied:</label>
+            <input type="date" id="dateApplied" name="dateApplied" required>
+
+            <!-- Application Submission Deadline -->
+            <label for="deadline"><br>Application Submission Deadline:</label>
+            <input type="date" id="deadline" name="deadline" required>
+
+            <!--Status -->
+            <label for="status"><br>Application Status:</label>
+            <select id="status">
+              <option value="interested">Interested</option>
+              <option value="applied">Applied</option>
+              <option value="interviewing">Interviewing</option>
+              <option value="offer">Offer</option>
+              </select><br><br>
+            <!-- Submit Button -->
+            <button id="submit">Submit</button>
+
+          </div> 
+        </div>
 
         <button>🗑</button>
       </div>

@@ -33,32 +33,6 @@ header .profile, .icons {
 .profile {
   position: relative;
 }
-.profile-menu {
-  display: none; /* Initially hidden */
-  position: absolute;
-  top: 100%; /* Position below the profile icon */
-  right: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  width: 150px;
-  z-index: 1000;
-}
-.profile-menu a {
-  display: block;
-  padding: 8px;
-  text-decoration: none;
-  color: #333;
-}
-.profile-menu a:hover {
-  background-color: #f0f0f0;
-}
-
-/* Show the profile menu on hover */
-.profile:hover .profile-menu {
-  display: block;
-}
 
 /* Main content layout */
 .container {
@@ -115,4 +89,75 @@ header .profile, .icons {
   margin-bottom: 15px;
   height: 30px;
   background-color: #f0f0f0;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+/* Back Button */
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+/* Navigation Buttons */
+.nav-buttons button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.nav-buttons button:hover {
+  background-color: green;
+}
+
+/* add in a new job */
+.new-job {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.new-job-content {
+  background-color: hsl(220, 90%, 76%);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  font-weight: bold;
+}
+
+/* The Close Button */
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
