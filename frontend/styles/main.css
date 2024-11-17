@@ -188,6 +188,11 @@ header .profile, .icons {
   cursor: pointer;
 }
 
+/* Footer */
+footer {
+  padding: 20px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   header {
