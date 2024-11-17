@@ -1,5 +1,13 @@
 ## Contribution Log for Sofia Simonoff
 
+### November 17, 2024
+- **Task 1**: Updated styling for applicationInfo.
+- **Details**: Changed the code slightly in order for "Interview Notes" and "Status" sections to be lined up.
+- **Link 1 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/b5b62b9630358fe325d1cb8f2a0c27d3800d2a08)
+- **Task 2**: Updated nav bar for applicationInfo.
+- **Details**: Changed the header code slightly in order to include the Home/Profile/Application Info routing.
+- **Link 1 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/1267166c8c6f004fd68caa80486d1791357021a5)
+
 ### November 5, 2024
 - **Task**: Added 'Interview Notes' section.
 - **Details**: Created an 'Interview Notes' section to the Application Information name, for each company. Users have the option to add interview dates, format, and questions asked.
