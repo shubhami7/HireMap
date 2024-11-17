@@ -29,10 +29,6 @@ header .profile, .icons {
   gap: 10px;
 }
 
-  /* Profile dropdown menu */
-.profile {
-  position: relative;
-}
 
 /* Main content layout */
 .container {
@@ -109,9 +105,9 @@ header .profile, .icons {
 }
 /* Navigation Buttons */
 .nav-buttons button {
-  background-color: black;
+  background-color: white;
   border: none;
-  color: white;
+  color: black;
   padding: 10px 20px;
   margin: 0 5px;
   cursor: pointer;
@@ -119,7 +115,7 @@ header .profile, .icons {
   font-size: 16px;
 }
 .nav-buttons button:hover {
-  background-color: green;
+  background-color: lightgray;
 }
 
 /* add in a new job */

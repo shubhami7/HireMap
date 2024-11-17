@@ -130,5 +130,47 @@ export class Database {
 
     // TODO:
     // Create method to update an application by its id
-    
+    async updateApp(id, updatedData) {
+    const db = await this.openDB();
+    const tx = db.transaction('applications', 'readwrite');
+    const store = tx.objectStore('applications');
+    const existingApp = await new Promise((res, rej) => {
+        const req = store.get(id);
+        req.onsuccess = () => res(req.result);
+        req.onerror = (error) => rej(`Failed to retrieve application: ${error.message}`);
+    });
+
+    if (!existingApp) {
+        throw new Error(`Application with id ${id} not found.`);
+    }
+    const updatedApp = { ...existingApp, ...updatedData };
+    store.put(updatedApp, id);
+    return new Promise((res, rej) => {
+        tx.oncomplete = () => res('Application updated successfully!');
+        tx.onerror = (error) => rej(`Failed to update application: ${error.message}`);
+    });
+}
+
+/**
+ * Example Usage of the `updateApp` Method in the `Database` Class
+ *
+ * 1. Create a Database instance for managing job applications.
+ *    - The database is initialized with the name 'JobApplications'.
+ *    - If the database does not exist, it will be created.
+ * 
+ * 2. Define the updated data for an existing application.
+ *    - The data to be updated includes:
+ *      a) Job Position: Updated to 'Senior Software Engineer'.
+ *      b) Application Status: Updated to 'Interviewing', indicating progress in the hiring process.
+ *      c) Interview Date: Updated to '2024-11-20', representing the scheduled date for the interview.
+ * 
+ * 3. Call the `updateApp` method to update an application.
+ *    - Parameters:
+ *      a) `id` ('12345'): The unique identifier for the application to update.
+ *      b) `updatedData`: The object containing the fields to update.
+ * 
+ * 4. Handle the Promise returned by the `updateApp` method.
+ *    - If the operation is successful, log a success message to the console.
+ *    - If an error occurs, log the error message to the console.
+ */
 }
