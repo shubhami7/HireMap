@@ -1,5 +1,5 @@
 // Import Database class
-import {Database} from './indexedDB';
+import {Database} from '../components/indexedDB.js';
 
 // Create and open a database for applications called appDB
 const appDB = new Database("appDB");
