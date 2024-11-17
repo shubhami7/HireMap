@@ -3,6 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="./styles/profilepage.css" />
+  </head>
+  <body>
+    <!-- Navigation Tabs -->
+    <div class="profile-tabs">
+      <button class="tab active">Overview</button>
+      <button class="tab">Activity</button>
+      <button class="tab">Settings</button>
+    </div>
+
+    <!-- Profile Name Input -->
+    <div class="profile-name-create">
+      <form id="nameForm">
+        <label for="nameInput">Enter your name:</label><br />
+        <input
+          type="text"
+          id="nameInput"
+          name="nameInput"
+          placeholder="Your Name"
+        />
+        <button type="submit" id="namesubmit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Profile Name Display -->
+    <h1 id="displayName">Your name will appear here</h1>
+
+    <!-- Profile Pic -->
+    <img
+      src="defaultpfp.webp"
+      alt="Profile Picture"
+      class="profile-pic"
+      style="height: 150px; width: 150px"
+    />
+
+    <!-- Profile Content -->
+    <div class="profile-content">
+      <!-- About Me Section -->
+      <div class="about-section">
+        <h2>About Me</h2>
+        <form id="descriptionForm">
+          <label for="paragraphInput">Enter your description paragraph:</label
+          ><br />
+          <textarea
+            id="paragraphInput"
+            name="paragraphInput"
+            rows="6"
+            cols="50"
+            placeholder="Write your description here..."
+          ></textarea>
+          <br /><br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <!-- Recent Activity Section -->
+      <div class="activity-section">
+        <h2>Recent Activity</h2>
+        <div class="activity-boxes">
+          <div class="activity-box">Jobs applied to: 85</div>
+          <div class="activity-box">Heard Back From: 12</div>
+          <div class="activity-box">Rejections: 66</div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+
+    <script src="./scripts/profilepage.js"></script>
+  </body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile Page</title>
 
     <style>
@@ -83,3 +163,4 @@
   </body>
 </html>
 
+-->
