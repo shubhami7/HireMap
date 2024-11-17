@@ -1,16 +1,36 @@
 # Application Features
 
-## Job Application Tracker
+## Job Application Tracker Section
 
-This feature will display an overview of each application submitted by the user, including key details such as company name, position, and the date of when the user applied. For each application, users can select their current status, such as "Applied," "Interviewing," "Offer," or "Rejected." Users will have the ability to update the status of each application. This functionality will give users a quick view of their progress, allowing them not to have to sort through various websites and emails.
+This feature will display an overview of each application submitted by the user, including key details such as company name and position. For each application, users can select their current status, such as "Applied," "Interviewing," "Offer," or "Rejected." Users will have the ability to update the status of each application. This functionality will give users a quick view of their progress, allowing them not to have to sort through various websites and emails.
+
+**Assigned to**: Edwin Tran
+
+Points: 4
+
+## Dragging Applications
+
+When the user wants to update the status of their application, they are able to drag each application into a different section
 
 **Assigned to**: Edwin Tran
 
-## Navigation Button
+Points: 3
 
-Hovering over an icon in the top corner of the page will show the different pages the user can go to, such as “Home” or “Profile”
+## Navigation Bar
+
+Bar and icons to navigate between different pages of the website
 
 **Assigned to**: Edwin Tran
+
+Points: 2
+
+## Upcoming Dates
+
+When the user has any upcoming due dates for interviews or online assessments, they will be add them here to keep track
+
+**Assigned to**: Edwin Tran
+
+Points: 1
 
 ## Trash Icon
 
