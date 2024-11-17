@@ -10,7 +10,7 @@
 ## Shubham Inavolu - Timekeeper
 - **Role**: Manages the timing of all team activities. ... ensures that meetings start and end on time, keeps track of deadlines, and reminds the team of upcoming due dates.
 - **Top 3 Commits**:
-  1. [Commit 1](Include Link): 
+  1. [Commit 1](Include Link): made sure team members were present and ready to continue work on Milestone 2. 
   2. [Commit 2](Include Link): 
   3. [Commit 3](Include Link):
  
