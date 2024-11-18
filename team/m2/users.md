@@ -7,7 +7,7 @@ Our web application, **HireMap**, is designed for college students, recent gradu
 
 ## User Needs
 
-For college students, securing an internship while managing schoolwork is a significant challenge. They must juggle deadlines and milestones in the application process while handling a demanding academic workload. For many students, applying to internships is their first experience with writing resumes, cover letters, and preparing for technical interviews, which can be daunting. HireMap can greatly ease the stress of this process by providing organizational tools, and its Alumni Job Connect feature offers the chance to reach out to alumni working at companies of interest, increasing the potential for referrals.
+For college students, securing an internship while managing schoolwork is a significant challenge. They must juggle deadlines and milestones in the application process while handling a demanding academic workload. For many students, applying to internships is their first experience with writing resumes, cover letters, and preparing for technical interviews, which can be daunting. HireMap can greatly ease the stress of this process by providing organizational tools.
 
 Recent graduates actively seeking employment often need to manage multiple job applications at various stages. HireMap helps track the progress of each application and key deadlines to ensure nothing is overlooked. The Company Benefits tracker is especially valuable to recent graduates, as they are likely applying for their first full-time positions and need to consider benefits for the first time. Being able to compare benefits across job offers is crucial when it comes to making informed decisions about accepting offers.
 
