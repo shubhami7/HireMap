@@ -4,12 +4,12 @@
 
 ```mermaid
 graph TD;
-    A[Start: User drags application box] --> B{Is the box dropped on trash?};
+    A[Start: User drags application box] --> B{Dropped on trash?};
     B -- Yes --> C[Trigger dragDropTrash function];
-    B -- No --> D[Application stays in position];
-    C --> E[Call deleteApp method in IndexedDB];
-    E --> F{Is deletion successful?};
+    B -- No --> D[Application does not move];
+    C --> E[Call deleteApp in IndexedDB];
+    E --> F{Deletion successful?};
     F -- Yes --> G[Remove application from DOM];
-    F -- No --> H[Display error message];
+    F -- No --> H[Error message];
     G --> J[End];
     H --> J[End];
