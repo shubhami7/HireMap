@@ -25,3 +25,15 @@
 - **Task 2**: added CSS for the add button modal
 - **Details**: added the CSS styling for the modal to popup
 - **Link to Commit**: https://github.com/edwintran235/326-team9/commit/a9f42465a538d56cac2a1e0452637b369188f01c
+
+### November 6, 2024
+- **Task 1**: added functionality to submit button
+- **Details**: I added code to add functionality to the submit button in the add feature. When the user inputs their information and hits submit, a new application box will show up in the designated status column.
+- **Link to Commit**:
+
+### November 17, 2024
+- **Task 1**: used indexedDB to add a new application
+- **Details**: changed the functionality of the submit button for the add job feature so that it uses indexedDB to store the new application in the database.
+- **Link to Commit**:
+- **Task 2**: added drag functionality to the added application box
+- **Link to Commit**:

@@ -70,18 +70,11 @@ A section that offers tips about the job search and interview process, tailored 
 
 **Assigned to**: Shubham Inavolu
 
-## Alumni Job Connect 
+## Input Name  
 
-Users can view alumni, with public profiles, from their university who have previously applied to the same company. They could then reach out for advice or potential referrals. This encourages networking and might improve the users chances of being hired at a company.
-
+Users can upload their name and have it persist. Because there is currently no login authorization this is implemented directly on the profile page and will move to the login page later. 
+**Point Value**: 1 point
 **Assigned to**: Mohammad Kiyani
-
-## Login/Create Account Page 
-
-Users can login or create account. Login allows users to enter a email and password and if it is correct they get sent to the homepage, else it prompts an error message. On the create account page, users can enter an email and a password twice to make an account on the web page.
-
-**Assigned to**: Krish Sharma
-
 
 ## Profile Pic Upload Button
 
@@ -95,16 +88,48 @@ Users can login or create account. Login allows users to enter a email and passw
 **Point Value**: 3 points
 **Team Member**: Mohammad Kiyani
 
+
 ## Description/Bio box
 
-**Description**: form input section so users can place their typed ‘elevator pitch’ into an accessible region in their profile page
-**Point Value**: 3 points
+**Description**: form input section so users can place their typed ‘elevator pitch’ into an accessible region in their profile page, or other important information. Data persists across devices/reloads
+**Point Value**: 1 point
 **Team Member**: Mohammad Kiyani
+
+## Recent Activity Section
+
+**Description**: displays current status of user applications so they can see at a glance an overview of number of apps, rejections... etc. Currently just a base implementation, as we will gather data for it on the next milestone.
+**Point Value**: 1 point
+**Team Member**: Mohammad Kiyani
+
+## Profile Page navigation
+
+**Description**: navigation menu on the profile page in line with the rest of the application which links you to the other pages, viewable on the top of the screen. There is a section for user login as well, but that will be implemented in the next milestone
+**Point Value**: 1 point
+**Team Member**: Mohammad Kiyani
+
+
+## Login/Create Account Page 
+
+Users can login or create account. Login allows users to enter a email and password and if it is correct they get sent to the homepage, else it prompts an error message. On the create account page, users can enter an email and a password twice to make an account on the web page.
+
+**Assigned to**: Krish Sharma
+
+
+
+
+
+
 
 ## 'Add Job' Button
 
 There will be an ‘Add’ button displayed on the home page where users can click the button and add in a new job they are applying for. Clicking the button will prompt users to input information for a new job that will be accessible in the ‘Application Information’ page.
+**Point Value**: 3
+**Assigned to**: Lauren Shea
 
+## Add New Application to Database
+
+When users press the 'Add' button, the will fill out information about the job. The information will be saved in the indexedDB database for applications so they can be accessed later. 
+**Point Value**: 4
 **Assigned to**: Lauren Shea
 
 ## Deadline Reminders and Notifications

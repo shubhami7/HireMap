@@ -4,6 +4,8 @@
 
 The **Login Page** is the landing page when initially loaded. Here, the users must log in or create an account in order to access the homepage and interact with our system. This page is simple with two inputs for username and password and our logo.
 
+Initial design:
+
 <img width="696" alt="image" src="https://github.com/user-attachments/assets/9f0d670b-ea01-48f6-9b15-eaac10f7c507">
 
 
@@ -15,7 +17,13 @@ The user wants to track their job application process by using our service. In o
 
 The **Profile Page** is where users can enter their information. This information will be important in other features
 
+Initial Design:
 <img width="672" alt="image" src="https://github.com/user-attachments/assets/2566a1b1-1214-4654-b65b-3f2376d9389f">
+
+Final Design:
+<img width="1330" alt="image" src="https://github.com/user-attachments/assets/82a86208-2cf3-4183-8fd6-d7800bbbce86">
+<img width="1327" alt="image" src="https://github.com/user-attachments/assets/ed02eaea-706a-403d-8793-72f8f7ebf4c9">
+
 
 The profile page will include a picture of the user, a description/bio, their resume, contact information, and user settings. The user has the opportunity to edit any of this information after it is saved.
 
@@ -23,11 +31,15 @@ The profile page will include a picture of the user, a description/bio, their re
 
 A user who just logged in wants to personalize their account. When they go to the profile page, they can edit their name, biography, contact information, user settings, and upload a resume. Say the user just got married and wants to change their name. The user can edit their profile, input a new name, and save their changes. The user's new name will show on their profile.
 
-## User Applications Screen
+## User Application Tracker Screen
 
 The **User Application Screen** is the homepage that users will be directed to after logging in. It includes all of the users current applications, interviews, offers, and to-dos which will be organized into four columns. The job names that fall under each category will be listed, each with a link to the **Notes** page with more information on that job. There is a navigation bar at the top where users can be directed to the **Profile Page** or the **Login Page** after logging out. There are buttons for adding new applications which will be filled out in a pop-up.
 
+Initial Design:
 <img width="674" alt="image" src="https://github.com/user-attachments/assets/ace96ba0-3cc2-4af8-bb63-5d4396c8a40a">
+
+Final design: 
+<img width="1345" alt="image" src="https://github.com/user-attachments/assets/36c2900a-32ef-431c-a2f9-2ad5633fa6ec">
 
 On this screen, users can interact with their applications:
 
@@ -39,6 +51,9 @@ On this screen, users can interact with their applications:
 
 This screen is the primary location for the user’s experience. It includes links to all other important pages. It acts as the main display for the Job Application Tracker as well as a directory for other useful features.
 
+
+
+
 **Use Case**: 
 
 A user who wants to track the progress of their Job/Interview processes would log into the application to see a list of the Jobs that they have applied for. When a user hears back from the company that they have reached the interview process, the user can tack this by dragging the application to the interview column. Anytime the user views this page, they will be reminded that they have an interview coming up.
@@ -47,7 +62,12 @@ A user who wants to track the progress of their Job/Interview processes would lo
 
 The application information screen has the detailed information about a specific application. It will include information such as the company name, date applied, application status, resume and CV used, important links to keep track of, deadlines (if you have an interview or assessments to do), company notes, company benefits, etc. You will be able to edit the information on the page, and if it is empty, the sections will remain blank.
 
+Initial Design:
 <img width="677" alt="image" src="https://github.com/user-attachments/assets/34bbcdd4-a9d2-4ecf-b1a6-42014870fb24">
+
+Final Design:
+<img width="1339" alt="image" src="https://github.com/user-attachments/assets/4b6541fe-ca52-45a0-a192-5f501355d0ad">
+
 
 **Use Case**:
 

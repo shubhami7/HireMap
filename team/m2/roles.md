@@ -32,9 +32,9 @@
 - **Role**: Facilitates communication within the team. Edwin makes sure that people are communicated efficiently and everyone is actively participating 
 in team discussions
 - **Top 3 Commits**:
-  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/8508d8f954834ff546045138fc6ebf0f7af6a506): Facilitated the group chat and established guidelines for communications
-  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/51e061a9225e2586dd8811d4083150a6bdf6d94c): Set up time and location to meet and complete Milestone 2
-  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/96ba7932f10c723033e852a862ffaa7c40c2fa14): Made sure everyone's opinions and ideas were heard during the meeting, incorporating different aspects of each others' ideas to compromise
+  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/c99f6918f89ad468e9c5654596f489142044a8ab): Creating Home Page
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/624ddbc0709579565ac3d48d18af88e15e0a310e): Creating Nav Bar
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/230be5472bfc6d4a6c591d2dfdb7ae43052dbdd7): Cleaning up all my features and homepage
 
 ## Macy Graves - Quality Control
 - **Role**: Reviews team submissions and ensures that all deliverables meet the necessary quality standards. ... is responsible for proofreading and ensuring the accuracy of all documents before submission.

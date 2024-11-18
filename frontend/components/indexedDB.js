@@ -22,7 +22,10 @@ export class Database {
             req.onupgradeneeded = (event) => {
                 let db = event.target.result;
                 if(!db.objectStoreNames.contains('applications')) {
-                    db.createObjectStore('applications', {keypath: 'id'});
+                    db.createObjectStore('applications', {
+                        keyPath: 'id',
+                        autoIncrement: true
+                    });
                 }
                 // TODO: create more object stores if needed
             };

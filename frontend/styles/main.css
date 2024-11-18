@@ -12,9 +12,9 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  border-bottom: 1px solid #ccc; /* Fixed missing border value */
-  background-color: rgb(100, 150, 255); /* Updated background color */
-  color: white; /* Text color for better contrast */
+  border-bottom: 1px solid #ccc; 
+  background-color: rgb(100, 150, 255); 
+  color: white; 
 }
 
 header .logo {
@@ -22,23 +22,11 @@ header .logo {
   font-weight: bold;
 }
 
-header .search-bar input {
-  padding: 8px; /* Added padding for better spacing */
-  font-size: 16px;
-  border: 1px solid #ccc; /* Added border for better visibility */
-  border-radius: 4px; /* Added rounded corners */
-}
-
-header .profile, .icons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 /* Main Content Layout */
 .container {
   display: flex;
-  flex-wrap: wrap; /* Added wrap for better responsiveness */
+  flex-wrap: wrap; 
 }
 
 .main-content {
@@ -50,7 +38,7 @@ header .profile, .icons {
   flex: 1;
   border-left: 2px solid #ccc;
   padding: 20px;
-  min-width: 300px; /* Ensures sidebar doesn't shrink too much */
+  min-width: 300px; 
 }
 
 /* Application Tracker Section */
@@ -63,7 +51,7 @@ header .profile, .icons {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+  flex-wrap: wrap; 
 }
 
 .status-column {
@@ -71,8 +59,8 @@ header .profile, .icons {
   text-align: center;
   border: 2px dashed #ccc;
   padding: 10px;
-  min-height: 150px; /* Fixed invalid `px` unit */
-  max-width: 300px; /* Prevent columns from growing too large */
+  min-height: 150px; 
+  max-width: 300px; 
 }
 
 .status-column h3 {
@@ -85,7 +73,7 @@ header .profile, .icons {
   margin: 10px 0;
   background-color: #f9f9f9;
   cursor: grab;
-  border-radius: 4px; /* Added rounded corners */
+  border-radius: 4px; 
 }
 
 .application-box:active {
@@ -97,43 +85,6 @@ header .profile, .icons {
 .upcoming-dates h3 {
   text-decoration: underline;
   margin-bottom: 15px;
-}
-
-.upcoming-item {
-  margin-bottom: 15px;
-  height: 30px;
-  background-color: #f0f0f0;
-  border-radius: 4px; /* Added rounded corners */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Navigation Bar */
-.nav-bar {
-  display: flex;
-  justify-content: space-between; /* Space out nav items */
-  align-items: center;
-  padding: 10px 20px; /* Added padding for spacing */
-  background-color: rgb(100, 150, 255); /* Match header color */
-  color: white;
-  border-bottom: 1px solid #ccc; /* Consistent border */
-}
-
-.nav-button {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  margin-right: 10px;
-  color: white;
-}
-
-.nav-button:hover {
-  color: gray; /* Subtle hover effect */
-}
-
-.nav-buttons button {
   background-color: white;
   border: 1px solid #ccc; /* Added border for visibility */
   color: black;
@@ -145,21 +96,67 @@ header .profile, .icons {
   transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
+.upcoming-item {
+  margin-bottom: 15px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 4px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reminder-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: white;
+}
+
+
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px 20px; 
+  border-bottom: 1px solid #ccc; 
+}
+
+
+.nav-button:hover {
+  color: gray; 
+}
+
+.nav-buttons button {
+  background-color: white;
+  border: 1px solid #ccc; 
+  color: black;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; 
+}
+
 .nav-buttons button:hover {
   background-color: lightgray; /* Subtle hover color */
 }
 
 /* Add a New Job Modal */
 .new-job {
-  display: none; /* Hidden by default */
+  display: none; 
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .new-job-content {
@@ -167,9 +164,9 @@ header .profile, .icons {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 50%; /* Adjust width based on screen size */
-  max-width: 600px; /* Prevent modal from becoming too wide */
-  border-radius: 8px; /* Added rounded corners */
+  width: 50%; 
+  max-width: 600px; 
+  border-radius: 8px; 
   font-weight: bold;
 }
 
@@ -191,6 +188,11 @@ header .profile, .icons {
 /* Footer */
 footer {
   padding: 20px;
+}
+
+.drag-over-trash {
+  background-color: red;
+  color: white;
 }
 
 /* Responsive Design */
