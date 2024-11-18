@@ -16,6 +16,9 @@
 - **Task 5**: Assigned tasks.
 - **Details**: Based on discussions, I assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
 - **Link 5 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
+- **Task 6**: Monitored task progress.
+- **Details**: Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
+- **Link 6 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
 
 ### November 5, 2024
 - **Task**: Added 'Interview Notes' section.
