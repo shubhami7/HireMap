@@ -6,6 +6,12 @@
   1. [Commit 1](https://github.com/edwintran235/326-team9/tree/milestone2/problem.md_update): gave rough draft for problem.md (now overwritten) 
   2. [Commit 2](https://github.com/edwintran235/326-team9/tree/milestone2/features.md/update/shahab): implemented new features in feature.md
   3. [Commit 3](https://github.com/edwintran235/326-team9/blob/main/team/m2/ui-diagrams.md): collaborated with edwin in person to give rough draft design on pictures for ui-diagrams.md
+ 
+- **Top 3 Commits for milestone 3**:
+  1. [Commit 1]([https://github.com/edwintran235/326-team9/tree/milestone2/problem.md_update](https://github.com/edwintran235/326-team9/tree/milestone3/updatedprofilepagewithresumeupload/11.17/shahab)): finished designing and implementing profile page with accompanying styles and scripts page, featuring all features outlined in features.md, storing data through localStorage 
+  2. [Commit 2]([https://github.com/edwintran235/326-team9/tree/milestone2/features.md/update/shahab](https://github.com/edwintran235/326-team9/tree/milestone3/updatingfeatures.md/shahab)): implemented navbar into profilepage to match implementation that was in the other pages implemented by my teammates to showcase a well structured application that flows well together with seamless page navigation
+  3. [Commit 3]([https://github.com/edwintran235/326-team9/blob/main/team/m2/ui-diagrams.md](https://github.com/edwintran235/326-team9/tree/milestone3/updatedprofilepagewithresumeupload/11.17/shahab)): added resume and cover letter upload functionality into profilepage.js allowing for customizability for users and what they put on their own pages. (commits 2 and 3 are precursors to the more finished product which is commit 1)
+ 
 
 ## Shubham Inavolu - Timekeeper
 - **Role**: Manages the timing of all team activities. ... ensures that meetings start and end on time, keeps track of deadlines, and reminds the team of upcoming due dates.
