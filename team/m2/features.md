@@ -111,6 +111,12 @@ Users can upload their name and have it persist. Because there is currently no l
 **Point Value**: 3 points
 **Team Member**: Mohammad Kiyani
 
+## Cover Letter Upload Button
+
+**Description**: A link that allows users to upload their cover letter to their profile, so that they can view it as a pdf. Clicking the button will boot up the users files so they can select what to upload.
+**Point Value**: 3 points
+**Team Member**: Mohammad Kiyani
+
 
 ## Description/Bio box
 
