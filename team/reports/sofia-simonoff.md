@@ -13,7 +13,9 @@
 - **Task 4**: Set up the team’s Trello board.
 - **Details**: Added tasks in the team's Trello for Milestone #3, including task descriptions and deadlines.
 - **Link 4 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
-  
+- **Task 5**: Assigned tasks.
+- **Details**: Based on discussions, I assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
+- **Link 5 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
 
 ### November 5, 2024
 - **Task**: Added 'Interview Notes' section.
