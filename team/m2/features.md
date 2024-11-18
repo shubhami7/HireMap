@@ -35,6 +35,7 @@ Points: 1
 ## Trash Icon
 
 When a user wants to remove an application from the page, they will be able to drag it to a trash can icon, which will remove it.
+
 **Assigned points**: 3
 **Assigned to**: Sofia Simonoff
 
@@ -42,12 +43,14 @@ When a user wants to remove an application from the page, they will be able to d
 ## Interview Notes and Questions
 
 For each application, users can record details about interview dates, the format (over the phone, technical exams, on-site interviews), and what questions they were asked during the interview process. This feature would allow users to review past interview questions to prepare for future interviews and improve their performance.
+
 **Assigned points**: 3
 **Assigned to**: Sofia Simonoff
 
 ## Resources and Tips Footer Section 
 
-At the bottom of the applicationt tracker, there is a section for resources and tips that will be populated with information from the repository.
+At the bottom of the application tracker, there is a section for resources and tips that will be populated with information from the repository.
+
 **Assigned points**: 2
 **Assigned to**: Sofia Simonoff
 
