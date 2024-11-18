@@ -22,12 +22,24 @@ columns.forEach(column => {
   column.addEventListener("drop", dragDrop);
 });
 
+// add event listeners to the trash can
+const trashCan = document.getElementById("trash-can");
+if (trashCan) {
+    trashCan.addEventListener("dragover", dragOverTrash);
+    trashCan.addEventListener("dragenter", dragEnterTrash);
+    trashCan.addEventListener("dragleave", dragLeaveTrash);
+    trashCan.addEventListener("drop", dragDropTrash);
+}
+
+
+
 function dragStart(e) {
   e.dataTransfer.setData("text/plain", e.target.id);
   setTimeout(() => {
     e.target.style.display = "none";
   }, 0);
 }
+
 
 function dragEnd(e) {
   e.target.style.display = "block";
@@ -63,6 +75,40 @@ function dragDrop(e) {
   }
 }
 
+
+function dragOverTrash(e) {
+  e.preventDefault(); // Allows the drop
+}
+
+function dragEnterTrash(e) {
+  trashCan.classList.add("drag-over-trash");
+}
+
+function dragLeaveTrash(e) {
+  trashCan.classList.remove("drag-over-trash");
+}
+
+// drag and drop for trash
+async function dragDropTrash(e) {
+  e.preventDefault();
+  trashCan.classList.remove("drag-over-trash");
+
+  const appID = e.dataTransfer.getData("text/plain");
+  const draggable = document.getElementById(appID);
+
+  // remove from DOM
+  if (draggable) {
+    draggable.remove();
+  }
+
+  // remove from IndexedDB
+  try {
+    await appDB.deleteApp(appID);
+    alert('Application deleted successfully!');
+} catch (error) {
+    console.error('Error deleting application:', error);
+}
+}
 // add job
 
 const modal = document.getElementById("add-popup");
@@ -147,3 +193,32 @@ submitBtn.addEventListener('click', async () => {
 });
 
 
+// add pop-up for new reminder
+const reminder = document.getElementById('reminder-popup');
+const remindButton = document.getElementById('new-reminder-button');
+const remindSpan = document.getElementsByClassName('close-reminder')[0];
+const remindSubmit = document.getElementById('reminder-submit');
+
+// when the user clicks on the button, open the modal
+remindButton.addEventListener('click', () => {
+  reminder.style.display = "flex";
+}) 
+
+// when the user clicks on <span> (x), close the modal
+remindSpan.addEventListener('click', () => {
+  reminder.style.display = "none";
+})
+
+
+// when the user clicks anywhere outside of the modal, close it
+window.addEventListener('click', function(event) {
+  if (event.target == reminder) {
+    reminder.style.display = "none";
+  }
+});
+
+
+// add code later to save submitted information
+remindSubmit.addEventListener('click', () => {
+  reminder.style.display = "none";
+})
