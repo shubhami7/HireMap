@@ -25,7 +25,7 @@
 - **Role**: Responsible for organizing and tracking team tasks. Sofia manages the team’s Trello board and ensures that all tasks are properly assigned and completed on time.
 - **Top 3 Commits**:
   1. [Commit 1](https://github.com/edwintran235/326-team9/commit/19698325815b058826e0191c7c3e01bcc61a6f4f): Add tasks in the team's Trello for Milestone #3, including task descriptions and deadlines.
-  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/7d109458a58bde58b71f0888c2d7aedf8cdadeb4): Based on discussions, assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/5dcb2a314b7a20fdbf800e1e1a4c665313e47c17): Based on discussions, assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
   3. [Commit 3](https://github.com/edwintran235/326-team9/commit/7d109458a58bde58b71f0888c2d7aedf8cdadeb4): Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
  
 ## Edwin Tran - Communication Lead
