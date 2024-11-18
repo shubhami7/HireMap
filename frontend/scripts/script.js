@@ -122,7 +122,7 @@ btn.addEventListener('click', () => {
   modal.style.display = "block";
 }) 
 
-// when the user clicks on <span> (x), close the modal
+// when the user clicks on (x), close the modal
 span.addEventListener('click', () => {
   modal.style.display = "none";
 })
@@ -137,7 +137,6 @@ window.onclick = function(event) {
 
 // add application to indexedDB when submit button is clicked
 submitBtn.addEventListener('click', async () => {
-  console.log('Submit button clicked!');  // Debugging line
 
   const companyName = document.getElementById("companyName").value;
   const position = document.getElementById("position").value;
@@ -165,7 +164,7 @@ submitBtn.addEventListener('click', async () => {
     const applicationBox = document.createElement("div");
     applicationBox.className = "application-box";
     applicationBox.id = applicationData.id;
-    applicationBox.draggable = true; // enable drag-and-drop
+    applicationBox.draggable = true; 
     applicationBox.innerHTML = companyName + "<br>• " + position;
 
     applicationBox.addEventListener("dragstart", dragStart);
@@ -204,13 +203,13 @@ remindButton.addEventListener('click', () => {
   reminder.style.display = "flex";
 }) 
 
-// when the user clicks on <span> (x), close the modal
+// when the user clicks on (x), close the modal
 remindSpan.addEventListener('click', () => {
   reminder.style.display = "none";
 })
 
 
-// when the user clicks anywhere outside of the modal, close it
+// when the user clicks outside of the modal, close it
 window.addEventListener('click', function(event) {
   if (event.target == reminder) {
     reminder.style.display = "none";
