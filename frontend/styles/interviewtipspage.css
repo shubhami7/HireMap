@@ -1,0 +1,72 @@
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(100, 150, 255);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.title {
+    color: rgb(100, 150, 255);
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    margin-top: 50px;
+    color: #333;
+}
+
+.title {
+    padding: 10px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns of equal width */
+    gap: 15px;
+}
+
+.tip-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px; /* Space inside the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tip-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .nav-buttons {
+    display: flex;
+    gap: 10px;
+    }
+
+header .nav-buttons button {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: black;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+header .nav-buttons button:hover {
+    background-color: lightgray;
+}
