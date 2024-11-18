@@ -3,7 +3,8 @@ import {Database} from '../components/indexedDB.js';
 
 // // Create and open a database for applications called appDB
 let appDB = new Database("appDB");
-appDB = await appDB.openDB();
+// appDB = await appDB.openDB();
+await appDB.openDB();
 
 // Add event listeners to each application box
 const boxes = document.querySelectorAll(".application-box");
@@ -54,6 +55,7 @@ function dragLeave(e) {
 function dragDrop(e) {
   const id = e.dataTransfer.getData("text/plain");
   const draggable = document.getElementById(id);
+
   const column = e.target.closest('.status-column');
   if (column) {
     column.appendChild(draggable); // Append the dragged element to the new column
@@ -63,60 +65,85 @@ function dragDrop(e) {
 
 // add job
 
-// Get the modal
-var modal = document.getElementById("add-popup");
+const modal = document.getElementById("add-popup");
+const btn = document.getElementById("add-button");
 
-// Get the button that opens the modal
-var btn = document.getElementById("add-button");
+const span = document.getElementsByClassName("close")[0];
+const submitBtn = document.getElementById("submit");
 
-// Get the <span> and 'submit' element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-var submitBtn = document.getElementById("submit");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
+// when the user clicks on the button, open the modal
+btn.addEventListener('click', () => {
   modal.style.display = "block";
-}
+}) 
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+// when the user clicks on <span> (x), close the modal
+span.addEventListener('click', () => {
   modal.style.display = "none";
-}
+})
 
-// When the user clicks anywhere outside of the modal, close it
+
+// when the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
 
-// Handle submit button click to add application box
-submitBtn.onclick = function() {
+// add application to indexedDB when submit button is clicked
+submitBtn.addEventListener('click', async () => {
+  console.log('Submit button clicked!');  // Debugging line
+
+  const companyName = document.getElementById("companyName").value;
+  const position = document.getElementById("position").value;
+  const status = document.getElementById("status").value;
+
+  const applicationData = {
+    id: new Date().getTime(),
+    companyName: companyName,
+    position: position,
+    status: status,
+    dateApplied: document.getElementById("dateApplied").value,
+    deadline: document.getElementById("deadline").value
+  };
+
+  console.log('application data: ', applicationData);
+
+  try {
+    // save the application to IndexedDB using the addApp method
+
+    console.log(appDB);
+    
+    const message = await appDB.addApp(applicationData);
   
-  // Get input values
-  var companyName = document.getElementById("companyName").value;
-  var position = document.getElementById("position").value;
-  var status = document.getElementById("status").value;
+    // create a new application box
+    const applicationBox = document.createElement("div");
+    applicationBox.className = "application-box";
+    applicationBox.id = applicationData.id;
+    applicationBox.draggable = true; // enable drag-and-drop
+    applicationBox.innerHTML = companyName + "<br>• " + position;
 
-  // create a new application box
-  var applicationBox = document.createElement("div");
-  applicationBox.className = "application-box";
-  applicationBox.draggable = true; // enable drag-and-drop
-  applicationBox.innerHTML = "Company: " + companyName + "<br><br>Position: " + position;
+    applicationBox.addEventListener("dragstart", dragStart);
+    applicationBox.addEventListener("dragend", dragEnd);
 
-  // append the new box to the specified status column
-  var statusColumn = document.getElementById(status);
-  if (statusColumn) {
-    statusColumn.appendChild(applicationBox);
+    const statusColumn = document.getElementById(status);
+    if (statusColumn) {
+      statusColumn.appendChild(applicationBox);
+    }
+
+    // clear form fields and close the modal
+    document.getElementById("companyName").value = "";
+    document.getElementById("position").value = "";
+    document.getElementById("dateApplied").value = "";
+    document.getElementById("deadline").value = "";
+    document.getElementById("status").value = "interested"; 
+    modal.style.display = "none";
+
   }
 
-  // Clear form fields and close modal
-  document.getElementById("companyName").value = "";
-  document.getElementById("position").value = "";
-  document.getElementById("dateApplied").value = "";
-  document.getElementById("deadline").value = "";
-  document.getElementById("status").value = "interested"; // Reset to default status
-  modal.style.display = "none";
-}
+  catch (error) {
+    console.log('Error adding new application.', error);
+  }
 
-// still need to add code to make store when the page is refreshed -> local storage
+});
+
+
