@@ -123,7 +123,13 @@ Users can login or create account. Login allows users to enter a email and passw
 ## 'Add Job' Button
 
 There will be an ‘Add’ button displayed on the home page where users can click the button and add in a new job they are applying for. Clicking the button will prompt users to input information for a new job that will be accessible in the ‘Application Information’ page.
+**Point Value**: 3
+**Assigned to**: Lauren Shea
 
+## Add New Application to Database
+
+When users press the 'Add' button, the will fill out information about the job. The information will be saved in the indexedDB database for applications so they can be accessed later. 
+**Point Value**: 4
 **Assigned to**: Lauren Shea
 
 ## Deadline Reminders and Notifications
