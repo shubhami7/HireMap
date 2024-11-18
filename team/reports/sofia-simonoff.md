@@ -10,6 +10,9 @@
 - **Task 3**: Used indexedDB to delete applications.
 - **Details**: Changed script.js and indexedDB.js to implement the trash functionality, so that application can be deleted
 - **Link 3 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/85eb9fd4e7a561065f8b324d0f01ba9f86903a6f)
+- **Task 4**: Set up the team’s Trello board.
+- **Details**: Added tasks in the team's Trello for Milestone #3, including task descriptions and deadlines.
+- **Link 4 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
   
 
 ### November 5, 2024
