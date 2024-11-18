@@ -19,6 +19,9 @@
 - **Task 6**: Monitored task progress.
 - **Details**: Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
 - **Link 6 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
+- **Task 7**: Added final diagrams.
+- **Details**: Added final diagrams to ui-diagrams.md to reflect changes.
+- **Link 7 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/07c2d579fcf6965c062ad8dbab6e097103d78693)
 
 ### November 5, 2024
 - **Task**: Added 'Interview Notes' section.
