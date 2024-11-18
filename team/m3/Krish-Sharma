@@ -1,1 +1,73 @@
+Features Assigned to me
+
+Navbar Feature
+The Navbar Feature allows for seamless routing between our pages, creating a flexible and responsive web app with multiple avenues for other features to be implemented in the various pages. On the navbar are buttons which link to their respective pages.
+
+This feature is critical for the user experience, as it provides intuitive navigation between the main application pages.
+
+How it Works:
+The Homepage acts as the central hub, where the user can navigate to the following pages:
+Profile Page: Displays user information and activity.
+Application Info Page: Shows details for each tracked job application.
+Login/Create Account Page: Currently represented as a blank button, as login functionality has not been implemented yet.
+The navigation bar is styled consistently across all pages, with responsive and accessible buttons.
+
+Navbar Tasks:
+Navbar Implementation
+
+Create and code the navbar structure in HTML.
+Link the buttons to their respective pages.
+Styling the Navbar
+
+Ensure the navbar is visually consistent across pages.
+Apply CSS styling for a modern and responsive design.
+Responsive Design
+
+Use media queries to ensure the navbar adapts to different screen sizes (e.g., mobile, tablet, desktop).
+Routing Between Pages
+
+Implement routing using <a> links or button click handlers to navigate between pages.
+Test each button to ensure it routes to the correct page.
+
+
+Mermaid Graph Representation for Navbar
+Graph TD
+  A[Homepage] --> B[Profile Page]
+  A --> C[Application Info Page]
+  A --> D[Login/Create Account Page (Blank Button due to login not being made yet)]
+
+Application Information Form
+When a user tracks a new application, the user is prompted to enter information about the company, position, etc. This information will be stored in the database and retrieved when the user double clicks on the application name on the homepage. The information will be displayed on the application information page.
+
+Assigned to: Macy Graves, Krish Sharma
+Points: 5
+
+Linked Features to IndexedDB
+Linked Name Input to IndexedDB
+
+The name input functionality was linked to IndexedDB for persistence, allowing the name to remain across sessions.
+Assigned to: Mohammad Kiyani, Krish Sharma
+Points: 1
+Linked Resume and Cover Letter Upload to IndexedDB
+
+The resume and cover letter upload functionality was linked to the IndexedDB, allowing these files to be stored and retrieved persistently across sessions.
+Assigned to: Mohammad Kiyani, Krish Sharma
+Points: 2 (1 point for each)
+Linked Profile Pic Upload to IndexedDB
+
+The profile picture upload feature was linked to the IndexedDB, enabling the uploaded picture to be saved and persist across sessions.
+Assigned to: Krish Sharma
+Points: 1
+Edit Application in Database
+Users can edit an existing application's information in the IndexedDB database, such as updating the company name, position, or status. This feature ensures the application details remain accurate and up-to-date.
+
+Assigned to: Krish Sharma
+Points: 4
+
+CSS Styling for Profile Page
+Updated the CSS for the profile page to align with the overall website design, ensuring consistency in navigation bar, layout, and color scheme.
+
+Assigned to: Krish Sharma, Mohammad Kiyani
+Points: 2
+
 
