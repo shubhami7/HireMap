@@ -102,7 +102,11 @@ submitBtn.onclick = function() {
   var applicationBox = document.createElement("div");
   applicationBox.className = "application-box";
   applicationBox.draggable = true; // enable drag-and-drop
+  applicationBox.id = companyName;
   applicationBox.innerHTML = "Company: " + companyName + "<br><br>Position: " + position;
+
+  // store application in db
+  db.addApp(applicationBox);
 
   // append the new box to the specified status column
   var statusColumn = document.getElementById(status);
@@ -121,11 +125,17 @@ submitBtn.onclick = function() {
 
 // still need to add code to make store when the page is refreshed -> local storage
 
+// Get elements from add application popup
+const popupCompany = document.getElementById('companyName');
+const popupPosition = document.getElementById('position');
+const submitElement = document.getElementById('submit');
 
+// when popup submit button is clicked, save info to indexed db
 
 // Get elements from the applicationInfo Page DOM
-const appPosition = document.getElementById('position');
-const appLocation = document.getElementById('location');
+const appCompany = document.getElementById('company-name');
+const appPosition = document.getElementById('pos');
+const appLocation = document.getElementById('loc');
 const appContacts = document.getElementById('contacts');
 const appDescription = document.getElementById('description');
 const appDateApplied = document.getElementById('dateApplied');
@@ -138,10 +148,13 @@ const appInterviewQs = document.getElementById('interview-questions-1');
 // Event listener for add application information??
 
 // when double click on application box, href to application page
-// const appBoxElement = document.getElementById('application-box');
+const appBoxElement = document.getElementById('amazon');
+console.log(appBoxElement);
 appBoxElement.addEventListener("dblclick", () => {
     // go to application page
     // load application info into page elements
+    const curApp = db.getAppByID(appBoxElement.id);
+    appCompany.value = curApp.innerText;
 });
 
 // Add event listeners for search bar
