@@ -46,10 +46,24 @@ For each application, users can record details about interview dates, the format
 **Assigned to**: Sofia Simonoff
 
 
-## Company Benefits Tracker
+## Application Search Bar
 
-This feature will allow users to record and and compare the benefits offered by companies. Users can add and view this information for each application, making it easier to compare different benefits that various companies offer. This can help users make informed decisions about which companies to focus on, especially when weighing multiple options. 
+A search bar will be added to the navigation bar. When a user wants to search through their current applications, a list of applications will appear based on the user’s query.
+**Assigned points**: 1
+**Assigned to**: Macy Graves
 
+
+## Application Information Form
+
+When a user tracks a new application, the user is prompted to enter information about the company, position, etc. This information will be stored in the database and retrieved when the user double clicks on the application name on the homepage. The information will be displayed on the application information page.
+**Assigned points**: 5
+**Assigned to**: Macy Graves
+
+
+## Resume/Cover Letter File Upload
+
+On the Application Information Page, a user can upload the specific resume and cover letter that they used for the application. The resume and cover letter will be stored and accessible on the application page for that specific application.
+**Assigned points**: 3
 **Assigned to**: Macy Graves
 
 ## Deadline Reminders and Notifications
