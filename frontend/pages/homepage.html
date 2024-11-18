@@ -28,7 +28,7 @@
       <h1>Application Tracker</h1>
       <div class="add-trash-buttons">
         <button id="add-button">Add</button>
-
+        <button id="trash-can">Delete</button>
         <div id="add-popup" class="new-job">
           <div class="new-job-content">
             <span class="close">&times</span>
@@ -36,19 +36,19 @@
             <br>
             <label for="companyName">Company Name:</label>
             <input type="text" id="companyName" name="companyName" required>
-            <br>
+
             <!-- Position Applied For -->
             <label for="position"><br>Position Applied For:</label>
             <input type="text" id="position" name="position" required>
-            <br>
+
             <!-- Date Applied -->
             <label for="dateApplied"><br>Date Applied:</label>
             <input type="date" id="dateApplied" name="dateApplied" required>
-            <br>
+
             <!-- Application Submission Deadline -->
             <label for="deadline"><br>Application Submission Deadline:</label>
             <input type="date" id="deadline" name="deadline" required>
-            <br>
+
             <!--Status -->
             <label for="status"><br>Application Status:</label>
             <select id="status">
@@ -62,8 +62,6 @@
 
           </div> 
         </div>
-
-        <button>🗑</button>
       </div>
     </div>
 
@@ -93,11 +91,10 @@
     <!-- Sidebar for Upcoming Dates -->
     <div class="sidebar">
       <div class="upcoming-dates">
-        <h3>Upcoming Dates</h3><br>
-        <!-- add button for new reminder -->
-        <div class="reminder-button">
-          <button id="new-reminder">+ New Reminder</button>
-        </div>
+        <h3>Upcoming Dates</h3>
+        <div class="upcoming-item"></div>
+        <div class="upcoming-item"></div>
+        <div class="upcoming-item"></div>
       </div>
     </div>
   </div>
