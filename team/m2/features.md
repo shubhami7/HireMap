@@ -140,7 +140,7 @@ When users press the 'Add' button, the will fill out information about the job. 
 
 ## Deadline Reminders and Notifications
 
-Users can select reminders for important deadlines and due dates coming up. Users will have to input what they want as a reminder and when they want to be reminded of it. The reminders will be displayed on the home page.
-
+When a user clicks on the 'new reminder' button, they will be prompted to enter information about what they would like to be reminded on and when the date is. This will be a pop-up modal feature.
+**Point Value**: 3
 **Assigned to**: Lauren Shea
 

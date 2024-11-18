@@ -29,11 +29,13 @@
 ### November 6, 2024
 - **Task 1**: added functionality to submit button
 - **Details**: I added code to add functionality to the submit button in the add feature. When the user inputs their information and hits submit, a new application box will show up in the designated status column.
-- **Link to Commit**:
+- **Link to Commit**: https://github.com/edwintran235/326-team9/commit/1609cf87a95203d8bde4c4582ae4a59bdbd1a4ac
 
 ### November 17, 2024
 - **Task 1**: used indexedDB to add a new application
 - **Details**: changed the functionality of the submit button for the add job feature so that it uses indexedDB to store the new application in the database.
-- **Link to Commit**:
+- **Link to Commit**: https://github.com/edwintran235/326-team9/commit/c80ac95f24417500d1b1828758e102c41298a7e4
 - **Task 2**: added drag functionality to the added application box
-- **Link to Commit**:
+- **Link to Commit**: https://github.com/edwintran235/326-team9/commit/c80ac95f24417500d1b1828758e102c41298a7e4
+- **Task 3**: added a 'new reminder' button that brings up a window for users to enter information to be reminded about.
+- **Link to Commit**: https://github.com/edwintran235/326-team9/commit/fb07bded8c8c3a7f0eceac725f2aa118edd5c68c#diff-289e1890e590076490274afe863b8852df6b7ef8d0c909c790e2ca4d131a909d
