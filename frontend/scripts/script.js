@@ -1,9 +1,9 @@
 // Import Database class
-// import {Database} from '../components/indexedDB.js';
+import {Database} from '../components/indexedDB.js';
 
 // // Create and open a database for applications called appDB
-// const appDB = new Database("appDB");
-// appDB = await appDB.openDB();
+const db = new Database("appDB");
+const appDB = await db.openDB();
 
 // Add event listeners to each application box
 const boxes = document.querySelectorAll(".application-box");
@@ -120,3 +120,32 @@ submitBtn.onclick = function() {
 }
 
 // still need to add code to make store when the page is refreshed -> local storage
+
+
+
+// Get elements from the applicationInfo Page DOM
+const appPosition = document.getElementById('position');
+const appLocation = document.getElementById('location');
+const appContacts = document.getElementById('contacts');
+const appDescription = document.getElementById('description');
+const appDateApplied = document.getElementById('dateApplied');
+const appResume = document.getElementById('resume');
+const appCoverLetter = document.getElementById('coverLetter');
+const appInterviewDate = document.getElementById('interview-date');
+const appInterviewType = document.getElementById('interview-format-1');
+const appInterviewQs = document.getElementById('interview-questions-1');
+
+// Event listener for add application information??
+
+// when double click on application box, href to application page
+// const appBoxElement = document.getElementById('application-box');
+appBoxElement.addEventListener("dblclick", () => {
+    // go to application page
+    // load application info into page elements
+});
+
+// Add event listeners for search bar
+// const searchBarElement = document.getElementById("search-bar");
+// searchBarElement.addEventListener('onkeyup', () => {
+
+// });
