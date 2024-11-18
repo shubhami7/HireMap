@@ -6,7 +6,7 @@
 graph TD;
     A[Start: User drags application box] --> B{Is the box dropped on trash?};
     B -- Yes --> C[Trigger dragDropTrash function];
-    B -- No --> D[Application remains in its original position];
+    B -- No --> D[Application stays in position];
     C --> E[Call deleteApp method in IndexedDB];
     E --> F{Is deletion successful?};
     F -- Yes --> G[Remove application from DOM];
