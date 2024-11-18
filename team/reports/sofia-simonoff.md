@@ -6,7 +6,11 @@
 - **Link 1 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/b5b62b9630358fe325d1cb8f2a0c27d3800d2a08)
 - **Task 2**: Updated nav bar for applicationInfo.
 - **Details**: Changed the header code slightly in order to include the Home/Profile/Application Info routing.
-- **Link 1 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/1267166c8c6f004fd68caa80486d1791357021a5)
+- **Link 2 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/1267166c8c6f004fd68caa80486d1791357021a5)
+- **Task 3**: Used indexedDB to delete applications.
+- **Details**: Changed script.js and indexedDB.js to implement the trash functionality, so that application can be deleted
+- **Link 3 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/85eb9fd4e7a561065f8b324d0f01ba9f86903a6f)
+  
 
 ### November 5, 2024
 - **Task**: Added 'Interview Notes' section.
