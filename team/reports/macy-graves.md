@@ -23,7 +23,7 @@
 
 ### October 31, 2024
 **Task1**: Created a branch and started working on the application information form feature.
-- **Details**: Created inputs and labels for all of the information that will be displayed on the `applicationInfo.html` page.
+- **Details**: Created inputs and labels for all of the information that will be displayed on the `applicationInfo.html` page. This includes the file upload for the resume and cover letter.
 - **Link to Commit**: [Commit on Application Information Page](https://github.com/edwintran235/326-team9/commit/bd82399eb5e8f5d7d30ed653135cc5042b0d24c4)
 
 ## November 6, 2024
@@ -37,3 +37,5 @@
 - **Link to Commit**: [Commit on getAppById()](https://github.com/edwintran235/326-team9/commit/7d73bbb53605d49bad0e10f056a6f6bed4cb27d6)
 - **Link to Commit**: [Commit on getAll()](https://github.com/edwintran235/326-team9/commit/70e5d276aed90e906d8914f0ef95f99def5e4e62)
 - **Link to Commit**: [Commit on deleteApp()](https://github.com/edwintran235/326-team9/commit/0ff7ed57be262d145672ce7b81da133237b5c5de)
+
+## November 17, 2024
