@@ -190,6 +190,11 @@ footer {
   padding: 20px;
 }
 
+.drag-over-trash {
+  background-color: red;
+  color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   header {
