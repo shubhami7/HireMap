@@ -107,14 +107,32 @@ header .logo {
 }
 
 .reminder-button {
-  background: none;
-  border: none;
-  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%;
+  background-color: rgb(100, 150, 255);
   cursor: pointer;
-  margin-right: 10px;
-  color: white;
 }
 
+#new-reminder {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new-reminder:hover {
+  background-color: #90b7fb;
+}
 
 /* Navigation Bar */
 .nav-bar {
