@@ -143,6 +143,8 @@ submitBtn.addEventListener('click', async () => {
     console.log('Error adding new application.', error);
   }
 
+});
+
 // still need to add code to make store when the page is refreshed -> local storage
 
 // Get elements from add application popup
