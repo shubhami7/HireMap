@@ -1,4 +1,4 @@
-Application Features
+# Application Features
 Job Application Tracker Section
 This feature will display an overview of each application submitted by the user, including key details such as company name and position. For each application, users can select their current status, such as "Applied," "Interviewing," "Offer," or "Rejected." Users will have the ability to update the status of each application. This functionality will give users a quick view of their progress, allowing them not to have to sort through various websites and emails.
 
@@ -56,8 +56,14 @@ Points: 5
 Resume/Cover Letter File Upload
 On the Application Information Page, a user can upload the specific resume and cover letter that they used for the application. The resume and cover letter will be stored and accessible on the application page for that specific application.
 
-Assigned to: Macy Graves
+Assigned to: Macy Graves, Mohammad Kiyani, Krish Sharma
 Points: 3
+
+Linked Resume and Cover Letter Upload to IndexedDB
+The resume and cover letter upload functionality was linked to the IndexedDB, allowing these files to be stored and retrieved persistently across sessions.
+
+Assigned to: Mohammad Kiyani, Krish Sharma
+Points: 1 (for each, total: 2)
 
 Deadline Reminders and Notifications
 Users can set reminders for application deadlines, interviews, and follow-ups. These reminders would be displayed in-app and would help keep users organized and make sure they do not miss important deadlines.
@@ -80,25 +86,37 @@ Points: 3
 Input Name
 Users can upload their name and have it persist. Because there is currently no login authorization, this is implemented directly on the profile page and will move to the login page later.
 
-Assigned to: Mohammad Kiyani
+Assigned to: Mohammad Kiyani, Krish Sharma
+Points: 1
+
+Linked Name Input to IndexedDB
+The name input functionality was linked to IndexedDB for persistence, allowing the name to remain across sessions.
+
+Assigned to: Mohammad Kiyani, Krish Sharma
 Points: 1
 
 Profile Pic Upload Button
 A button that allows users to upload their pic to their profile, so that their page is customizable. Clicking the button will boot up the user's files so they can select what to upload.
 
-Assigned to: Mohammad Kiyani
+Assigned to: Mohammad Kiyani, Krish Sharma
 Points: 3
+
+Linked Profile Pic to IndexedDB
+The profile picture upload feature was linked to the IndexedDB, enabling the uploaded picture to be saved and persist across sessions.
+
+Assigned to: Krish Sharma
+Points: 1
 
 Resume Upload Button
 A link that allows users to upload their resume to their profile, so that they can view it as a PDF. Clicking the button will boot up the user's files so they can select what to upload.
 
-Assigned to: Mohammad Kiyani
+Assigned to: Mohammad Kiyani, Krish Sharma
 Points: 3
 
 Cover Letter Upload Button
 A link that allows users to upload their cover letter to their profile, so that they can view it as a PDF. Clicking the button will boot up the user's files so they can select what to upload.
 
-Assigned to: Mohammad Kiyani
+Assigned to: Mohammad Kiyani, Krish Sharma
 Points: 3
 
 Description/Bio Box
@@ -148,4 +166,10 @@ When a user clicks on the 'new reminder' button, they will be prompted to enter 
 
 Assigned to: Lauren Shea
 Points: 3
+
+CSS Styling for Profile Page
+Updated the CSS for the profile page to align with the overall website design, ensuring consistency in navigation bar, layout, and color scheme.
+
+Assigned to: Krish Sharma, Mohammad Kiyani
+Points: 2
 
