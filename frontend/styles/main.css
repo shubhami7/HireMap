@@ -82,19 +82,6 @@ header .logo {
 }
 
 /* Sidebar */
-.upcoming-dates h3 {
-  text-decoration: underline;
-  margin-bottom: 15px;
-  background-color: white;
-  border: 1px solid #ccc; /* Added border for visibility */
-  color: black;
-  padding: 10px 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-}
 
 .upcoming-item {
   margin-bottom: 15px;
@@ -107,27 +94,28 @@ header .logo {
 }
 
 .reminder-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px; 
-  height: 80px; 
-  border-radius: 50%;
-  background-color: rgb(100, 150, 255);
+  background-color:#90b7fb;
+  border: 1px solid #ccc; 
+  color: black;
+  padding: 5px 10px;
+  margin: 0 5px;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px; 
+  display: inline-flex;
 }
 
 #new-reminder {
   background: none;
   border: none;
   color: white;
-  font-size: 15px;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%; 
-  display: flex;
+  font-size: 14px; /* Smaller font size */
+  padding: 5px 10px; /* Smaller padding */
+  border-radius: 5px; 
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 #new-reminder:hover {
