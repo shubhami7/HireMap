@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../styles/profilepage.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header --------------------------->
     <header>
-      <!-- Navigation Buttons -->
+      <!-- Navigation Buttons -------------->
       <div class="nav-buttons">
         <button onclick="window.location.href='homepage.html'">Home</button>
         <button onclick="window.location.href='profilepage.html'">
@@ -24,7 +24,7 @@
       </div>
     </header>
 
-    <!-- Profile Name Input -->
+    <!-- Profile Name Input --------------------------------->
     <div class="profile-name-create">
       <form id="nameForm">
         <label for="nameInput">Enter your name:</label><br />
@@ -38,20 +38,45 @@
       </form>
     </div>
 
-    <!-- Profile Name Display -->
+    <!-- Profile Name Display ----------------------------->
     <h1 id="displayName">Your name will appear here</h1>
 
-    <!-- Profile Pic -->
+    <!-- Profile Pic ----------------------------------------->
     <img
-      src="defaultpfp.webp"
+      src="../assets/defaultpfp.webp"
       alt="Profile Picture"
       class="profile-pic"
       style="height: 150px; width: 150px"
     />
 
-    <!-- Profile Content -->
+    <br/>
+    <br/>
+
+
+    <!-- Upload Resume/Cover Letter Section ---------------------------------->
+    <div class="upload-section">
+      <h2>Upload Your Documents</h2>
+      <form id="documentsForm">
+        <div>
+          <label for="resumeInput">Resume:</label>
+          <input type="file" id="resumeInput" name="resume" accept=".pdf, .doc, .docx, .txt" />
+        </div>
+        <div>
+          <label for="coverLetterInput">Cover Letter:</label>
+          <input type="file" id="coverLetterInput" name="coverLetter" accept=".pdf, .doc, .docx, .txt" />
+        </div>
+        <button type="submit" id="uploadButton">Upload Documents</button>
+      </form>
+      <div id="uploadStatus"></div>
+      <button id="viewResume">View Stored Resume</button>
+      <button id="viewCoverLetter">View Stored Cover Letter</button>
+    </div>
+
+    <br/>
+    <br/>
+    
+    <!-- About Me Section ------------------------------------------------>
     <div class="profile-content">
-      <!-- About Me Section -->
       <div class="about-section">
         <h2>About Me</h2>
         <form id="descriptionForm">
@@ -64,14 +89,15 @@
             cols="50"
             placeholder="Write your description here..."
           ></textarea>
-          <br /><br />
           <button type="submit">Submit</button>
         </form>
       </div>
+      
 
-      <!-- Recent Activity Section -->
+      <!-- Recent Activity Section ----------------------------------->
       <div class="activity-section">
         <h2>Recent Activity</h2>
+        <br/>
         <div class="activity-boxes">
           <div class="activity-box">Jobs applied to: 85</div>
           <div class="activity-box">Heard Back From: 12</div>
@@ -81,97 +107,11 @@
       
       </div>
     </div>
-
-    <script src="../scripts/profilepage.js"></script>
+    
+    <!--Link to js file below------------------------------>
+    <script src="../scripts/profilepage.js">
+    </script>
   </body>
 </html>
 
 
-
-<!--
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Page</title>
-
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        display: flex;
-        justify-content: center;
-      }
-      .navbar {
-        background-color: #333;
-        color: white;
-        padding: 15px;
-        text-align: center;
-      }
-      .navbar a {
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        font-size: 16px;
-      }
-      .container {
-        max-width: 600px;
-        padding: 20px;
-        text-align: center;
-      }
-      .profile-pic {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 2px solid #ccc;
-        margin: 20px 0;
-      }
-      .description {
-        width: 100%;
-        height: 100px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 10px;
-      }
-      .button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      .button:hover {
-        background-color: #45a049;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="navbar">
-      <a href="#" aria-label="Home">Home</a>
-      <a href="#" aria-label="Profile">Profile</a>
-      <a href="#" aria-label="Settings">Settings</a>
-      <a href="#" aria-label="Logout">Logout</a>
-    </div>
-
-    <div class="container">
-      <h1>Profile Page</h1>
-
-      <img src="placeholder.jpg" alt="Profile Picture" class="profile-pic" />
-
-      <textarea
-        class="description"
-        placeholder="Write a brief description about yourself..."
-      ></textarea>
-
-      <button class="button" aria-label="Insert Resume">Insert Resume</button>
-    </div>
-  </body>
-</html>
-
--->
