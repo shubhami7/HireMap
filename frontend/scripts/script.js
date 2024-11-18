@@ -3,7 +3,7 @@ import {Database} from '../components/indexedDB.js';
 
 // // Create and open a database for applications called appDB
 const db = new Database("appDB");
-const appDB = await db.openDB();
+await db.openDB();
 
 // Add event listeners to each application box
 const boxes = document.querySelectorAll(".application-box");
@@ -88,6 +88,7 @@ window.onclick = function(event) {
   }
 }
 
+let appQuery;
 // add application to indexedDB when submit button is clicked
 submitBtn.addEventListener('click', async () => {
   console.log('Submit button clicked!');  // Debugging line
@@ -109,10 +110,8 @@ submitBtn.addEventListener('click', async () => {
 
   try {
     // save the application to IndexedDB using the addApp method
-
-    console.log(appDB);
     
-    const message = await appDB.addApp(applicationData);
+    db.addApp(applicationData);
   
     // create a new application box
     const applicationBox = document.createElement("div");
@@ -128,6 +127,11 @@ submitBtn.addEventListener('click', async () => {
     if (statusColumn) {
       statusColumn.appendChild(applicationBox);
     }
+
+    appQuery = companyName;
+    applicationBox.addEventListener('dblclick', () => {
+      window.location.href='applicationInfo.html';
+    });
 
     // clear form fields and close the modal
     document.getElementById("companyName").value = "";
@@ -145,42 +149,28 @@ submitBtn.addEventListener('click', async () => {
 
 });
 
-// still need to add code to make store when the page is refreshed -> local storage
+export {appQuery};
 
-// Get elements from add application popup
-const popupCompany = document.getElementById('companyName');
-const popupPosition = document.getElementById('position');
-const submitElement = document.getElementById('submit');
 
-// when popup submit button is clicked, save info to indexed db
+  // const appBoxElement = document.getElementById('amazon');
+  // console.log(appBoxElement);
+  // appBoxElement.addEventListener("dblclick", () => {
+  //     // go to application page
+  //     // load application info into page elements
+  //     window.location.href='application.html';
+  //     const curApp = db.getAppByID(appBoxElement.id);
+  //     appCompany.value = curApp.innerText;
+  // });
 
-// Get elements from the applicationInfo Page DOM
-const appCompany = document.getElementById('company-name');
-const appPosition = document.getElementById('pos');
-const appLocation = document.getElementById('loc');
-const appContacts = document.getElementById('contacts');
-const appDescription = document.getElementById('description');
-const appDateApplied = document.getElementById('dateApplied');
-const appResume = document.getElementById('resume');
-const appCoverLetter = document.getElementById('coverLetter');
-const appInterviewDate = document.getElementById('interview-date');
-const appInterviewType = document.getElementById('interview-format-1');
-const appInterviewQs = document.getElementById('interview-questions-1');
+  // let name = '';
 
-// Event listener for add application information??
-
-// when double click on application box, href to application page
-const appBoxElement = document.getElementById('amazon');
-console.log(appBoxElement);
-appBoxElement.addEventListener("dblclick", () => {
-    // go to application page
-    // load application info into page elements
-    const curApp = db.getAppByID(appBoxElement.id);
-    appCompany.value = curApp.innerText;
-});
-
-// Add event listeners for search bar
-// const searchBarElement = document.getElementById("search-bar");
-// searchBarElement.addEventListener('onkeyup', () => {
-
-// });
+  // boxes.forEach(box => {
+  //   name = box.innerText;
+  //   console.log(name);
+  //   box.addEventListener("ondblclick", () => {
+  //     window.location.href='application.html';
+  //     window.onload = () => {
+        
+  //     }
+  //   });
+  // });

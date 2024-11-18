@@ -8,6 +8,7 @@
     <title>Application Information</title>
     <link href="../styles/main.css" rel="stylesheet" />
 </head>
+<script type="module" src="../scripts/applications.js"></script>
 
 <!-- Header -->
 <header>
@@ -28,18 +29,19 @@
     <div class="main-content">
         <div class="application-info-column">
             <!-- TODO: Make this the company name of the application clicked on -->
-            <h1 id="company-name">Company Name</h1><br><br>
+            <h1 id="company-name">Amazon</h1><br><br>
         </div>
         <!-- Turn into readonly inputs with labels -->
-        <label id="pos" >Position: </label>
-        <input type='text' id="pos" readonly/><br><br>
+        <label id="pos">Position: </label>
+        <input type='text' id="pos" value="Software Engineer" readonly/><br><br>
         <label id="loc" >Location: </label>
-        <input type='text' id="loc" readonly /><br><br>
+        <input type='text' id="loc" value="Boston, MA" readonly /><br><br>
         <label id="contacts" >Contacts: </label>
-        <input type='text' id="contacts" readonly /><br><br>
+        <input type='text' id="contacts" value="amazon@applications.gmail.com" readonly /><br><br>
         <label id="description" >Description: </label>
-        <input type='text' id="description" readonly /><br><br>
+        <input type='text' id="description" value="Work remotely as a software engineer. Starting salary $75,000." readonly /><br><br>
         <h2>Status</h2>
+        <input type="text" id="curStatus" value="Interested"/><br><br>
         <label id="date-applied" >Date Applied: </label>
         <input type='datetime-local' id="date-applied" readonly /><br><br>
         <!-- Resume and cover letter drop boxes and display -->
