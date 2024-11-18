@@ -22,12 +22,24 @@ columns.forEach(column => {
   column.addEventListener("drop", dragDrop);
 });
 
+// add event listeners to the trash can
+const trashCan = document.getElementById("trash-can");
+if (trashCan) {
+    trashCan.addEventListener("dragover", dragOverTrash);
+    trashCan.addEventListener("dragenter", dragEnterTrash);
+    trashCan.addEventListener("dragleave", dragLeaveTrash);
+    trashCan.addEventListener("drop", dragDropTrash);
+}
+
+
+
 function dragStart(e) {
   e.dataTransfer.setData("text/plain", e.target.id);
   setTimeout(() => {
     e.target.style.display = "none";
   }, 0);
 }
+
 
 function dragEnd(e) {
   e.target.style.display = "block";
@@ -63,6 +75,40 @@ function dragDrop(e) {
   }
 }
 
+
+function dragOverTrash(e) {
+  e.preventDefault(); // Allows the drop
+}
+
+function dragEnterTrash(e) {
+  trashCan.classList.add("drag-over-trash");
+}
+
+function dragLeaveTrash(e) {
+  trashCan.classList.remove("drag-over-trash");
+}
+
+// drag and drop for trash
+async function dragDropTrash(e) {
+  e.preventDefault();
+  trashCan.classList.remove("drag-over-trash");
+
+  const appID = e.dataTransfer.getData("text/plain");
+  const draggable = document.getElementById(appID);
+
+  // remove from DOM
+  if (draggable) {
+    draggable.remove();
+  }
+
+  // remove from IndexedDB
+  try {
+    await appDB.deleteApp(appID);
+    alert('Application deleted successfully!');
+} catch (error) {
+    console.error('Error deleting application:', error);
+}
+}
 // add job
 
 const modal = document.getElementById("add-popup");
@@ -145,5 +191,3 @@ submitBtn.addEventListener('click', async () => {
   }
 
 });
-
-
