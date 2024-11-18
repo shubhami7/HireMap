@@ -41,7 +41,7 @@ in team discussions
 - **Top 3 Commits**:
   1. [Commit 1](https://github.com/edwintran235/326-team9/commit/b53a0bb0509b3f44edfe744892784dfcc50b9073): Added missing use cases to **ui-diagrams.md** file.
   2. [Commit 2](https://github.com/edwintran235/326-team9/commit/b95ac80dfd5ffd18785e55e27574ab46ca96c838): Proofread and revised the **ui-diagrams.md** file to enhance UI-diagram descriptions to ensure completeness and formal formatting.
-  3. [Commit 3](): Reviewed code examples given by TAs and professors of a completed milestones to check if work is up to standard. Shared these examples with the team.
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/5c08af53d5fc34a72f6f21a19eb5fdb67b2b12ea): Created a Database class that utilizes indexedDB for Milestone 3. The class opens a new store with asynchronous methods to add, get, and delete data. This class can be exported and used for data storage.
 
 ## Krish Sharma - Documentation Lead
 - **Role**: Responsible for overseeing the organization and maintenance of all project documentation. ... ensures that all documents are up to date, well-organized, and accessible to team members.
