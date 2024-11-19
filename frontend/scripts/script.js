@@ -102,7 +102,7 @@ async function dragDropTrash(e) {
 
   // remove from IndexedDB
   try {
-    await appDB.deleteApp(appID);
+    await db.deleteApp(appID);
     alert('Application deleted successfully!');
 } catch (error) {
     console.error('Error deleting application:', error);
