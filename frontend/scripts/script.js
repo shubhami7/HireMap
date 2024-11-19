@@ -21,12 +21,24 @@ columns.forEach(column => {
   column.addEventListener("drop", dragDrop);
 });
 
+// add event listeners to the trash can
+const trashCan = document.getElementById("trash-can");
+if (trashCan) {
+    trashCan.addEventListener("dragover", dragOverTrash);
+    trashCan.addEventListener("dragenter", dragEnterTrash);
+    trashCan.addEventListener("dragleave", dragLeaveTrash);
+    trashCan.addEventListener("drop", dragDropTrash);
+}
+
+
+
 function dragStart(e) {
   e.dataTransfer.setData("text/plain", e.target.id);
   setTimeout(() => {
     e.target.style.display = "none";
   }, 0);
 }
+
 
 function dragEnd(e) {
   e.target.style.display = "block";
@@ -62,6 +74,40 @@ function dragDrop(e) {
   }
 }
 
+
+function dragOverTrash(e) {
+  e.preventDefault(); // Allows the drop
+}
+
+function dragEnterTrash(e) {
+  trashCan.classList.add("drag-over-trash");
+}
+
+function dragLeaveTrash(e) {
+  trashCan.classList.remove("drag-over-trash");
+}
+
+// drag and drop for trash
+async function dragDropTrash(e) {
+  e.preventDefault();
+  trashCan.classList.remove("drag-over-trash");
+
+  const appID = e.dataTransfer.getData("text/plain");
+  const draggable = document.getElementById(appID);
+
+  // remove from DOM
+  if (draggable) {
+    draggable.remove();
+  }
+
+  // remove from IndexedDB
+  try {
+    await appDB.deleteApp(appID);
+    alert('Application deleted successfully!');
+} catch (error) {
+    console.error('Error deleting application:', error);
+}
+}
 // add job
 
 const modal = document.getElementById("add-popup");
@@ -75,7 +121,7 @@ btn.addEventListener('click', () => {
   modal.style.display = "block";
 }) 
 
-// when the user clicks on <span> (x), close the modal
+// when the user clicks on (x), close the modal
 span.addEventListener('click', () => {
   modal.style.display = "none";
 })
@@ -91,7 +137,6 @@ window.onclick = function(event) {
 let appQuery;
 // add application to indexedDB when submit button is clicked
 submitBtn.addEventListener('click', async () => {
-  console.log('Submit button clicked!');  // Debugging line
 
   const companyName = document.getElementById("companyName").value;
   const position = document.getElementById("position").value;
@@ -117,7 +162,7 @@ submitBtn.addEventListener('click', async () => {
     const applicationBox = document.createElement("div");
     applicationBox.className = "application-box";
     applicationBox.id = applicationData.id;
-    applicationBox.draggable = true; // enable drag-and-drop
+    applicationBox.draggable = true; 
     applicationBox.innerHTML = companyName + "<br>• " + position;
 
     applicationBox.addEventListener("dragstart", dragStart);
@@ -147,6 +192,37 @@ submitBtn.addEventListener('click', async () => {
     console.log('Error adding new application.', error);
   }
 
+});
+
+
+// add pop-up for new reminder
+const reminder = document.getElementById('reminder-popup');
+const remindButton = document.getElementById('new-reminder-button');
+const remindSpan = document.getElementsByClassName('close-reminder')[0];
+const remindSubmit = document.getElementById('reminder-submit');
+
+// when the user clicks on the button, open the modal
+remindButton.addEventListener('click', () => {
+  reminder.style.display = "flex";
+}); 
+
+// when the user clicks on (x), close the modal
+remindSpan.addEventListener('click', () => {
+  reminder.style.display = "none";
+});
+
+
+// when the user clicks outside of the modal, close it
+window.addEventListener('click', function(event) {
+  if (event.target == reminder) {
+    reminder.style.display = "none";
+  }
+});
+
+
+// add code later to save submitted information
+remindSubmit.addEventListener('click', () => {
+  reminder.style.display = "none";
 });
 
 export {appQuery};

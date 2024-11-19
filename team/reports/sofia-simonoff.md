@@ -6,7 +6,13 @@
 - **Link 1 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/b5b62b9630358fe325d1cb8f2a0c27d3800d2a08)
 - **Task 2**: Updated nav bar for applicationInfo.
 - **Details**: Changed the header code slightly in order to include the Home/Profile/Application Info routing.
-- **Link 1 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/1267166c8c6f004fd68caa80486d1791357021a5)
+- **Link 2 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/1267166c8c6f004fd68caa80486d1791357021a5)
+- **Task 3**: Used indexedDB to delete applications.
+- **Details**: Changed script.js and indexedDB.js to implement the trash functionality, so that application can be deleted
+- **Link 3 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/85eb9fd4e7a561065f8b324d0f01ba9f86903a6f)
+- **Task 4**: Added final diagrams.
+- **Details**: Added final diagrams to ui-diagrams.md to reflect changes.
+- **Link 4 to Commit**: [Link to edits](https://github.com/edwintran235/326-team9/commit/07c2d579fcf6965c062ad8dbab6e097103d78693)
 
 ### November 5, 2024
 - **Task**: Added 'Interview Notes' section.
@@ -14,10 +20,19 @@
 - **Link 1 to Commit**: [Link to homepage html edits](https://github.com/edwintran235/326-team9/commit/4f947b498bf824690461317763875b03676a6b8e)
 
 ### October 30, 2024
-- **Task**: Made edits to homepage functionality.
+- **Task 1**: Made edits to homepage functionality.
 - **Details**: Changed around some aspects of the homepage for more clear layout. Created a footnote section for Resources & Tips.
 - **Link 1 to Commit**: [Link to homepage html edits](https://github.com/edwintran235/326-team9/commit/8d115cf6ea6941075b35cee8308d48cfbaf74cc1)
 - **Link 2 to Commit**: [Link to homepage css edits](https://github.com/edwintran235/326-team9/commit/6f9439950a066b11cdfef955044b3a12ddae2521)
+- **Task 2**: Set up the team’s Trello board.
+- **Details**: Added tasks in the team's Trello for Milestone #3, including task descriptions and deadlines.
+- **Link 2 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
+- **Task 3**: Assigned tasks.
+- **Details**: Based on discussions, I assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
+- **Link 3 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
+- **Task 4**: Monitored task progress.
+- **Details**: Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
+- **Link 4 to Commit**: [Trello Link](https://trello.com/b/2sGNljBE/group-9-milestone-3)
 
 ### October 21, 2024
 - **Task 1**: Set up the team’s Trello board.

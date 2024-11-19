@@ -34,22 +34,45 @@ Points: 1
 
 ## Trash Icon
 
-When a user wants to remove an application from the page, they will be able to drag it to a trash can icon, which will remove it and store all the deleted applications in a separate location
-**Assigned points**: 2
+When a user wants to remove an application from the page, they will be able to drag it to a trash can icon, which will remove it.
+
+**Assigned points**: 3
 **Assigned to**: Sofia Simonoff
 
 
 ## Interview Notes and Questions
 
 For each application, users can record details about interview dates, the format (over the phone, technical exams, on-site interviews), and what questions they were asked during the interview process. This feature would allow users to review past interview questions to prepare for future interviews and improve their performance.
+
 **Assigned points**: 3
 **Assigned to**: Sofia Simonoff
 
+## Resources and Tips Footer Section 
 
-## Company Benefits Tracker
+At the bottom of the application tracker, there is a section for resources and tips that will be populated with information from the repository.
 
-This feature will allow users to record and and compare the benefits offered by companies. Users can add and view this information for each application, making it easier to compare different benefits that various companies offer. This can help users make informed decisions about which companies to focus on, especially when weighing multiple options. 
+**Assigned points**: 2
+**Assigned to**: Sofia Simonoff
 
+
+## Application Search Bar
+
+A search bar will be added to the navigation bar. When a user wants to search through their current applications, a list of applications will appear based on the user’s query.
+**Assigned points**: 1
+**Assigned to**: Macy Graves
+
+
+## Application Information Form
+
+When a user tracks a new application, the user is prompted to enter information about the company, position, etc. This information will be stored in the database and retrieved when the user double clicks on the application name on the homepage. The information will be displayed on the application information page.
+**Assigned points**: 5
+**Assigned to**: Macy Graves
+
+
+## Resume/Cover Letter File Upload
+
+On the Application Information Page, a user can upload the specific resume and cover letter that they used for the application. The resume and cover letter will be stored and accessible on the application page for that specific application.
+**Assigned points**: 3
 **Assigned to**: Macy Graves
 
 ## Deadline Reminders and Notifications
@@ -85,6 +108,12 @@ Users can upload their name and have it persist. Because there is currently no l
 ## Resume Upload Button
 
 **Description**: A link that allows users to upload their resume to their profile, so that they can view it as a pdf. Clicking the button will boot up the users files so they can select what to upload.
+**Point Value**: 3 points
+**Team Member**: Mohammad Kiyani
+
+## Cover Letter Upload Button
+
+**Description**: A link that allows users to upload their cover letter to their profile, so that they can view it as a pdf. Clicking the button will boot up the users files so they can select what to upload.
 **Point Value**: 3 points
 **Team Member**: Mohammad Kiyani
 
@@ -134,7 +163,7 @@ When users press the 'Add' button, the will fill out information about the job. 
 
 ## Deadline Reminders and Notifications
 
-Users can select reminders for important deadlines and due dates coming up. Users will have to input what they want as a reminder and when they want to be reminded of it. The reminders will be displayed on the home page.
-
+When a user clicks on the 'new reminder' button, they will be prompted to enter information about what they would like to be reminded on and when the date is. This will be a pop-up modal feature.
+**Point Value**: 3
 **Assigned to**: Lauren Shea
 

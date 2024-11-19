@@ -13,7 +13,6 @@ Our web application, **HireMap**, is designed to provide a comprehensive, user-f
 - **Deadline Reminders and Notifications**: Users can set reminders for application deadlines, interviews, and follow-up tasks to stay organized.
 - **Priority Applications**: Users can mark top-choice applications to focus their efforts on the most desired job opportunities.
 - **Job Search and Interview Tips Repository**: A section providing stage-specific tips for job searching and interviewing, helping users at each step.
-- **Alumni Job Connect**: Users can connect with alumni who have applied to similar companies, improving networking opportunities and chances for referrals.
 
 By providing an intuitive and organized way to manage the job application process, HireMap aims to alleviate the stress that comes with tracking multiple applications.
 

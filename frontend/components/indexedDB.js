@@ -110,9 +110,15 @@ export class Database {
     // Create method to delete application by its name/id
     async deleteApp(app) {
 
+        const appIDNum = Number(appId);
+
+        if (isNaN(appIDNum)) {
+            return Promise.reject('Invalid application ID');
+        }
+
         // Open the db, create a transaction on the object store
         const db = await this.openDB();
-        const tx = db.transaction('applications', 'readonly');
+        const tx = db.transaction('applications', 'readwrite');
         const store = tx.objectStore('applications');
         // retrieve the application using id parameter
         const req = store.delete(app);
@@ -126,7 +132,7 @@ export class Database {
               if (error.name === "NotFoundError") {
                 res("Application does not exist.");
               }
-              rej(`Error while deleting: ${error}`);
+              rej(`Error while deleting: ${error.message}`);
             };
           });
     }

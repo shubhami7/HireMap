@@ -6,6 +6,12 @@
   1. [Commit 1](https://github.com/edwintran235/326-team9/tree/milestone2/problem.md_update): gave rough draft for problem.md (now overwritten) 
   2. [Commit 2](https://github.com/edwintran235/326-team9/tree/milestone2/features.md/update/shahab): implemented new features in feature.md
   3. [Commit 3](https://github.com/edwintran235/326-team9/blob/main/team/m2/ui-diagrams.md): collaborated with edwin in person to give rough draft design on pictures for ui-diagrams.md
+ 
+- **Top 3 Commits for milestone 3**:
+  1. [Commit 1]([https://github.com/edwintran235/326-team9/tree/milestone2/problem.md_update](https://github.com/edwintran235/326-team9/tree/milestone3/updatedprofilepagewithresumeupload/11.17/shahab)): finished designing and implementing profile page with accompanying styles and scripts page, featuring all features outlined in features.md, storing data through localStorage 
+  2. [Commit 2]([https://github.com/edwintran235/326-team9/tree/milestone2/features.md/update/shahab](https://github.com/edwintran235/326-team9/tree/milestone3/updatingfeatures.md/shahab)): implemented navbar into profilepage to match implementation that was in the other pages implemented by my teammates to showcase a well structured application that flows well together with seamless page navigation
+  3. [Commit 3]([https://github.com/edwintran235/326-team9/blob/main/team/m2/ui-diagrams.md](https://github.com/edwintran235/326-team9/tree/milestone3/updatedprofilepagewithresumeupload/11.17/shahab)): added resume and cover letter upload functionality into profilepage.js allowing for customizability for users and what they put on their own pages. (commits 2 and 3 are precursors to the more finished product which is commit 1)
+ 
 
 ## Shubham Inavolu - Timekeeper
 - **Role**: Manages the timing of all team activities. ... ensures that meetings start and end on time, keeps track of deadlines, and reminds the team of upcoming due dates.
@@ -17,16 +23,16 @@
 ## Lauren Shea - Note-Taker
 - **Role**: Records detailed notes during meetings and ensures that action items are clearly communicated. Lauren is responsible for distributing meeting minutes to the team after each session.
 - **Top 3 Commits**:
-  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/655392a84eb029096f6f03a952994db17aa84a25): took notes on what was discussed during the meeting
-  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/d806d8da093c4c8c69a8479fd391ebc6c886ab03): summarized the next steps to finish milestone 2
-  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/8efdce63fe734451aa5cc0394be1f419689d36de): sent completed notes to each group member
+  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/fb07bded8c8c3a7f0eceac725f2aa118edd5c68c#diff-289e1890e590076490274afe863b8852df6b7ef8d0c909c790e2ca4d131a909d): add in new reminder pop-up
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/c80ac95f24417500d1b1828758e102c41298a7e4): Add application feature to add to indexedDB database
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/90499693b9a86df5be61320e4355d2d25d1ba23b): updated import statement so it worked across the files
  
 ## Sofia Simonoff - Task Manager
 - **Role**: Responsible for organizing and tracking team tasks. Sofia manages the team’s Trello board and ensures that all tasks are properly assigned and completed on time.
 - **Top 3 Commits**:
-  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/bfd8c77c206e65a9c848d7a65ee6d8cf6506845c): Add tasks in the team's Trello for Milestone #2, including task descriptions and deadlines.
-  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/7d109458a58bde58b71f0888c2d7aedf8cdadeb4): Based on discussions, assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
-  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/7d109458a58bde58b71f0888c2d7aedf8cdadeb4): Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
+  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/19698325815b058826e0191c7c3e01bcc61a6f4f): Add tasks in the team's Trello for Milestone #3, including task descriptions and deadlines.
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/5dcb2a314b7a20fdbf800e1e1a4c665313e47c17): Based on discussions, assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/1cd84be2980f3cfac5f95657b4d1fb5d0817261a): Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
  
 ## Edwin Tran - Communication Lead
 - **Role**: Facilitates communication within the team. Edwin makes sure that people are communicated efficiently and everyone is actively participating 
