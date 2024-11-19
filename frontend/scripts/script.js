@@ -2,9 +2,8 @@
 import {Database} from '../components/indexedDB.js';
 
 // // Create and open a database for applications called appDB
-let appDB = new Database("appDB");
-// appDB = await appDB.openDB();
-await appDB.openDB();
+const db = new Database("appDB");
+await db.openDB();
 
 // Add event listeners to each application box
 const boxes = document.querySelectorAll(".application-box");
@@ -135,6 +134,7 @@ window.onclick = function(event) {
   }
 }
 
+let appQuery;
 // add application to indexedDB when submit button is clicked
 submitBtn.addEventListener('click', async () => {
 
@@ -155,10 +155,8 @@ submitBtn.addEventListener('click', async () => {
 
   try {
     // save the application to IndexedDB using the addApp method
-
-    console.log(appDB);
     
-    const message = await appDB.addApp(applicationData);
+    db.addApp(applicationData);
   
     // create a new application box
     const applicationBox = document.createElement("div");
@@ -174,6 +172,11 @@ submitBtn.addEventListener('click', async () => {
     if (statusColumn) {
       statusColumn.appendChild(applicationBox);
     }
+
+    appQuery = companyName;
+    applicationBox.addEventListener('dblclick', () => {
+      window.location.href='applicationInfo.html';
+    });
 
     // clear form fields and close the modal
     document.getElementById("companyName").value = "";
@@ -201,12 +204,12 @@ const remindSubmit = document.getElementById('reminder-submit');
 // when the user clicks on the button, open the modal
 remindButton.addEventListener('click', () => {
   reminder.style.display = "flex";
-}) 
+}); 
 
 // when the user clicks on (x), close the modal
 remindSpan.addEventListener('click', () => {
   reminder.style.display = "none";
-})
+});
 
 
 // when the user clicks outside of the modal, close it
@@ -220,4 +223,30 @@ window.addEventListener('click', function(event) {
 // add code later to save submitted information
 remindSubmit.addEventListener('click', () => {
   reminder.style.display = "none";
-})
+});
+
+export {appQuery};
+
+
+  // const appBoxElement = document.getElementById('amazon');
+  // console.log(appBoxElement);
+  // appBoxElement.addEventListener("dblclick", () => {
+  //     // go to application page
+  //     // load application info into page elements
+  //     window.location.href='application.html';
+  //     const curApp = db.getAppByID(appBoxElement.id);
+  //     appCompany.value = curApp.innerText;
+  // });
+
+  // let name = '';
+
+  // boxes.forEach(box => {
+  //   name = box.innerText;
+  //   console.log(name);
+  //   box.addEventListener("ondblclick", () => {
+  //     window.location.href='application.html';
+  //     window.onload = () => {
+        
+  //     }
+  //   });
+  // });

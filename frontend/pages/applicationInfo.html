@@ -9,66 +9,78 @@
     <link href="../styles/main.css" rel="stylesheet" />
     <script src="../components/script.js" src="../components/indexedDB.js"></script>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="logo">HireMap</div>
-         <!-- Navigation Buttons -->
-        <div class="nav-buttons">
-          <button onclick="window.location.href='homepage.html'">Home</button>
-          <button onclick="window.location.href='profilepage.html'">Profile</button>
-          <button onclick="window.location.href='applicationInfo.html'">Application Info</button>
-        </div>
-        <div class="profile">
-          <button>👤</button></div>
-    </header>
-    
-    <!-- Content Container -->
-    <div class="container">
-        <!-- Application Info Column -->
-        <div class="main-content">
-            <div class="application-info-column">
-                <h1>Company Name</h1><br><br>
-            </div>
-            <p1>Position: </p1><br><br>
-            <p2>Location: </p2><br><br>
-            <p8>Contacts: </p8><br><br>
-            <p3>Description: </p3><br><br>
-            <h2>Status</h2>
-            <p4>Date Applied:</p4><br><br>
-            <p5>Resume: </p5><br><br>
-            <p6>Cover Letter:</p6><br><br>
-            <p7>Interview Dates: </p7><br><br>
-    
-            <div class="interview-notes-section">
-        <h2>Interview Notes</h2>
-    
-        <!-- Interview Date -->
-        <div class="interview-note">
-            <h3>Interview Date: <input type="date" /></h3>
-            <label for="interview-format-1">Interview Format:</label>
-            <select id="interview-format-1">
-                <option value="phone">Phone</option>
-                <option value="technical">Technical Exam</option>
-                <option value="onsite">On-Site</option>
-            </select><br><br>
-    
-            <label for="interview-questions-1">Questions Asked:</label><br>
-            <textarea id="interview-questions-1" rows="4" placeholder="Notes..."></textarea><br><br>
-        </div>
+<script type="module" src="../scripts/applications.js"></script>
+
+<!-- Header -->
+<header>
+    <div class="logo">HireMap</div>
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button onclick="window.location.href='homepage.html'">Home</button>
+      <button onclick="window.location.href='profilepage.html'">Profile</button>
+      <button onclick="window.location.href='interviewtipspage.html'">Interview Tips</button>
     </div>
-    
+    <div class="profile">
+      <button>👤</button></div>
+  </header>
+
+<!-- Content Container -->
+<div class="container">
+    <!-- Application Info Column -->
+    <div class="main-content">
+        <div class="application-info-column">
+            <!-- TODO: Make this the company name of the application clicked on -->
+            <h1 id="company-name">Amazon</h1><br><br>
+        </div>
+        <!-- Turn into readonly inputs with labels -->
+        <label id="pos">Position: </label>
+        <input type='text' id="pos" value="Software Engineer" readonly/><br><br>
+        <label id="loc" >Location: </label>
+        <input type='text' id="loc" value="Boston, MA" readonly /><br><br>
+        <label id="contacts" >Contacts: </label>
+        <input type='text' id="contacts" value="amazon@applications.gmail.com" readonly /><br><br>
+        <label id="description" >Description: </label>
+        <input type='text' id="description" value="Work remotely as a software engineer. Starting salary $75,000." readonly /><br><br>
+        <h2>Status</h2>
+        <input type="text" id="curStatus" value="Interested"/><br><br>
+        <label id="date-applied" >Date Applied: </label>
+        <input type='datetime-local' id="date-applied" readonly /><br><br>
+        <!-- Resume and cover letter drop boxes and display -->
+        <label key="resume" >Resume: </label>
+        <input type='file' key="resume" readonly /><br><br>
+        <label key="coverLetter">Cover Letter:</label>
+        <input type='file' key="coverLetter" readonly /><br><br>
+
+</div>
+
+<!-- Sidebar for Upcoming Dates -->
+<div class="sidebar">
+    <div class="upcoming-dates">
+        <h3>Upcoming Dates</h3>
+        <div class="upcoming-item"></div>
+        <div class="upcoming-item"></div>
+        <div class="upcoming-item"></div>
     </div>
-    
-    <!-- Sidebar for Upcoming Dates -->
-    <div class="sidebar">
-        <div class="upcoming-dates">
-            <h3>Upcoming Dates</h3>
-            <div class="upcoming-item"></div>
-            <div class="upcoming-item"></div>
-            <div class="upcoming-item"></div>
-        </div>
-        </div>
+    </div>
+</div>
+</div>
+
+<div class="interview-notes-section">
+    <h2>Interview Notes</h2>
+
+    <!-- Interview Date -->
+    <div class="interview-note">
+        <h3>Interview Date: <input type="date" id="interview-date" /></h3>
+        <label for="interview-format-1">Interview Format:</label>
+        <select id="interview-format-1">
+            <option value="select">select value</option>
+            <option value="phone">Phone</option>
+            <option value="technical">Technical Exam</option>
+            <option value="onsite">On-Site</option>
+        </select><br><br>
+
+        <label for="interview-questions-1">Questions Asked:</label><br>
+        <textarea id="interview-questions-1" rows="4" placeholder="Notes..."></textarea><br><br>
     </div>
     </div>
     

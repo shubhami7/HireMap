@@ -52,7 +52,7 @@ export class Database {
         const tx = db.transaction('applications', 'readwrite');
         const store = tx.objectStore('applications');
         // add the new application to the object store
-        store.add(app);
+        store.add(app, app.companyName); // value, key --> object, company name
 
         // return a promise that resolves when transaction is successful and rejects with msg
         return new Promise((res, rej) => {
