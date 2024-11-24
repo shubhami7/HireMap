@@ -183,6 +183,27 @@ Navigation menu on the profile page in line with the rest of the application whi
 
 **Points:** 1
 
+## Resume/Cover letter File uploads
+On the profile page, users can upload a resume or cover letter as a way to store it, so we need to connect this with the backend to ensure the data persists, allowing users to upload a resume/cover letter and retrieve them. 
+**Point Value:** 6
+**Size Category:** Large
+**Assigned to:** Mohammad Kiyani
+
+
+## Name Input on profile page
+On the profile page, users can input their name so that it will associate those login credentials with your name, allowing your name to appear every time you open the homepage creating a more personal experience. This involves storing the name inputted and then retrieving it every time the homepage is opened for display
+**Point Value:** 2
+**Size Category:** Medium
+**Assigned to:** Mohammad Kiyani
+
+## Description/ BIO box storage
+On the profile page, users can input a description of themselves as a good template incase the question gets asked in an application so users can just copy/paste their already made description, so this needs to be persisted by storing the input into the backend and then retrieved when users load the profilepage
+**Point Value:** 2
+**Size Category:** Medium
+**Assigned to:** Mohammad Kiyani
+
+
+
 ## Login/Create Account Page
 Users can login or create an account. Login allows users to enter an email and password, and if it is correct, they get sent to the homepage; otherwise, it prompts an error message. On the create account page, users can enter an email and a password twice to make an account on the web page.
 
