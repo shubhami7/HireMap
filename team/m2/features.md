@@ -1,32 +1,53 @@
 # Application Features
 
-## Job Application Tracker Section
+## Job Application Tracker Section (M3)
 This feature will display an overview of each application submitted by the user, including key details such as company name and position. For each application, users can select their current status, such as "Applied," "Interviewing," "Offer," or "Rejected." Users will have the ability to update the status of each application. This functionality will give users a quick view of their progress, allowing them not to have to sort through various websites and emails.
 
 **Assigned to:** Edwin Tran
 
 **Points:** 4
 
-## Dragging Applications
+## Dragging Applications (M3)
 When the user wants to update the status of their application, they are able to drag each application into a different section.
 
 **Assigned to:** Edwin Tran
 
 **Points:** 3
 
-## Navigation Bar
+## Navigation Bar (M3)
 Bar and icons to navigate between different pages of the website.
 
 **Assigned to:** Edwin Tran
 
 **Points:** 2
 
-## Upcoming Dates
+## Upcoming Dates (M3)
 When the user has any upcoming due dates for interviews or online assessments, they will be able to add them here to keep track.
 
 **Assigned to:** Edwin Tran
 
 **Points:** 1
+
+## User Dashboard Data Aggregation (M4)
+Creates a single dashboard API that groups multiple types of user-specific data into a single response. This will include a greeting based on the time of day, user-specific announcements/reminders, and recent activity. This is just as a welcome for the user. It will show up the first time the user logs in for the day. There will be an option to not show it for the rest of the day that the user can click.
+
+**Assigned to:** Edwin Tran
+
+**Points:** 5
+
+## Application Sorting (M4)
+A way to sort the applications in different ways, such as day applied, user priority, and alphabetical.
+
+**Assigned to:** Edwin Tran
+
+**Points:** 3
+
+## Drag and Drop Status Update (M4)
+When the user grabs an application and drags it to a new category, it will update the status of the application
+
+**Assigned to:** Edwin Tran
+
+**Points:** 2
 
 ## Trash Functionality (Front End - M3)
 When a user wants to remove an application from the page, they will be able to drag it to a trash can icon, which will remove it. Implemented with indexdbb.
