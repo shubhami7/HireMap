@@ -1,6 +1,10 @@
 // Find the express.js module
 const express = require('express');
 
+// import sequelize ORM from database.js
+const sequelize = require('./config/database');
+sequelize.sync().then(() => console.log("Database is open."));
+
 // Create an express app
 const app = express();
 
