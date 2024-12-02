@@ -1,8 +1,13 @@
-Starting the Application
+Starting the Application:
+1. Move to the backend file
+2. Install node modules
+3. Run the start script
 
-First install dependencies:
-In the terminal install the node modules:
+To do this run the following commands in order:
+    cd backend
+    npm i
+    npm start
 
-cd backend
-npm install
-npm start (console should print: The server has started!)
+Console should print: 
+    The server has started!
+    Database is open.
