@@ -1,5 +1,30 @@
 ## Contribution Log for Sofia Simonoff
 
+### November 25, 2024
+- **Task 1**: Commented on Edwin's issues.
+- **Link to comment**: [Comment 1](https://github.com/edwintran235/326-team9/issues/40#issuecomment-2498856039)
+- **Link to comment**: [Comment 2](https://github.com/edwintran235/326-team9/issues/44#issuecomment-2498861892)
+- **Link to comment**: [Comment 3](https://github.com/edwintran235/326-team9/issues/45#issuecomment-2498965058)
+- **Task 2**: Commented on Shahab's issues.
+- **Link to comment**: [Comment 1](https://github.com/edwintran235/326-team9/issues/47#issuecomment-2498875059)
+- **Link to comment**: [Comment 2](https://github.com/edwintran235/326-team9/issues/48#issuecomment-2498879205)
+- **Link to comment**: [Comment 3](https://github.com/edwintran235/326-team9/issues/49#issuecomment-2498883569)
+- **Task 3**: Commented on Macy's issues.
+- **Link to comment**: [Comment 1](https://github.com/edwintran235/326-team9/issues/50#issuecomment-2498896839)
+- **Link to comment**: [Comment 2](https://github.com/edwintran235/326-team9/issues/51#issuecomment-2498905994)
+- **Link to comment**: [Comment 3](https://github.com/edwintran235/326-team9/issues/52#issuecomment-2498914462)
+- **Task 4**: Commented on Lauren's issues.
+- **Link to comment**: [Comment 1](https://github.com/edwintran235/326-team9/issues/53#issuecomment-2498929174)
+- **Link to comment**: [Comment 2](https://github.com/edwintran235/326-team9/issues/54#issuecomment-2498948955)
+- **Link to comment**: [Comment 3](https://github.com/edwintran235/326-team9/issues/55#issuecomment-2498959268)
+- **Task 5**: Commented on Shubham's issues.
+- **Link to comment**: [Comment 1](https://github.com/edwintran235/326-team9/issues/56#issuecomment-2501896447)
+- **Link to comment**: [Comment 2](https://github.com/edwintran235/326-team9/issues/57#issuecomment-2501899783)
+- **Task 6**: Commented on Krish's issues.
+- **Link to comment**: [Comment 1](https://github.com/edwintran235/326-team9/issues/58#issuecomment-2501903536)
+- **Link to comment**: [Comment 2](https://github.com/edwintran235/326-team9/issues/59#issuecomment-2501908866)
+- **Link to comment**: [Comment 1](https://github.com/edwintran235/326-team9/issues/60#issuecomment-2501912356)
+
 ### November 24, 2024
 - **Task 1**: Created a GitHub issue for Trash Functionality.
 - **Link to issue**: [Issue #41](https://github.com/edwintran235/326-team9/issues/41#issue-2688374186)
