@@ -11,3 +11,8 @@ To do this run the following commands in order:
 Console should print: 
     The server has started!
     Database is open.
+
+About the Database:
+We are using SQLite with Sequelize.
+When our application starts, the Database is viewable in the backend/db directory.
+It may be useful to install the VSCode SQLite Extension to view the tables and schemas in the database.
