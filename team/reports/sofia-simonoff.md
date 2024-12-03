@@ -1,5 +1,13 @@
 ## Contribution Log for Sofia Simonoff
 
+### November 24, 2024
+- **Task 1**: Created a GitHub issue for Trash Functionality.
+- **Link to issue**: [Issue #41](https://github.com/edwintran235/326-team9/issues/41#issue-2688374186)
+- **Task 2**: Created a GitHub issue for Interview Notes Storage and Retrieval.
+- **Link to issue**: [Issue #42](https://github.com/edwintran235/326-team9/issues/42#issue-2688375442)
+- **Task 1**: Created a GitHub issue for Restore Trash.
+- **Link to issue**: [Issue #43](https://github.com/edwintran235/326-team9/issues/43#issue-2688377600)
+  
 ### November 17, 2024
 - **Task 1**: Updated styling for applicationInfo.
 - **Details**: Changed the code slightly in order for "Interview Notes" and "Status" sections to be lined up.
