@@ -4,6 +4,9 @@
 - **Task 1**: Set up the team’s Trello board.
 - **Details**: Added tasks in the team's Trello for Milestone #4, including task descriptions and deadlines.
 - **Link 1 to Commit**: [Trello Link](https://trello.com/b/PjitceQA/group-9-milestone-4)
+- **Task 2**: Assigned tasks.
+- **Details**: Based on discussions, I assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
+- **Link 2 to Commit**: [Trello Link](https://trello.com/b/PjitceQA/group-9-milestone-4)
 
 ### November 26, 2024
 - **Task 1**: Final comment made on Trash Functionality feature.
