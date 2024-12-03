@@ -1,5 +1,10 @@
 ## Contribution Log for Sofia Simonoff
 
+### December 3, 2024
+- **Task 1**: Set up the team’s Trello board.
+- **Details**: Added tasks in the team's Trello for Milestone #4, including task descriptions and deadlines.
+- **Link 1 to Commit**: [Trello Link](https://trello.com/b/PjitceQA/group-9-milestone-4)
+
 ### November 26, 2024
 - **Task 1**: Final comment made on Trash Functionality feature.
 - **Link to comment**: [Final Comment 1](https://github.com/edwintran235/326-team9/issues/41#issuecomment-2501959243)
