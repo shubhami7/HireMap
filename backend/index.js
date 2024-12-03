@@ -12,10 +12,16 @@ const app = express();
 app.use(express.json());
 
 // Example attempt to create new user in table when post request sent
-const User = require('./models/user');
+const { User, Application } = require('./models/user');
 app.post("users", (req, res) => {
     User.create(res.body).then(() => {
         res.send("user entry added");
+    });
+});
+
+app.post("applications", (req, res) => {
+    Application.create(res.body).then(() => {
+        res.send("application entry added");
     });
 });
 
