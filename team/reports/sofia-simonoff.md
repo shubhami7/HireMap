@@ -1,6 +1,14 @@
 ## Contribution Log for Sofia Simonoff
 
 ### November 25, 2024
+- **Task 1**: Final comment made on Trash Functionality feature.
+- **Link to comment**: [Final Comment 1](https://github.com/edwintran235/326-team9/issues/41#issuecomment-2501959243)
+- **Task 2**: Final comment made on Interview Notes Storage and Retrieval feature.
+- **Link to comment**: [Final Comment 1](https://github.com/edwintran235/326-team9/issues/42#issuecomment-2501942337)
+- **Task 3**: Final comment made on Restore Trash feature.
+- **Link to comment**: [Final Comment 1](https://github.com/edwintran235/326-team9/issues/43#issuecomment-2501932182)
+
+### November 25, 2024
 - **Task 1**: Commented on Edwin's issues.
 - **Link to comment**: [Comment 1](https://github.com/edwintran235/326-team9/issues/40#issuecomment-2498856039)
 - **Link to comment**: [Comment 2](https://github.com/edwintran235/326-team9/issues/44#issuecomment-2498861892)
