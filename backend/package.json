@@ -16,11 +16,8 @@
   "dependencies": {
     "@sequelize/core": "^7.0.0-alpha.42",
     "@sequelize/sqlite3": "^7.0.0-alpha.43",
-    "electron-prebuilt": "^0.25.3",
-    "electron-rebuild": "^3.2.9",
-    "express": "^4.21.1",
-    "sequelize": "^6.37.5",
-    "sqlite3": "^5.1.7"
+    "@types/node": "^22.10.1",
+    "express": "^4.21.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"

@@ -1,7 +1,24 @@
-const { Model, DataTypes } = require("@sequelize/core");
-const sequelize = require("../config/database");
+const { DataTypes, Model } = require('@sequelize/core');
+const { Attribute, Table, PrimaryKey, NotNull } = require('@sequelize/core/decorators-legacy');
 
-class User extends Model {}
+const sequelize = require('../config/database');
+
+// @Table({
+//     tableName: "users"
+// })
+class User extends Model {
+    // @Attribute(DataTypes.STRING)
+    // @PrimaryKey
+    // userName;
+  
+    // @Attribute(DataTypes.STRING)
+    // @NotNull
+    // firstName;
+  
+    // @Attribute(DataTypes.STRING)
+    // lastName;
+}
+
 
 // User.init({
 //     username: {

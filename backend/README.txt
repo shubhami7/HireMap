@@ -1,11 +1,11 @@
 Starting the Application:
-1. Move to the backend file
+1. Move to the 'backend' directory
 2. Install node modules
 3. Run the start script
 
 To do this run the following commands in order:
     cd backend
-    npm i
+    npm install
     npm start
 
 Console should print: 
