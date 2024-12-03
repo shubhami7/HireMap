@@ -30,9 +30,9 @@
 ## Sofia Simonoff - Task Manager
 - **Role**: Responsible for organizing and tracking team tasks. Sofia manages the team’s Trello board and ensures that all tasks are properly assigned and completed on time.
 - **Top 3 Commits**:
-  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/19698325815b058826e0191c7c3e01bcc61a6f4f): Add tasks in the team's Trello for Milestone #3, including task descriptions and deadlines.
-  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/5dcb2a314b7a20fdbf800e1e1a4c665313e47c17): Based on discussions, assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
-  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/1cd84be2980f3cfac5f95657b4d1fb5d0817261a): Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
+  1. [Commit 1](https://github.com/edwintran235/326-team9/commit/8f2378e0a2e529d8b1f42976da6cd09bcd441259): Add tasks in the team's Trello for Milestone #4, including task descriptions and deadlines.
+  2. [Commit 2](https://github.com/edwintran235/326-team9/commit/5a2201a2f0c5e5596483b5e0085ced8c1cc1e331): Based on discussions, assigned tasks to team members during the team’s planning meetings and updated Trello with new assignments.
+  3. [Commit 3](https://github.com/edwintran235/326-team9/commit/5f2e2c9166bfa9839032b18d461a21eb4b7ce2b5): Monitored task progress and updated the board, ensuring that tasks were completed by the deadline.
  
 ## Edwin Tran - Communication Lead
 - **Role**: Facilitates communication within the team. Edwin makes sure that people are communicated efficiently and everyone is actively participating 
