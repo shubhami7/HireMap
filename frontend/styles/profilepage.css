@@ -24,36 +24,32 @@ header {
 header .logo {
   font-size: 24px;
   font-weight: bold;
+  color: white; 
 }
 
-header .profile,
-.icons {
+.nav-bar {
   display: flex;
+  justify-content: space-between; 
   align-items: center;
-  gap: 10px;
-}
-
-.nav-buttons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  padding: 10px 20px; 
+  border-bottom: 1px solid #ccc; 
 }
 
 .nav-buttons button {
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
+background-color: white;
+border: 1px solid #ccc; 
+color: black;
+padding: 10px 20px;
+margin: 0 5px;
+cursor: pointer;
+border-radius: 5px;
+font-size: 16px;
+transition: background-color 0.3s ease; 
 }
 
 .nav-buttons button:hover {
-  background-color: lightgray;
+background-color: lightgray; /* Subtle hover color */
 }
-
 /*--------------------------------------------------------------------------------*/
 
 /* Body Styles */
