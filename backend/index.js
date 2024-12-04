@@ -11,17 +11,34 @@ const app = express();
 // Middleware for database comms in format of json objects
 app.use(express.json());
 
-// Example attempt to create new user in table when post request sent
-const { User, Application } = require('./models/user');
-app.post("users", (req, res) => {
+// Import Schemas
+const { User, Application, Tip, Interview } = require('./models/user');
+
+// Post to the users table
+app.post("users", (res) => {
     User.create(res.body).then(() => {
         res.send("user entry added");
     });
 });
 
-app.post("applications", (req, res) => {
+// Post to the applications table
+app.post("applications", (res) => {
     Application.create(res.body).then(() => {
         res.send("application entry added");
+    });
+});
+
+// Post to the tips table
+app.post("tips", (res) => {
+    Tip.create(res.body).then(() => {
+        res.send("tip entry added");
+    });
+});
+
+// Post to the interviews table
+app.post("interviews", (res) => {
+    Interview.create(res.body).then(() => {
+        res.send("interview entry added");
     });
 });
 
