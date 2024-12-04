@@ -86,3 +86,9 @@ body {
 .nav-buttons button:hover {
   background-color: lightgray;
 }
+
+.hiring-managers-tips-container h2,
+.alumni-tips-container h2 {
+    margin-top: 30px;
+    margin-bottom: 20px; 
+}
