@@ -36,20 +36,21 @@ header .logo {
 }
 
 .nav-buttons button {
-background-color: white;
-border: 1px solid #ccc; 
-color: black;
-padding: 10px 20px;
-margin: 0 5px;
-cursor: pointer;
-border-radius: 5px;
-font-size: 16px;
-transition: background-color 0.3s ease; 
+  background-color: #c3d3f1a9;
+  border: 1px solid #c3d3f1a9; 
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; 
 }
 
 .nav-buttons button:hover {
-background-color: lightgray; /* Subtle hover color */
+  background-color: #bcd5fffc;
 }
+
 /*--------------------------------------------------------------------------------*/
 
 /* Body Styles */
@@ -159,7 +160,7 @@ h1#displayName {
   cursor: pointer;
 }
 
-/* Activity Section ----------------------------------------------------------*/
+/* Activity Section */
 .activity-section {
   width: 100%;
   max-width: 600px;
@@ -169,7 +170,8 @@ h1#displayName {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
 }
-/* keeps individual activities in a row---------------*/
+
+/* Keeps individual activities in a row */
 .activity-boxes {
   display: flex;
   flex-wrap: wrap;
@@ -177,7 +179,8 @@ h1#displayName {
   justify-content: center;
   margin-top: 10px;
 }
-/*each individual box-----------------------*/
+
+/* Each individual box */
 .activity-box {
   border: 1px solid #ccc;
   padding: 15px;
