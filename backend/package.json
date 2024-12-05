@@ -1,0 +1,27 @@
+{
+  "name": "326-team9",
+  "version": "1.0.0",
+  "description": "REST API using Express, Node, SQLite, and Sequelize to implement the backend of HireMap",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edwintran235/326-team9"
+  },
+  "author": "Macy Graves",
+  "license": "ISC",
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.42",
+    "@sequelize/sqlite3": "^7.0.0-alpha.43",
+    "@types/node": "^22.10.1",
+    "express": "^4.21.1",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
