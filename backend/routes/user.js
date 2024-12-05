@@ -88,3 +88,5 @@ router.delete('/user/:id', [checkIDExist], (req, res) => {
         res.status(200).json(result);
     });
 });
+
+module.exports = router;
