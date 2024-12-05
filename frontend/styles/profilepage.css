@@ -139,6 +139,30 @@ h1#displayName {
   cursor: pointer;
 }
 
+/* View Buttons for Resume and Cover Letter */
+#viewResume, #viewCoverLetter {
+  padding: 4px 8px;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  color: #444;
+  background: #f4f4f4;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#viewResume:hover, #viewCoverLetter:hover {
+  background-color: rgb(100, 150, 255);
+  border-color: rgb(100, 150, 255);
+  color: white;
+}
+
+
 /* About Section */
 .about-section {
   width: 100%;
