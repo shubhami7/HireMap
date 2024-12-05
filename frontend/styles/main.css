@@ -273,7 +273,9 @@ footer {
 
 .drag-over-trash {
   background-color: red;
-  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 /* Responsive Design */
