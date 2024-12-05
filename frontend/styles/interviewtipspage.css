@@ -93,4 +93,6 @@ body {
 .alumni-tips-container h2 {
     margin-top: 30px;
     margin-bottom: 20px; 
+    text-decoration: underline;
+    font-size: 20px;
 }
