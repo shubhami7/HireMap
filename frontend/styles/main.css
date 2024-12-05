@@ -101,15 +101,49 @@ header .logo {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 /* Sidebar */
-.upcoming-item {
+.reminder-container {
   margin-bottom: 15px;
-  height: 30px;
-  background-color: #f0f0f0;
-  border-radius: 4px; 
+  background-color: #d2e5ff;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.reminder-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.reminder-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.reminder-name {
+  font-size: 16px;
+  margin: 0;
+}
+
+.reminder-date {
+  font-size: 14px;
+  color: rgba(73, 129, 197, 0.934);
+  margin-top: 5px;
+}
+
+label {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+input[type="checkbox"] {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0;
 }
 
 .reminder-button {
@@ -160,7 +194,7 @@ header .logo {
 
 /* content of reminder modal */
 .reminder-content {
-  background-color: white;
+  background-color: hsl(220, 90%, 76%);;
   padding: 20px;
   border-radius: 10px;
   width: 400px;
