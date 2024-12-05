@@ -103,32 +103,36 @@ header .logo {
 }
 
 .reminder-button {
-  background-color:#90b7fb;
-  border: 1px solid #ccc; 
+  background-color: #a3c2f9;
+  border: 1px solid #ccc;
   color: black;
   padding: 5px 10px;
   margin: 0 5px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px; 
+  font-size: 16px;
   display: inline-flex;
+  transition: all 0.3s ease; 
 }
 
 #new-reminder-button {
   background: none;
   border: none;
   color: white;
-  font-size: 14px; 
+  font-size: 14px;
   padding: 5px 10px;
-  border-radius: 5px; 
+  border-radius: 5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease; 
 }
 
-#new-reminder:hover {
-  background-color: #90b7fb;
+.reminder-button:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2); 
+  background-color: #a3c2f9;
 }
 
 #reminder-popup {
