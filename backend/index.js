@@ -3,7 +3,9 @@ const express = require('express');
 
 // import sequelize ORM from database.js
 const sequelize = require('./config/database');
-sequelize.sync().then(() => console.log("Database is open."));
+sequelize.sync()
+    .then(() => console.log("Database is open."))
+    .catch((err) => console.log("Could not open database: " + `${err.message}`));
 
 // Create an express app
 const app = express();
