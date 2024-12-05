@@ -151,14 +151,14 @@ submitBtn.addEventListener("click", async () => {
 
   try {
     // Save the application to IndexedDB
-    await db.addApp(applicationData);
+    db.addApp(applicationData);
 
     // Create a new application box
     const applicationBox = document.createElement("div");
     applicationBox.className = "application-box";
     applicationBox.id = applicationData.id;
     applicationBox.draggable = true;
-    applicationBox.innerHTML = `${companyName}<br>• ${position}`;
+    applicationBox.innerHTML = companyName + "<br><br>• " + position;
 
     applicationBox.addEventListener("dragstart", dragStart);
     applicationBox.addEventListener("dragend", dragEnd);
