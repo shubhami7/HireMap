@@ -257,6 +257,20 @@ footer {
   padding: 20px;
 }
 
+.action-button {
+  padding: 4px 8px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  color: #444; 
+  background: #f4f4f4;
+  border: 1px solid #bbb; 
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
 .drag-over-trash {
   background-color: red;
   color: white;
