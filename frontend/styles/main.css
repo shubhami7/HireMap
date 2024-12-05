@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f6f6f6;
 }
 
 /* Header */
@@ -52,7 +53,7 @@ header .logo {
 .status-columns {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 5px;
   flex-wrap: wrap; 
 }
 
@@ -61,14 +62,20 @@ header .logo {
   text-align: center;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
   padding: 20px;
   margin: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .status-column h3 {
-  text-decoration: underline;
+  background-color: #c8daf8; 
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1); 
+  color: #030303; 
+  font-size: medium;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 1px;
 }
 
 .status-column:hover {
@@ -80,9 +87,11 @@ header .logo {
   border: none;
   padding: 10px 20px;
   margin: 10px 0;
+  font-size: 13px;
+  text-align: left;
   background-color: #f5f5f5;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   cursor: grab;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -93,7 +102,6 @@ header .logo {
 }
 
 /* Sidebar */
-
 .upcoming-item {
   margin-bottom: 15px;
   height: 30px;
@@ -105,7 +113,7 @@ header .logo {
 }
 
 .reminder-button {
-  background-color: #a3c2f9;
+  background-color: #a9afba;
   border: 1px solid #ccc;
   color: black;
   padding: 5px 10px;
@@ -120,7 +128,7 @@ header .logo {
 #new-reminder-button {
   background: none;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 14px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -134,7 +142,7 @@ header .logo {
 .reminder-button:hover {
   transform: translateY(-2px); 
   box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2); 
-  background-color: #a3c2f9;
+  background-color: #ced3dd;
 }
 
 #reminder-popup {
@@ -205,7 +213,7 @@ header .logo {
 
 .nav-buttons button {
   background-color: #c3d3f1a9;
-  border: 1px solid #c3d3f1a9; 
+  border: 1px solid #c8daf8; 
   color: white;
   padding: 10px 20px;
   margin: 0 5px;
