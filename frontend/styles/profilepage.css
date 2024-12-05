@@ -43,7 +43,8 @@ header .logo {
   margin: 0 5px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: bold;
   transition: background-color 0.3s ease; 
 }
 
