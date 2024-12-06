@@ -37,6 +37,13 @@ app.post("tips", (res) => {
     });
 });
 
+// Post to the reminders table
+app.post("reminders", (res) => {
+    Reminder.create(res.body).then(() => {
+        res.send("reminder entry added");
+    });
+});
+
 // Post to the interviews table
 app.post("interviews", (res) => {
     Interview.create(res.body).then(() => {

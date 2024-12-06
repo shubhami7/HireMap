@@ -138,12 +138,14 @@ let appQuery;
 submitBtn.addEventListener("click", async () => {
   const companyName = document.getElementById("companyName").value;
   const position = document.getElementById("position").value;
+  const location = document.getElementById("jobLocation").value;
   const status = document.getElementById("status").value;
 
   const applicationData = {
     id: new Date().getTime(),
     companyName: companyName,
     position: position,
+    location: location,
     status: status,
     dateApplied: document.getElementById("dateApplied").value,
     deadline: document.getElementById("deadline").value,
@@ -158,7 +160,7 @@ submitBtn.addEventListener("click", async () => {
     applicationBox.className = "application-box";
     applicationBox.id = applicationData.id;
     applicationBox.draggable = true;
-    applicationBox.innerHTML = companyName + "<br><br>• " + position;
+    applicationBox.innerHTML = companyName + "<br><br>• " + position + "<br>• " + location;
 
     applicationBox.addEventListener("dragstart", dragStart);
     applicationBox.addEventListener("dragend", dragEnd);
@@ -261,16 +263,6 @@ remindSubmit.addEventListener("click", () => {
   } catch (error) {
       console.log("Error adding new reminder!", error);
   }
-
-
-
-
-
-
-
-
-
-
 
 });
 
