@@ -1,8 +1,8 @@
 const express = require('express');
-const { User, Application, Tip, Interview } = require('../models/user');
+const { User, Application, Tip, Reminder, Interview } = require('../models/user');
 const router = express.Router();
 
-const Entry = User | Application | Tip | Interview;
+const Entry = User | Application | Tip | Reminder | Interview;
 
 // Middleware for routes, the id must exist!
 var checkIDExist = (req, res, next) => {  
