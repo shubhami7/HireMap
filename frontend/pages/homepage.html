@@ -46,7 +46,7 @@
             <input type="date" id="dateApplied" name="dateApplied" required>
             <br>
             <!-- Application Submission Deadline -->
-            <label for="deadline"><br>Application Submission Deadline:</label>
+            <label for="deadline"><br>Application Submission <br> Deadline:</label>
             <input type="date" id="deadline" name="deadline" required>
             <br>
             <!--Status -->
@@ -101,7 +101,7 @@
     <!-- Sidebar for Upcoming Dates -->
     <div class="sidebar">
       <div class="upcoming-dates">
-        <h3>Upcoming Dates</h3>
+        <h3>Reminders and Deadlines</h3>
         <br>
         <div class="reminder-button">
           <button id="new-reminder-button">+ New Reminder</button>
@@ -112,16 +112,44 @@
             <span class="close-reminder">&times</span>
 
             <p>Upcoming Date?</p>
-            <label for="reminder-des">Description:<br><br></label>
-            <input type="text" id="reminder-des" name="reminder-res" required>
+            <br>
+            <label for="reminder-des">New Reminder:<br></label>
+            <input type="text" id="reminder-des" name="reminder-des" required>
 
           
-            <label for="remind-date"><br>Upcoming Date:<br></label>
-            <input type="date" id="future-date" name="future-date" required><br><br>
+            <label for="remind-date"><br>Deadline:<br></label>
+            <input type="date" id="remind-date" name="remind-date" required><br><br>
 
             <button id="reminder-submit">Submit</button>
           </div>
         </div>
+
+      <!-- checklist for reminders -->
+      <div id="add-reminder" class="add-reminder">
+        <br>
+        <div class="reminder-container">
+          <div class="reminder-row">
+            <!-- Reminder Name and Date (Stacked) -->
+            <div class="reminder-text">
+              <p class="reminder-name">Example Reminder</p>
+              <p class="reminder-date">Deadline: 12/4/2024</p>
+            </div>
+
+            <!-- Checkbox -->
+            <label>
+              <input type="checkbox">
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+            
+
+
+
+        </div>
+
       </div>
       </div>
     </div>
