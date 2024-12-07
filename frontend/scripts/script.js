@@ -183,7 +183,7 @@ submitBtn.addEventListener("click", async () => {
     document.getElementById("status").value = "interested";
     modal.style.display = "none";
   } catch (error) {
-    console.log("Error adding new application.", error);
+    console.log("Error adding new application!", error);
   }
 });
 
@@ -192,6 +192,7 @@ const reminder = document.getElementById("reminder-popup");
 const remindButton = document.getElementById("new-reminder-button");
 const remindSpan = document.getElementsByClassName("close-reminder")[0];
 const remindSubmit = document.getElementById("reminder-submit");
+
 
 remindButton.addEventListener("click", () => {
   reminder.style.display = "flex";
@@ -206,6 +207,23 @@ window.addEventListener("click", function (event) {
     reminder.style.display = "none";
   }
 });
+
+// add delete button functionality
+
+function addDeleteListeners() {
+
+  const deleteButtons = document.querySelectorAll('.delete-reminder');
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const reminderToDelete = e.target.closest('.reminder-container');
+      if (reminderToDelete) {
+        reminderToDelete.remove();
+      }
+    });
+  });
+}
+
+addDeleteListeners(); 
 
 remindSubmit.addEventListener("click", () => {
   const reminderText = document.getElementById("reminder-des").value;
@@ -238,13 +256,19 @@ remindSubmit.addEventListener("click", () => {
     reminderDateP.className = "reminder-date";
     reminderDateP.textContent = `Deadline: ${reminderDate}`;
 
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "delete-reminder";
+    deleteButton.textContent = "🗑 Delete";
+
     reminderTextDiv.appendChild(reminderName);
     reminderTextDiv.appendChild(reminderDateP);
+    reminderTextDiv.appendChild(deleteButton);
 
     const checkboxLabel = document.createElement("label");
     const checkboxInput = document.createElement("input");
     checkboxInput.type = "checkbox";
     checkboxLabel.appendChild(checkboxInput);
+
 
     reminderRow.appendChild(reminderTextDiv);
     reminderRow.appendChild(checkboxLabel);
@@ -258,12 +282,14 @@ remindSubmit.addEventListener("click", () => {
     document.getElementById("remind-date").value = "";
     
     reminder.style.display = "none";
-
+    addDeleteListeners();
 
   } catch (error) {
       console.log("Error adding new reminder!", error);
   }
 
+
 });
+
 
 export { appQuery };
