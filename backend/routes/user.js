@@ -63,7 +63,7 @@ router.get('/application', (req, res) => {
     });
 });
 
-// Get Reminders
+// Get All Reminders
 router.get('/reminder', (req, res) => {
     Reminder.findAll().then(reminders => {
         res.status(200).json(reminders);
