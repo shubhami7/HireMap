@@ -178,6 +178,9 @@ submitBtn.addEventListener("click", async () => {
     // Clear form fields and close the modal
     document.getElementById("companyName").value = "";
     document.getElementById("position").value = "";
+    document.getElementById("jobLocation").value = "";
+    document.getElementById("jobContacts").value = "";
+    document.getElementById("jobDescription").value = "";
     document.getElementById("dateApplied").value = "";
     document.getElementById("deadline").value = "";
     document.getElementById("status").value = "interested";
