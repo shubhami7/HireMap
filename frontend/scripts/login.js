@@ -4,7 +4,7 @@ import { Database } from '../components/indexedDB.js';
 const db = new Database("appDB");
 await db.openDB();
 
-// Show/Hide forms
+// DOM elements
 const signinForm = document.getElementById("signinForm");
 const signupForm = document.getElementById("signupForm");
 const signupContainer = document.getElementById("signupContainer");
@@ -22,6 +22,16 @@ showSignin.addEventListener("click", () => {
   signinForm.parentElement.style.display = "block";
 });
 
+// Hashing function (for simplicity)
+async function hashPassword(password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hash = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(hash))
+    .map(b => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
 // Sign-up logic
 signupForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -36,15 +46,15 @@ signupForm.addEventListener("submit", async (e) => {
   }
 
   try {
-    // Check if the user already exists
     const existingUser = await db.getAppByID(email);
     if (existingUser) {
       alert("User already exists. Please sign in.");
       return;
     }
 
-    // Save user credentials in IndexedDB
-    await db.addApp({ id: email, password });
+    const hashedPassword = await hashPassword(password);
+
+    await db.addApp({ id: email, password: hashedPassword });
     alert("Sign-up successful! Please sign in.");
     signupContainer.style.display = "none";
     signinForm.parentElement.style.display = "block";
@@ -62,8 +72,9 @@ signinForm.addEventListener("submit", async (e) => {
 
   try {
     const user = await db.getAppByID(email);
+    const hashedPassword = await hashPassword(password);
 
-    if (user && user.password === password) {
+    if (user && user.password === hashedPassword) {
       alert("Login successful!");
       window.location.href = "./homepage.html"; // Redirect to homepage
     } else {
