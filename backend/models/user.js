@@ -26,6 +26,7 @@ User.init({
     sequelize,
     modelName: 'User',
     tableName: 'users',
+    timestamps: true, // Automatically adds createdAt and updatedAt timestamps
 });
 
 // Application Schema
@@ -38,6 +39,7 @@ Application.init({
     },
     userId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: User,
             key: 'id',
@@ -81,6 +83,7 @@ Application.init({
     sequelize,
     modelName: 'Application',
     tableName: 'applications',
+    timestamps: true, // Adds createdAt and updatedAt
 });
 
 // Tip Schema
@@ -93,6 +96,7 @@ Tip.init({
     },
     userId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: User,
             key: 'id',
@@ -111,6 +115,7 @@ Tip.init({
     sequelize,
     modelName: 'Tip',
     tableName: 'tips',
+    timestamps: true,
 });
 
 // Reminder Schema
@@ -123,6 +128,7 @@ Reminder.init({
     },
     userId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: User,
             key: 'id',
@@ -130,6 +136,7 @@ Reminder.init({
     },
     date: {
         type: DataTypes.DATE,
+        allowNull: false,
     },
     description: {
         type: DataTypes.STRING,
@@ -138,6 +145,7 @@ Reminder.init({
     sequelize,
     modelName: 'Reminder',
     tableName: 'reminders',
+    timestamps: true,
 });
 
 // Interview Schema
@@ -150,6 +158,7 @@ Interview.init({
     },
     applicationId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: Application,
             key: 'id',
@@ -157,6 +166,7 @@ Interview.init({
     },
     date: {
         type: DataTypes.DATE,
+        allowNull: false,
     },
     format: {
         type: DataTypes.ENUM('phone', 'onsite', 'technical exam'),
@@ -168,19 +178,20 @@ Interview.init({
     sequelize,
     modelName: 'Interview',
     tableName: 'interviews',
+    timestamps: true,
 });
 
 // Establish relationships between tables
-User.hasMany(Application, { foreignKey: 'userId' });
+User.hasMany(Application, { foreignKey: 'userId', onDelete: 'CASCADE' });
 Application.belongsTo(User, { foreignKey: 'userId' });
 
-User.hasMany(Tip, { foreignKey: 'userId' });
+User.hasMany(Tip, { foreignKey: 'userId', onDelete: 'CASCADE' });
 Tip.belongsTo(User, { foreignKey: 'userId' });
 
-User.hasMany(Reminder, { foreignKey: 'userId' });
+User.hasMany(Reminder, { foreignKey: 'userId', onDelete: 'CASCADE' });
 Reminder.belongsTo(User, { foreignKey: 'userId' });
 
-Application.hasMany(Interview, { foreignKey: 'applicationId' });
+Application.hasMany(Interview, { foreignKey: 'applicationId', onDelete: 'CASCADE' });
 Interview.belongsTo(Application, { foreignKey: 'applicationId' });
 
 module.exports = {
