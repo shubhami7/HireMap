@@ -501,12 +501,16 @@ const closeBtn = document.getElementById("popup-close");
 const doNotShowCheckbox = document.getElementById("do-not-show");
 
 // Show the pop-up
+document.addEventListener("DOMContentLoaded", () => {
+  showPopup();
+});
+
 async function showPopup() {
-  const doNotShowToday = localStorage.getItem("doNotShowToday");
+  const doNotShowToday = true;//localStorage.getItem("doNotShowToday");
 
   if (!doNotShowToday || new Date().toDateString() !== doNotShowToday) {
       try {
-          // Fetch reminders from the backend
+          // Fetch reminders
           const response = await fetch("http://localhost:3021/reminder");
           if (!response.ok) {
               throw new Error("Failed to fetch reminders.");
@@ -514,7 +518,7 @@ async function showPopup() {
 
           const reminders = await response.json();
 
-          // Populate the reminders in the pop-up
+          // Populate reminders
           const reminderList = document.getElementById("reminder-list");
           reminderList.innerHTML = ""; // Clear existing reminders
           reminders.forEach((reminder) => {
@@ -524,13 +528,29 @@ async function showPopup() {
           });
 
           // Display the pop-up
+          const popup = document.getElementById("popup-container");
+          const overlay = document.getElementById("popup-overlay");
           popup.style.display = "block";
           overlay.style.display = "block";
+
+          // Event listener for close button
+          document.getElementById("popup-close").addEventListener("click", () => {
+              popup.style.display = "none";
+              overlay.style.display = "none";
+          });
+
+          // Event listener for "Do not show today"
+          document.getElementById("do-not-show").addEventListener("change", (e) => {
+              if (e.target.checked) {
+                  localStorage.setItem("doNotShowToday", new Date().toDateString());
+              }
+          });
       } catch (error) {
           console.error("Error fetching reminders:", error);
       }
   }
 }
+
 
 // Close the pop-up
 function closePopup() {
