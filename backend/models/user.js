@@ -70,16 +70,16 @@ Application.init({
         values: ['interested', 'applied', 'interviewing', 'offer'],
     },
     isDeleted: {
-        type: DataTypes.ENUM,
+        type: DataTypes.BOOLEAN,
     },
     // previousStatus: {
     //     type: DataTypes.ENUM,
     //     values: ['interested', 'applied', 'interviewing', 'offer'],
     //     allowNull: true
     // },
-    // dateApplied: {
-    //     type: DataTypes.DATE
-    // },
+    dateApplied: {
+        type: DataTypes.DATE
+    },
     // dateDeleted: {
     //     type: DataTypes.DATE,
     //     allowNull: true
