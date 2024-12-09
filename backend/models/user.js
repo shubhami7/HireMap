@@ -44,7 +44,6 @@ Application.init({
         primaryKey: true,
         unique: true,
         autoIncrement: true,
-        allowNull: true
     },
     // userId: {
     //     type: DataTypes.INTEGER, // Foreign key for the User
