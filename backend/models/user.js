@@ -43,6 +43,7 @@ Application.init({
         type: DataTypes.INTEGER,
         primaryKey: true,
         unique: true,
+        autoIncrement: true
     },
     userId: {
         type: DataTypes.INTEGER, // Foreign key for the User
@@ -69,21 +70,24 @@ Application.init({
     previousStatus: {
         type: DataTypes.ENUM,
         values: ['interested', 'applied', 'interviewing'],
+        allowNull: true
     },
     dateApplied: {
         type: DataTypes.DATE
     },
     dateDeleted: {
         type: DataTypes.DATE,
+        allowNull: true
     },
     hasStar: {
         type: DataTypes.BOOLEAN,
+        allowNull: true
     },
     // TODO: Add resume, cover letter
 }, {
     sequelize,
     modelName: 'Application',
-    tableName: 'applications',
+    tableName: 'Applications',
 });
 
 // Tip Schema

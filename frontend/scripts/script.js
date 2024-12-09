@@ -128,84 +128,57 @@ window.onclick = function (event) {
   }
 };
 
-let appQuery;
+// let appQuery;
 
 submitBtn.addEventListener("click", async () => {
+
   const companyName = document.getElementById("companyName").value;
   const position = document.getElementById("position").value;
   const location = document.getElementById("jobLocation").value;
+  const contacts = document.getElementById("jobContacts").value;
   const status = document.getElementById("status").value;
+  const previousStatus = null;
+  const dateApplied = null;
+  const dateDeleted = null;
+  const hasStar = null;
 
   const applicationData = {
-    id: new Date().getTime(),
+    // id: new Date().getTime(),
     companyName: companyName,
     position: position,
     location: location,
+    contacts: contacts,
     status: status,
     dateApplied: document.getElementById("dateApplied").value,
     deadline: document.getElementById("deadline").value,
+    previousStatus: null,
+    dateDeleted: null,
+    hasStar: null
   };
 
+
   try {
-    // Save the application to IndexedDB
-    db.addApp(applicationData);
 
-    // Create a new application box
-    const applicationBox = document.createElement("div");
-    applicationBox.className = "application-box";
-    applicationBox.id = applicationData.id;
-    applicationBox.draggable = true;
-    applicationBox.innerHTML = companyName + "<br><br>• " + position + "<br>• " + location;
 
-    // Create inner content with a star icon for marking priority
-    applicationBox.innerHTML = `
-      <span class="star-icon" title="Mark as priority">☆</span>
-      ${companyName}<br><br>• ${position}<br>• ${location}
-    `;
+    console.log("data to backend ", JSON.stringify(applicationData));
 
-    // Add event listener to toggle priority on the star icon
-    const starIcon = applicationBox.querySelector(".star-icon");
-    starIcon.addEventListener("click", () => {
-      const statusColumn = applicationBox.closest(".status-column");
-      if (statusColumn) {
-        const isStarred = starIcon.textContent === "★";
-        starIcon.textContent = isStarred ? "☆" : "★"; // Toggle star
-        applicationBox.classList.toggle("priority", !isStarred); // Add or remove the priority class
+    // Save the application to database
+    const response = await fetch('http://localhost:3021/application', {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(applicationData)
 
-        // Reorder applications based on priority
-        const boxes = Array.from(
-          statusColumn.querySelectorAll(".application-box")
-        );
-
-        // Separate priority and non-priority boxes
-        const priorityBoxes = boxes.filter((box) =>
-          box.querySelector(".star-icon").textContent === "★"
-        );
-        const nonPriorityBoxes = boxes.filter((box) =>
-          box.querySelector(".star-icon").textContent === "☆"
-        );
-
-        // Remove all boxes temporarily
-        boxes.forEach((box) => statusColumn.removeChild(box));
-
-        // Append priority boxes first, then non-priority boxes
-        priorityBoxes.forEach((box) => statusColumn.appendChild(box));
-        nonPriorityBoxes.forEach((box) => statusColumn.appendChild(box));
-      }
     });
 
-    applicationBox.addEventListener("dragstart", dragStart);
-    applicationBox.addEventListener("dragend", dragEnd);
 
-    const statusColumn = document.getElementById(status);
-    if (statusColumn) {
-      statusColumn.appendChild(applicationBox);
+    if (!response.ok) {
+      throw new Error("Failed to create application");
     }
 
-    appQuery = companyName;
-    applicationBox.addEventListener("dblclick", () => {
-      window.location.href = `applicationInfo.html?id=${applicationData.id}`;
-    });
+    const newApplication = await response.json();
+    renderApplication(newApplication);
 
     // Clear form fields and close the modal
     document.getElementById("companyName").value = "";
@@ -217,10 +190,79 @@ submitBtn.addEventListener("click", async () => {
     document.getElementById("deadline").value = "";
     document.getElementById("status").value = "interested";
     modal.style.display = "none";
+
   } catch (error) {
     console.log("Error adding new application!", error);
   }
 });
+
+// render application box
+function renderApplication(application) {
+
+  // Create a new application box
+  const applicationBox = document.createElement("div");
+  applicationBox.className = "application-box";
+  applicationBox.id = applicationData.id;
+  applicationBox.draggable = true;
+  applicationBox.innerHTML = companyName + "<br><br>• " + position + "<br>• " + location;
+
+  // Create inner content with a star icon for marking priority
+  applicationBox.innerHTML = `
+    <span class="star-icon" title="Mark as priority">☆</span>
+    ${companyName}<br><br>• ${position}<br>• ${location}
+  `;
+
+  // Add event listener to toggle priority on the star icon
+  const starIcon = applicationBox.querySelector(".star-icon");
+  starIcon.addEventListener("click", () => {
+    const statusColumn = applicationBox.closest(".status-column");
+    if (statusColumn) {
+      const isStarred = starIcon.textContent === "★";
+      starIcon.textContent = isStarred ? "☆" : "★"; // Toggle star
+      applicationBox.classList.toggle("priority", !isStarred); // Add or remove the priority class
+
+      // Reorder applications based on priority
+      const boxes = Array.from(
+        statusColumn.querySelectorAll(".application-box")
+      );
+
+      // Separate priority and non-priority boxes
+      const priorityBoxes = boxes.filter((box) =>
+        box.querySelector(".star-icon").textContent === "★"
+      );
+      const nonPriorityBoxes = boxes.filter((box) =>
+        box.querySelector(".star-icon").textContent === "☆"
+      );
+
+      // Remove all boxes temporarily
+      boxes.forEach((box) => statusColumn.removeChild(box));
+
+      // Append priority boxes first, then non-priority boxes
+      priorityBoxes.forEach((box) => statusColumn.appendChild(box));
+      nonPriorityBoxes.forEach((box) => statusColumn.appendChild(box));
+    }
+  });
+
+  applicationBox.addEventListener("dragstart", dragStart);
+  applicationBox.addEventListener("dragend", dragEnd);
+
+  const statusColumn = document.getElementById(status);
+  if (statusColumn) {
+    statusColumn.appendChild(applicationBox);
+  }
+
+  // appQuery = companyName;
+  applicationBox.addEventListener("dblclick", () => {
+    window.location.href = `applicationInfo.html?id=${applicationData.id}`;
+  });
+
+}
+
+
+
+
+
+
 
 // Reminder Modal
 const reminder = document.getElementById("reminder-popup");
@@ -281,7 +323,6 @@ reminderDeleteListeners();
 // create and render new reminder 
 
 remindSubmit.addEventListener("click", async () => {
-  event.preventDefault(); // Prevent page reload or form reset
   
   const reminderText = document.getElementById("reminder-des").value;
   const reminderDate = document.getElementById("remind-date").value;

@@ -25,19 +25,24 @@ const checkIDExist = (req, res, next) => {
 
 // Example route: Creating Application
 router.post('/application', (req, res) => {
+
+    console.log("Data received by backend:", req.body);
+
     Application.create({
         // TODO: Does this work if the optional entries are not entered?
         // Simple fix would be to check if each attribute exists in req body, 
         // and set it if it does.
         companyName: req.body.companyName,
+        userId: 1,
         position: req.body.position,
         location: req.body.location,
         contacts: req.body.contacts,
         status: req.body.status,
-        previousStatus: req.body.previousStatus,
+        previousStatus: req.body.previousStatus || null,
         dateApplied: req.body.dateApplied,
-        dateDeleted: req.body.dateDeleted,
-        hasStar: req.body.hasStar
+        dateDeleted: req.body.dateDeleted || null,
+        deadline: req.body.deadline,
+        hasStar: req.body.hasStar || null
     }).then(application => {
         /*console.log(application.get({
             plain: true
