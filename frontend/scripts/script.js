@@ -162,6 +162,43 @@ submitBtn.addEventListener("click", async () => {
     applicationBox.draggable = true;
     applicationBox.innerHTML = companyName + "<br><br>• " + position + "<br>• " + location;
 
+    // Create inner content with a star icon for marking priority
+    applicationBox.innerHTML = `
+      <span class="star-icon" title="Mark as priority">☆</span>
+      ${companyName}<br><br>• ${position}<br>• ${location}
+    `;
+
+    // Add event listener to toggle priority on the star icon
+    const starIcon = applicationBox.querySelector(".star-icon");
+    starIcon.addEventListener("click", () => {
+      const statusColumn = applicationBox.closest(".status-column");
+      if (statusColumn) {
+        const isStarred = starIcon.textContent === "★";
+        starIcon.textContent = isStarred ? "☆" : "★"; // Toggle star
+        applicationBox.classList.toggle("priority", !isStarred); // Add or remove the priority class
+
+        // Reorder applications based on priority
+        const boxes = Array.from(
+          statusColumn.querySelectorAll(".application-box")
+        );
+
+        // Separate priority and non-priority boxes
+        const priorityBoxes = boxes.filter((box) =>
+          box.querySelector(".star-icon").textContent === "★"
+        );
+        const nonPriorityBoxes = boxes.filter((box) =>
+          box.querySelector(".star-icon").textContent === "☆"
+        );
+
+        // Remove all boxes temporarily
+        boxes.forEach((box) => statusColumn.removeChild(box));
+
+        // Append priority boxes first, then non-priority boxes
+        priorityBoxes.forEach((box) => statusColumn.appendChild(box));
+        nonPriorityBoxes.forEach((box) => statusColumn.appendChild(box));
+      }
+    });
+
     applicationBox.addEventListener("dragstart", dragStart);
     applicationBox.addEventListener("dragend", dragEnd);
 
