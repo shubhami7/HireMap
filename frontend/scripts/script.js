@@ -57,7 +57,7 @@ function dragLeave(e) {
 }
 
 async function dragDrop(e) {
-  const id = e.dataTransfer.getData("text/plain");
+  const id = e.dataTransfer.getData("text/plain"); // Get the ID of the dragged application
   const draggable = document.getElementById(id);
 
   const column = e.target.closest(".status-column");
@@ -65,15 +65,30 @@ async function dragDrop(e) {
     column.appendChild(draggable); // Append the dragged element to the new column
     column.classList.remove("drag-over"); // Remove the highlight
 
-    // Update application status in IndexedDB
-    const newStatus = column.id;
-    const appData = await db.getAppByID(parseInt(id, 10));
-    if (appData) {
-      appData.status = newStatus;
-      await db.updateApp(appData.id, appData);
+    const newStatus = column.id; // Get the new status from the column ID
+
+    try {
+      // Send an update request to the backend to update the status
+      const response = await fetch(`http://localhost:3021/application/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ status: newStatus }), // Update only the status field
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update application status");
+      }
+
+      console.log(`Application ${id} updated to status: ${newStatus}`);
+    } catch (error) {
+      console.error("Error updating application status:", error);
     }
   }
 }
+
+
 
 function dragOverTrash(e) {
   e.preventDefault(); // Allows the drop

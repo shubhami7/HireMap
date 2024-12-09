@@ -95,24 +95,25 @@ router.get('/application/:id', [checkIDExist], (req, res) => {
 });
 
 // Example route: Updating an application by id
-router.put('/application/:id', [checkIDExist], (req, res) => {
-    //console.log('Update book by id');
-    Application.update({
-        companyName: req.body.companyName,
-        position: req.body.position,
-        location: req.body.location,
-        contacts: req.body.contacts,
-        status: req.body.status,
-        previousStatus: req.body.previousStatus,
-        dateApplied: req.body.dateApplied,
-        dateDeleted: req.body.dateDeleted,
-        hasStar: req.body.hasStar
-    },{
-        where: { id: req.params.id }
-    }).then(result => {
-        res.status(200).json(result);
-    });
-});
+router.put('/application/:id', async (req, res) => {
+    try {
+      const result = await Application.update(
+        { status: req.body.status }, // Only update the status
+        { where: { id: req.params.id } } // Match the application by ID
+      );
+  
+      if (result[0] === 0) { // Sequelize returns an array, [0] means no rows were updated
+        return res.status(404).json({ message: "Application not found" });
+      }
+  
+      res.status(200).json({ message: "Application updated successfully" });
+    } catch (error) {
+      console.error("Error updating application:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  });
+  
+
 
 // Example route: Delete user by id
 router.delete('/user/:id', [checkIDExist], (req, res) => {
