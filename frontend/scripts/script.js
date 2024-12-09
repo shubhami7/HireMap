@@ -491,6 +491,7 @@ const popup = document.getElementById("popup-container");
 const overlay = document.getElementById("popup-overlay");
 const closeBtn = document.getElementById("popup-close");
 const doNotShowCheckbox = document.getElementById("do-not-show");
+const greetingElement = document.getElementById("popup-greeting");
 
 // Show the pop-up
 document.addEventListener("DOMContentLoaded", () => {
@@ -498,10 +499,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function showPopup() {
-  const doNotShowToday = true; //localStorage.getItem("doNotShowToday");
+  const doNotShowToday = true//localStorage.getItem("doNotShowToday");
 
   if (!doNotShowToday || new Date().toDateString() !== doNotShowToday) {
     try {
+      // Determine the time-based greeting
+      const currentHour = new Date().getHours();
+      let greeting;
+      if (currentHour < 12) {
+        greeting = "Good Morning!";
+      } else if (currentHour < 18) {
+        greeting = "Good Afternoon!";
+      } else {
+        greeting = "Good Evening!";
+      }
+      greetingElement.textContent = greeting;
+
       // Fetch reminders
       const response = await fetch("http://localhost:3021/reminder");
       if (!response.ok) {
@@ -513,7 +526,8 @@ async function showPopup() {
       // Sort reminders by deadline date in ascending order (closest deadlines first)
       reminders.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-      // Limit to 3 reminders with the closest deadlines
+      // Limit to 3 reminders
+
       const latestReminders = reminders.slice(0, 3);
 
       // Populate reminders
@@ -522,10 +536,7 @@ async function showPopup() {
       latestReminders.forEach((reminder) => {
         const listItem = document.createElement("li");
 
-        // Check if reminder is overdue
-        const isOverdue = new Date(reminder.date) < new Date();
         listItem.innerHTML = `
-              ${isOverdue ? "<strong style='color: red;'>Overdue</strong>" : ""}
                   ${reminder.description} - ${new Date(
           reminder.date
         ).toLocaleDateString()} 
