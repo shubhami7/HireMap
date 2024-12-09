@@ -1,9 +1,6 @@
 import { Database } from "../components/indexedDB.js";
 import { appQuery } from "./script.js";
 
-// Initialize the database
-const db = new Database("appDB");
-await db.openDB();
 
 // Log that the script is loaded
 console.log("loading...");

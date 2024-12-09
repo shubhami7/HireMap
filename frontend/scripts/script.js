@@ -1,9 +1,4 @@
-// Import Database class
-import { Database } from "../components/indexedDB.js";
 
-// Initialize the database
-const db = new Database("appDB");
-await db.openDB();
 
 // Add event listeners to each application box
 const boxes = document.querySelectorAll(".application-box");
@@ -315,7 +310,6 @@ remindSubmit.addEventListener("click", async () => {
     }
 
     const newReminder = await response.json();
-
     renderReminder(newReminder);
 
     document.getElementById("reminder-des").value = "";
@@ -330,7 +324,6 @@ remindSubmit.addEventListener("click", async () => {
 
 // render reminders after reload
 document.addEventListener("DOMContentLoaded", async () => {
-
   try {
     
     const response = await fetch('http://localhost:3021/reminder');
@@ -395,6 +388,3 @@ function renderReminder(reminder) {
   reminderDeleteListeners();
 
 }
-
-
-export { appQuery };
