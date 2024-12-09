@@ -61,7 +61,7 @@ router.post('/reminder', (req, res) => {
     }).then(reminder => {
         res.status(200).json(reminder);
     }).catch(err => {
-        res.status(400).json('Error has occured: ' + `${err.message}`);
+        res.status(400).json('Error has occurred: ' + `${err.message}`);
     });
 });
 

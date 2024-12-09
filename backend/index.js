@@ -4,7 +4,7 @@ const cors = require('cors'); // Import the cors middleware
 const sequelize = require('./config/database');
 const cron = require('node-cron');
 
-sequelize.sync()
+sequelize.sync({alter: true})
     .then(() => console.log("Database is open."))
     .catch((err) => console.log("Could not open database: " + `${err.message}`));
 
