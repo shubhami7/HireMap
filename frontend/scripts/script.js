@@ -286,6 +286,8 @@ reminderDeleteListeners();
 // create and render new reminder 
 
 remindSubmit.addEventListener("click", async () => {
+  event.preventDefault(); // Prevent page reload or form reset
+  
   const reminderText = document.getElementById("reminder-des").value;
   const reminderDate = document.getElementById("remind-date").value;
 
@@ -297,7 +299,9 @@ remindSubmit.addEventListener("click", async () => {
 
   // save data
   try {
-  
+    
+    console.log("data to backend ", JSON.stringify(reminderData));
+
     const response = await fetch('http://localhost:3021/reminder', {
       method: 'POST',
       headers:{
@@ -383,6 +387,9 @@ function renderReminder(reminder) {
   reminderContainer.appendChild(reminderRow);
 
   const currReminders = document.getElementById("add-reminder");
+  if (!currReminders) {
+    console.error('No element with id "add-reminder" found');
+  }
   currReminders.appendChild(reminderContainer);
 
   reminderDeleteListeners();

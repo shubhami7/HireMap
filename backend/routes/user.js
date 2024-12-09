@@ -2,20 +2,26 @@ const express = require('express');
 const { User, Application, Tip, Reminder, Interview } = require('../models/user');
 const router = express.Router();
 
-const Entry = User | Application | Tip | Reminder | Interview;
+const checkIDExist = (req, res, next) => {
+    const modelMap = {
+        user: User,
+        application: Application,
+        tip: Tip,
+        reminder: Reminder,
+        interview: Interview
+    };
+    const model = modelMap[req.params.model];
+    if (!model) return res.status(400).json({ error: "Invalid model type" });
 
-// Middleware for routes, the id must exist!
-var checkIDExist = (req, res, next) => {  
-    //console.log('Check ID exist');
-    Entry.count({ where: { id: req.params.id } }).then(count => {
-        if (count != 0) {
+    model.count({ where: { id: req.params.id } }).then(count => {
+        if (count > 0) {
             next();
         } else {
-            //console.log('Book not found');
-            res.status(400).json('Book not found');
+            res.status(404).json({ error: "Record not found" });
         }
-    }); 
+    }).catch(err => res.status(500).json({ error: err.message }));
 };
+
 
 // Example route: Creating Application
 router.post('/application', (req, res) => {
@@ -37,13 +43,16 @@ router.post('/application', (req, res) => {
             plain: true
         }));*/
         res.status(200).json(application);
-    }).error(err => {
+    }).catch(err => {
         res.status(405).json('Error has occurred: ' + `${err.message}`);
     });
 });
 
 // Create Reminder
 router.post('/reminder', (req, res) => {
+
+    console.log("Data received by backend:", req.body);
+
     Reminder.create({
         date: req.body.date,
         description: req.body.description
@@ -76,7 +85,8 @@ router.get('/reminder', (req, res) => {
 // Example route: Get Application by id
 router.get('/application/:id', [checkIDExist], (req, res) => {
     //console.log('Get app by id');
-    Application.findById(req.params.id).then(application => {
+    Application.findByPk
+    (req.params.id).then(application => {
         //console.log(application);
         res.status(200).json(application);
     });
