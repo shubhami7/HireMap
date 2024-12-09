@@ -43,11 +43,13 @@ Application.init({
         type: DataTypes.INTEGER,
         primaryKey: true,
         unique: true,
-        autoIncrement: true
+        autoIncrement: true,
+        allowNull: true
     },
-    userId: {
-        type: DataTypes.INTEGER, // Foreign key for the User
-    },
+    // userId: {
+    //     type: DataTypes.INTEGER, // Foreign key for the User
+    //     allowNull: true
+    // },
     companyName: {
         type: DataTypes.STRING,
     },
@@ -67,22 +69,22 @@ Application.init({
         type: DataTypes.ENUM,
         values: ['interested', 'applied', 'interviewing'],
     },
-    previousStatus: {
-        type: DataTypes.ENUM,
-        values: ['interested', 'applied', 'interviewing'],
-        allowNull: true
-    },
-    dateApplied: {
-        type: DataTypes.DATE
-    },
-    dateDeleted: {
-        type: DataTypes.DATE,
-        allowNull: true
-    },
-    hasStar: {
-        type: DataTypes.BOOLEAN,
-        allowNull: true
-    },
+    // previousStatus: {
+    //     type: DataTypes.ENUM,
+    //     values: ['interested', 'applied', 'interviewing'],
+    //     allowNull: true
+    // },
+    // dateApplied: {
+    //     type: DataTypes.DATE
+    // },
+    // dateDeleted: {
+    //     type: DataTypes.DATE,
+    //     allowNull: true
+    // },
+    // hasStar: {
+    //     type: DataTypes.BOOLEAN,
+    //     allowNull: true
+    // },
     // TODO: Add resume, cover letter
 }, {
     sequelize,

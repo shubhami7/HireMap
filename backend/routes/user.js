@@ -44,9 +44,6 @@ router.post('/application', (req, res) => {
         deadline: req.body.deadline,
         hasStar: req.body.hasStar || null
     }).then(application => {
-        /*console.log(application.get({
-            plain: true
-        }));*/
         res.status(200).json(application);
     }).catch(err => {
         res.status(405).json('Error has occurred: ' + `${err.message}`);
