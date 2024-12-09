@@ -143,6 +143,18 @@
       </div>
     </div>
   </div>
-  <script src="../scripts/script.js" ></script>
+  <!-- Popup HTML -->
+  <div id="popup-overlay"></div>
+  <div id="popup-container">
+      <button id="popup-close">&times;</button>
+      <h2 id="popup-greeting"></h2>
+      <ul id="reminder-list"></ul>
+      <p>“Stay positive, work hard, and make it happen!”</p>
+      <div class="popup-footer">
+          <label><input type="checkbox" id="do-not-show"> Do not show today</label>
+      </div>
+  </div>
+  
+  <script src="../scripts/script.js" defer></script>
 </body>
 </html>

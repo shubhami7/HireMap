@@ -89,7 +89,6 @@ async function dragDrop(e) {
 }
 
 
-
 function dragOverTrash(e) {
   e.preventDefault(); // Allows the drop
 }
@@ -494,3 +493,61 @@ sortDropdown.addEventListener("change", () => {
     applications.forEach((app) => column.appendChild(app));
   });
 });
+
+// Get references to pop-up elements
+const popup = document.getElementById("popup-container");
+const overlay = document.getElementById("popup-overlay");
+const closeBtn = document.getElementById("popup-close");
+const doNotShowCheckbox = document.getElementById("do-not-show");
+
+// Show the pop-up
+async function showPopup() {
+  const doNotShowToday = localStorage.getItem("doNotShowToday");
+
+  if (!doNotShowToday || new Date().toDateString() !== doNotShowToday) {
+      try {
+          // Fetch reminders from the backend
+          const response = await fetch("http://localhost:3021/reminder");
+          if (!response.ok) {
+              throw new Error("Failed to fetch reminders.");
+          }
+
+          const reminders = await response.json();
+
+          // Populate the reminders in the pop-up
+          const reminderList = document.getElementById("reminder-list");
+          reminderList.innerHTML = ""; // Clear existing reminders
+          reminders.forEach((reminder) => {
+              const listItem = document.createElement("li");
+              listItem.textContent = `${reminder.description} - ${new Date(reminder.date).toLocaleDateString()}`;
+              reminderList.appendChild(listItem);
+          });
+
+          // Display the pop-up
+          popup.style.display = "block";
+          overlay.style.display = "block";
+      } catch (error) {
+          console.error("Error fetching reminders:", error);
+      }
+  }
+}
+
+// Close the pop-up
+function closePopup() {
+    popup.style.display = "none";
+    overlay.style.display = "none";
+
+    // If the checkbox is checked, set a flag in local storage
+    if (doNotShowCheckbox.checked) {
+        localStorage.setItem("doNotShowToday", new Date().toDateString());
+    }
+}
+
+// Event listener for close button
+closeBtn.addEventListener("click", closePopup);
+
+// Event listener for clicking outside the pop-up
+overlay.addEventListener("click", closePopup);
+
+// Show the pop-up when the page loads
+document.addEventListener("DOMContentLoaded", showPopup);

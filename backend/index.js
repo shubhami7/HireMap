@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors'); // Import the cors middleware
 
 const sequelize = require('./config/database');
-sequelize.sync()
+sequelize.sync({alter:true})
     .then(() => console.log("Database is open."))
     .catch((err) => console.log("Could not open database: " + `${err.message}`));
 
