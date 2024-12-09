@@ -33,7 +33,7 @@ app.post("/users", (req, res) => {
 
 
 // Post to the applications table
-app.post("/applications", (req, res) => {
+app.post("/application", (req, res) => {
     Application.create(req.body)
     .then(() => res.send("application entry added"))
     .catch(err => res.status(400).json({ error: err.message }));

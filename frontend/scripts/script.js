@@ -158,8 +158,6 @@ submitBtn.addEventListener("click", async () => {
 
 
   try {
-
-
     console.log("data to backend ", JSON.stringify(applicationData));
 
     // Save the application to database
@@ -169,7 +167,6 @@ submitBtn.addEventListener("click", async () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(applicationData)
-
     });
 
 
@@ -198,18 +195,16 @@ submitBtn.addEventListener("click", async () => {
 
 // render application box
 function renderApplication(application) {
-
   // Create a new application box
   const applicationBox = document.createElement("div");
   applicationBox.className = "application-box";
-  applicationBox.id = applicationData.id;
+  applicationBox.id = application.id; // Use application.id from the parameter
   applicationBox.draggable = true;
-  applicationBox.innerHTML = companyName + "<br><br>• " + position + "<br>• " + location;
 
-  // Create inner content with a star icon for marking priority
+  // Set inner HTML using application data
   applicationBox.innerHTML = `
     <span class="star-icon" title="Mark as priority">☆</span>
-    ${companyName}<br><br>• ${position}<br>• ${location}
+    ${application.companyName}<br><br>• ${application.position}<br>• ${application.location}
   `;
 
   // Add event listener to toggle priority on the star icon
@@ -222,9 +217,7 @@ function renderApplication(application) {
       applicationBox.classList.toggle("priority", !isStarred); // Add or remove the priority class
 
       // Reorder applications based on priority
-      const boxes = Array.from(
-        statusColumn.querySelectorAll(".application-box")
-      );
+      const boxes = Array.from(statusColumn.querySelectorAll(".application-box"));
 
       // Separate priority and non-priority boxes
       const priorityBoxes = boxes.filter((box) =>
@@ -246,22 +239,15 @@ function renderApplication(application) {
   applicationBox.addEventListener("dragstart", dragStart);
   applicationBox.addEventListener("dragend", dragEnd);
 
-  const statusColumn = document.getElementById(status);
+  const statusColumn = document.getElementById(application.status); // Use application.status
   if (statusColumn) {
     statusColumn.appendChild(applicationBox);
   }
 
-  // appQuery = companyName;
   applicationBox.addEventListener("dblclick", () => {
-    window.location.href = `applicationInfo.html?id=${applicationData.id}`;
+    window.location.href = `applicationInfo.html?id=${application.id}`; // Use application.id
   });
-
 }
-
-
-
-
-
 
 
 // Reminder Modal
@@ -367,13 +353,20 @@ remindSubmit.addEventListener("click", async () => {
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     
-    const response = await fetch('http://localhost:3021/reminder');
-    if (!response.ok) {
+    const reminderResponse = await fetch('http://localhost:3021/reminder');
+    const applicationResponse = await fetch('http://localhost:3021/application');
+    if (!reminderResponse.ok) {
       throw new Error("Failed to load reminders");
     }
+    if (!applicationResponse.ok) {
+      throw new Error("Failed to load applications");
+    }
 
-    const reminders = await response.json();
+    const reminders = await reminderResponse.json();
     reminders.forEach(renderReminder);
+
+    const applications = await applicationResponse.json();
+    applications.forEach(renderApplication);
 
   } catch (error) {
     console.log("Error fetching reminders!", error);
