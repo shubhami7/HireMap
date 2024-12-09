@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors'); // Import the cors middleware
 
 const sequelize = require('./config/database');
+const cron = require('node-cron');
+
 sequelize.sync()
     .then(() => console.log("Database is open."))
     .catch((err) => console.log("Could not open database: " + `${err.message}`));
@@ -24,6 +26,28 @@ app.use('/', userRoutes);
 // Import Schemas
 const { User, Application, Tip, Interview, Reminder } = require('./models/user');
 
+// Cron job to delete applications older than 30 days
+cron.schedule('0 0 * * *', async () => {  
+    try {
+        const thirtyDaysAgo = new Date();
+        thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+        // Find applications flagged as deleted and older than 30 days
+        await Application.destroy({
+            where: {
+                is_deleted: true,
+                date_deleted: {
+                    [sequelize.Op.lt]: thirtyDaysAgo
+                }
+            }
+        });
+
+        console.log('Old deleted applications permanently removed from the database.');
+    } catch (err) {
+        console.error('Error deleting old applications:', err.message);
+    }
+});
+
 // Post to the users table
 app.post("/users", (req, res) => {
     User.create(req.body)
@@ -33,7 +57,7 @@ app.post("/users", (req, res) => {
 
 
 // Post to the applications table
-app.post("/application", (req, res) => {
+app.post("/applications", (req, res) => {
     Application.create(req.body)
     .then(() => res.send("application entry added"))
     .catch(err => res.status(400).json({ error: err.message }));
