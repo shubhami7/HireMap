@@ -2,17 +2,17 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 // Tables to create
-const tableName1 = 'users';
-const tableName2 = 'applications';
-const tableName3 = 'application information';
-const tableName4 = 'tips';
-const tableName5 = 'reminders';
-const tableName6 = 'interviews';
+// const tableName1 = 'users';
+// const tableName2 = 'applications';
+// const tableName3 = 'application information';
+// const tableName4 = 'tips';
+// const tableName5 = 'reminders';
+// const tableName6 = 'interviews';
 // TODO: create the rest of the tables
 
 // User Schema
 class User extends Model {}
-sequelize.define('User', {
+User.init({
     email: {
         type: DataTypes.STRING,
         unique: true,
@@ -30,18 +30,22 @@ sequelize.define('User', {
         type: DataTypes.STRING
     },
     // TODO: add resume, cover letter, and photo
-}, { tableName1 });
+}, {
+    sequelize,
+    modelName: 'User',
+    tableName: 'users',
+});
 
 // Application Information Schema
 class Application extends Model {}
-sequelize.define('Application', {
+Application.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         unique: true,
     },
     userId: {
-        type: DataTypes.INTEGER, //Foreign key, can determine which user this application belongs to
+        type: DataTypes.INTEGER, // Foreign key for the User
     },
     companyName: {
         type: DataTypes.STRING,
@@ -75,18 +79,23 @@ sequelize.define('Application', {
     hasStar: {
         type: DataTypes.BOOLEAN,
     },
-    // TODO: Add resume, cover letter, 
-}, { tableName3 });
+    // TODO: Add resume, cover letter
+}, {
+    sequelize,
+    modelName: 'Application',
+    tableName: 'applications',
+});
 
+// Tip Schema
 class Tip extends Model {}
-sequelize.define("Tip", {
+Tip.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         unique: true,
-    }, 
+    },
     userId: {
-        type: DataTypes.INTEGER, // is this the right way to connect the tables? foreign key??
+        type: DataTypes.INTEGER, // Foreign key for the User
     },
     author: {
         type: DataTypes.STRING,
@@ -98,13 +107,19 @@ sequelize.define("Tip", {
         type: DataTypes.ENUM,
         values: ['interested', 'applied', 'interviewing'],
     },
-}, { tableName4 });
+}, {
+    sequelize,
+    modelName: 'Tip',
+    tableName: 'tips',
+});
 
+// Reminder Schema
 class Reminder extends Model {}
-sequelize.define('Reminder', {
+Reminder.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true
     },
     date: {
         type: DataTypes.DATE,
@@ -112,17 +127,21 @@ sequelize.define('Reminder', {
     description: {
         type: DataTypes.STRING,
     },
-}, { tableName5 });
+}, {
+    sequelize, // Pass the sequelize instance
+    modelName: 'Reminder',
+    tableName: 'Reminders',
+});
 
+// Interview Schema
 class Interview extends Model {}
-sequelize.define('Interview', {
-    // TODO:
+Interview.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
     },
     applicationId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER, // Foreign key for the Application
     },
     date: {
         type: DataTypes.DATE,
@@ -134,8 +153,13 @@ sequelize.define('Interview', {
     questions: {
         type: DataTypes.STRING,
     }
-}, { tableName6 });
+}, {
+    sequelize,
+    modelName: 'Interview',
+    tableName: 'interviews',
+});
 
+// Exporting models
 module.exports = {
     User,
     Application,
