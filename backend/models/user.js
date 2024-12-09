@@ -67,11 +67,14 @@ Application.init({
     },
     status: {
         type: DataTypes.ENUM,
-        values: ['interested', 'applied', 'interviewing'],
+        values: ['interested', 'applied', 'interviewing', 'offer'],
+    },
+    isDeleted: {
+        type: DataTypes.ENUM,
     },
     // previousStatus: {
     //     type: DataTypes.ENUM,
-    //     values: ['interested', 'applied', 'interviewing'],
+    //     values: ['interested', 'applied', 'interviewing', 'offer'],
     //     allowNull: true
     // },
     // dateApplied: {
@@ -111,7 +114,7 @@ Tip.init({
     },
     interviewStage: {
         type: DataTypes.ENUM,
-        values: ['interested', 'applied', 'interviewing'],
+        values: ['interested', 'applied', 'interviewing', 'offer'],
     },
 }, {
     sequelize,
