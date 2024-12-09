@@ -122,13 +122,19 @@ router.delete('/user/:id', [checkIDExist], (req, res) => {
     });
 });
 
-// Delete Reminder by id
-router.delete('/reminder/:id', [checkIDExist], (req, res) => {
-    Reminder.destroy({
-        where: { id: req.params.id }
-    }).then(result => {
-        res.status(200).json(result);
-    });
-});
+router.delete('/reminder/:id', async (req, res) => {
+    try {
+      const reminderId = req.params.id;
+      const deleted = await Reminder.destroy({ where: { id: reminderId } });
+      if (deleted) {
+        res.status(200).json({ message: 'Reminder deleted successfully' });
+      } else {
+        res.status(404).json({ error: 'Reminder not found' });
+      }
+    } catch (error) {
+      console.error("Error deleting reminder:", error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
 
 module.exports = router;
