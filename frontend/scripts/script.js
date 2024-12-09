@@ -322,6 +322,7 @@ function reminderDeleteListeners() {
 reminderDeleteListeners(); 
 
 // create and render new reminder 
+const reminderSort = [];
 
 remindSubmit.addEventListener("click", async () => {
   
@@ -352,7 +353,7 @@ remindSubmit.addEventListener("click", async () => {
     }
 
     const newReminder = await response.json();
-    renderReminder(newReminder);
+    sortAndRender(newReminder);
 
     document.getElementById("reminder-des").value = "";
     document.getElementById("remind-date").value = "";
@@ -378,7 +379,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const reminders = await reminderResponse.json();
-    reminders.forEach(renderReminder);
+    reminders.forEach(sortAndRender);
 
     const applications = await applicationResponse.json();
     applications.forEach(renderApplication);
@@ -388,6 +389,29 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
 });
+
+// sort and render the reminders
+
+function sortAndRender(reminder) {
+  reminderSort.push(reminder);
+  reminderSort.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  const currReminders = document.getElementById("add-reminder");
+  if (!currReminders) {
+    console.error('No element with id "add-reminder" found');
+    return;
+  }
+  currReminders.innerHTML = "";
+
+  reminderSort.forEach((sortedReminder) => {
+    const reminderElement = renderReminder(sortedReminder);
+    currReminders.appendChild(reminderElement);
+  });
+
+  reminderDeleteListeners();
+}
+
+
 
 // add reminders to UI
 function renderReminder(reminder) {
@@ -421,12 +445,6 @@ function renderReminder(reminder) {
 
   reminderContainer.appendChild(reminderRow);
 
-  const currReminders = document.getElementById("add-reminder");
-  if (!currReminders) {
-    console.error('No element with id "add-reminder" found');
-  }
-  currReminders.appendChild(reminderContainer);
-
-  reminderDeleteListeners();
+  return reminderContainer;
 
 }
