@@ -499,7 +499,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function showPopup() {
-  const doNotShowToday = true//localStorage.getItem("doNotShowToday");
+  const doNotShowToday = localStorage.getItem("doNotShowToday");
 
   if (!doNotShowToday || new Date().toDateString() !== doNotShowToday) {
     try {
