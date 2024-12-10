@@ -40,8 +40,8 @@ function appDetails(data) {
   document.getElementById("jobDesc").value = data.description;
   document.getElementById("applied").value = data.dateApplied;
   document.getElementById("curStatus").value = data.status;
-  const applied = new Date(data.dateApplied); // Assume application.dateApplied is from Sequelize
-  const formattedDate = applied.toISOString().split('T')[0]; // Extract YYYY-MM-DD
+  const applied = new Date(data.dateApplied); 
+  const formattedDate = applied.toISOString().split('T')[0]; 
 
   document.getElementById("applied").value = formattedDate;
 
