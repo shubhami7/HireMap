@@ -1,4 +1,3 @@
-
 async function fetchAppData(applicationId) {
 
   try {

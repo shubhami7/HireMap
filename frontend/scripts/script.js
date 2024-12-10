@@ -1,5 +1,3 @@
-
-
 // Add event listeners to each application box
 const boxes = document.querySelectorAll(".application-box");
 const columns = document.querySelectorAll(".status-column");
