@@ -1,5 +1,3 @@
-import { Database } from "../components/indexedDB.js";
-
 // Initialize the IndexedDB
 const db = new Database("appDB");
 await db.openDB();
@@ -192,7 +190,7 @@ document.addEventListener("DOMContentLoaded", async function() {
       if (!app.is_deleted) {
           const appElement = document.createElement("div");
           appElement.id = app.id;
-          appElement.classList.add("application-card");
+          appElement.classList.add("application-box");
 
           appElement.innerHTML = `
               <h3>${app.position}</h3>
