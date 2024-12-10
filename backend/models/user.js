@@ -84,6 +84,18 @@ Application.init({
         type: DataTypes.BOOLEAN,
         defaultValue: false,
     },
+    // previousStatus: {
+    //     type: DataTypes.ENUM,
+    //     values: ['interested', 'applied', 'interviewing'],
+    //     allowNull: true
+    // },
+    dateApplied: {
+        type: DataTypes.DATE
+    },
+    // dateDeleted: {
+    //     type: DataTypes.DATE,
+    //     allowNull: true
+    // },
     // hasStar: {
     //     type: DataTypes.BOOLEAN,
     //     allowNull: true
