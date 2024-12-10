@@ -67,7 +67,7 @@ router.post('/reminder', (req, res) => {
 
 
 // Example route: Get All Applications
-router.get('/api/applications', (req, res) => {
+router.get('/application', (req, res) => {
     //console.log('Getting all apps');
     Application.findAll().then(application => {
         res.status(200).json(application);
