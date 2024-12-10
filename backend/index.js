@@ -1,8 +1,8 @@
 const express = require('express');
 const sequelize = require('./config/database');
-const { User } = require('./models/user');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+sequelize.sync({alter:true})
+    .then(() => console.log("Database is open."))
+    .catch((err) => console.log("Could not open database: " + `${err.message}`));
 
 const app = express();
 const SECRET_KEY = 'your_secret_key'; // Use a secure secret key
