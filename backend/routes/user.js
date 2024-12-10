@@ -84,14 +84,21 @@ router.get('/reminder', (req, res) => {
     });
 });
 
-// Example route: Get Application by id
-router.get('/application/:id', [checkIDExist], (req, res) => {
-    //console.log('Get app by id');
-    Application.findByPk
-    (req.params.id).then(application => {
-        //console.log(application);
+// get app by id
+router.get('/application/:model/:id', [checkIDExist], async (req, res) => {
+
+    console.log("in the backend");
+    try {
+        const application = await Application.findByPk(req.params.id);
+        console.log('Fetched Application:', application);
+
+        if (!application) {
+            return res.status(404).json({ message: "Application not found" });
+        }
         res.status(200).json(application);
-    });
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 // Example route: Updating an application by id
@@ -125,6 +132,7 @@ router.delete('/user/:id', [checkIDExist], (req, res) => {
     });
 });
 
+// delete router by id
 router.delete('/reminder/:id', async (req, res) => {
     try {
       const reminderId = req.params.id;
