@@ -100,36 +100,3 @@ function renderReminderWithoutDelete(reminder) {
   currReminders.appendChild(reminderContainer);
 
 }
-
-async function loadDeletedApplications() {
-  try {
-    console.log("Fetching deleted applications...");
-    const response = await fetch('/api/applications/deleted');
-    const applications = await response.json();
-    console.log("Deleted applications fetched:", applications);
-
-    const deletedColumn = document.getElementById('deleted-column');
-    deletedColumn.innerHTML = ''; // Clear existing content
-
-    applications.forEach((app) => {
-      const applicationBox = document.createElement('div');
-      applicationBox.className = 'application-box';
-      applicationBox.id = `app${app.id}`;
-
-      applicationBox.innerHTML = `
-        <div class="application-content">
-          <h4>${app.name}</h4>
-          <p>Status: Deleted</p>
-          <button class="restore-btn" onclick="restoreApplication('${app.id}')">Restore</button>
-          <button class="delete-btn" onclick="permanentlyDelete('${app.id}')">Delete Permanently</button>
-        </div>
-      `;
-
-      deletedColumn.appendChild(applicationBox);
-    });
-  } catch (error) {
-    console.error('Error loading deleted applications:', error);
-  }
-}
-
-
