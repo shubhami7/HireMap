@@ -101,3 +101,64 @@ function renderReminderWithoutDelete(reminder) {
 
 }
 
+// Delete application (flag as deleted)
+async function deleteApplication(applicationId) {
+  try {
+    const response = await fetch(`http://localhost:3021/application/${applicationId}/delete`, {
+      method: 'PUT', // Using PUT method to flag it as deleted
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ is_deleted: true }) // Flagging as deleted
+    });
+
+    if (response.ok) {
+      alert("Application moved to trash!");
+
+      // Optionally, update the DOM by removing the application from the page or triggering a UI update
+      const applicationBox = document.getElementById(`app${applicationId}`);
+      if (applicationBox) {
+        applicationBox.remove(); // Remove the application from the current view
+      }
+
+      // Optionally, you could fetch the list of deleted applications to update the "Deleted" section
+      loadDeletedApplications(); // This will reload and update the "deleted applications" section
+    } else {
+      alert("Failed to delete application.");
+    }
+  } catch (error) {
+    console.error("Error deleting application:", error);
+    alert("An error occurred while trying to delete the application.");
+  }
+}
+
+async function loadDeletedApplications() {
+  try {
+    console.log("Fetching deleted applications...");
+    const response = await fetch('/api/applications/deleted');
+    const applications = await response.json();
+    console.log("Deleted applications fetched:", applications);
+
+    const deletedColumn = document.getElementById('deleted-column');
+    deletedColumn.innerHTML = ''; // Clear existing content
+
+    applications.forEach((app) => {
+      const applicationBox = document.createElement('div');
+      applicationBox.className = 'application-box';
+      applicationBox.id = `app${app.id}`;
+
+      applicationBox.innerHTML = `
+        <div class="application-content">
+          <h4>${app.name}</h4>
+          <p>Status: Deleted</p>
+          <button class="restore-btn" onclick="restoreApplication('${app.id}')">Restore</button>
+          <button class="delete-btn" onclick="permanentlyDelete('${app.id}')">Delete Permanently</button>
+        </div>
+      `;
+
+      deletedColumn.appendChild(applicationBox);
+    });
+  } catch (error) {
+    console.error('Error loading deleted applications:', error);
+  }
+}
+
+
