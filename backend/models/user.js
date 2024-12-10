@@ -66,7 +66,23 @@ Application.init({
     },
     status: {
         type: DataTypes.ENUM,
-        values: ['interested', 'applied', 'interviewing'],
+        values: ['interested', 'applied', 'interviewing', 'offer'],
+    },
+    previousStatus: {
+        type: DataTypes.ENUM,
+        values: ['interested', 'applied', 'interviewing', 'offer'],
+        allowNull: true
+    },
+    // dateApplied: {
+    //     type: DataTypes.DATE
+    // },
+    dateDeleted: {
+        type: DataTypes.DATE,
+        allowNull: true
+    },
+    isDeleted: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
     },
     // previousStatus: {
     //     type: DataTypes.ENUM,

@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors'); // Import the cors middleware
+const cron = require('node-cron');
 
 const sequelize = require('./config/database');
 sequelize.sync({alter:true})
@@ -23,6 +24,28 @@ app.use('/', userRoutes);
 
 // Import Schemas
 const { User, Application, Tip, Interview, Reminder } = require('./models/user');
+
+// Cron job to delete applications older than 30 days
+cron.schedule('0 0 * * *', async () => {  
+    try {
+        const thirtyDaysAgo = new Date();
+        thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+        // Find applications flagged as deleted and older than 30 days
+        await Application.destroy({
+            where: {
+                is_deleted: true,
+                date_deleted: {
+                    [sequelize.Op.lt]: thirtyDaysAgo
+                }
+            }
+        });
+
+        console.log('Old deleted applications permanently removed from the database.');
+    } catch (err) {
+        console.error('Error deleting old applications:', err.message);
+    }
+});
 
 // Post to the users table
 app.post("/users", (req, res) => {

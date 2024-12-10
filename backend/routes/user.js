@@ -1,5 +1,6 @@
 const express = require('express');
 const { User, Application, Tip, Reminder, Interview } = require('../models/user');
+const { isDeepStrictEqual } = require('util');
 const router = express.Router();
 
 const checkIDExist = (req, res, next) => {
@@ -71,6 +72,9 @@ router.get('/application', (req, res) => {
     //console.log('Getting all apps');
     Application.findAll().then(application => {
         res.status(200).json(application);
+    }).catch(error => {
+        console.error('Error fetching applications:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
     });
 });
 
@@ -146,6 +150,81 @@ router.delete('/reminder/:id', async (req, res) => {
       console.error("Error deleting reminder:", error);
       res.status(500).json({ error: 'Internal server error' });
     }
-  });
+});
+  
+
+// Soft delete an application by ID
+router.put('/applications/soft-delete/:id', async (req, res) => {
+    try {
+        const result = await Application.update(
+            { isDeleted: req.body.isDeleted ,
+              dateDeleted: req.body.dateDeleted  
+            }
+            , // Only update the isDeleted
+            { where: { id: req.params.id } } // Match the application by ID
+          );
+        
+          if (result[0] === 0) { // Sequelize returns an array, [0] means no rows were updated
+            return res.status(404).json({ message: "Application not found" });
+          }
+      
+          res.status(200).json({ message: "Application updated successfully" });
+        } catch (error) {
+          console.error("Error updating application:", error);
+          res.status(500).json({ error: "Internal server error" });
+        }
+});
+
+// Fetch deleted applications
+router.get('/applications/deleted', async (req, res) => {
+    console.log('Fetching deleted applications...');
+    try {
+        const deletedApplications = await Application.findAll({
+            where: { isDeleted: true },
+        });
+        console.log('Fetched deleted applications:', deletedApplications);
+        res.status(200).json(deletedApplications)
+    } catch (error) {
+        console.error('Error fetching deleted applications:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
+// Restore from trash
+router.put('/applications/restore/:id', async (req, res) => {
+    try {
+        const result = await Application.update(
+            {isDeleted: false,
+             dateDeleted: null
+            },
+            {where: {id: req.params.id}}
+        );
+        
+        if (result[0] === 0) { // Sequelize returns an array, [0] means no rows were updated
+            return res.status(404).json({ message: "Application not found" });
+          }
+        
+        res.status(200).json({ message: 'Application restored successfully' });
+    } catch (error) {
+        console.error('Error restoring application:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
+// Permanently delete application by ID
+router.delete('/applications/:id', async (req, res) => {
+    try {
+        const result = await Application.destroy({ where: { id: req.params.id } });
+        
+        if (result[0] === 0) { // Sequelize returns an array, [0] means no rows were updated
+            return res.status(404).json({ message: "Application not found" });
+          }
+
+        res.status(200).json({ message: 'Application permanently deleted' });
+    } catch (error) {
+        console.error('Error permanently deleting application:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
 
 module.exports = router;
