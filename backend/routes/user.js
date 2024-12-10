@@ -153,7 +153,7 @@ router.delete('/reminder/:id', async (req, res) => {
   
 
 // Soft delete an application by ID
-router.put('/api/applications/soft-delete/:id', async (req, res) => {
+router.put('/applications/soft-delete/:id', async (req, res) => {
     try {
         const application = await Application.findByPk(req.params.id);
         
@@ -173,7 +173,7 @@ router.put('/api/applications/soft-delete/:id', async (req, res) => {
 });
 
 // Fetch deleted applications
-router.get('/api/applications/deleted', async (req, res) => {
+router.get('/applications/deleted', async (req, res) => {
     console.log('Fetching deleted applications...');
     try {
         const deletedApplications = await Application.findAll({
@@ -188,7 +188,7 @@ router.get('/api/applications/deleted', async (req, res) => {
 });
 
 // Restore from trash
-router.put('/api/applications/restore/:id', async (req, res) => {
+router.put('/applications/restore/:id', async (req, res) => {
     try {
         const application = await Application.findByPk(req.params.id);
         
@@ -208,7 +208,7 @@ router.put('/api/applications/restore/:id', async (req, res) => {
 });
 
 // Permanently delete application by ID
-router.delete('/api/applications/:id', async (req, res) => {
+router.delete('/applications/:id', async (req, res) => {
     try {
         const deleted = await Application.destroy({ where: { id: req.params.id } });
         
