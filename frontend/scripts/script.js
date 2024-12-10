@@ -110,12 +110,20 @@ async function dragDropTrash(e) {
     draggable.remove();
   }
 
-  // Remove from IndexedDB
+  // Soft delete from the database
   try {
-    await db.deleteApp(parseInt(appID, 10));
-    alert("Application deleted successfully!");
+    const response = await fetch(`http://localhost:3021/api/applications/soft-delete/${appID}`, {
+      method: "PUT", // Change method to PUT for soft delete
+    });
+
+    if (response.ok) {
+      alert("Application soft-deleted successfully!");
+    } else {
+      const result = await response.json();
+      alert(result.message || "Error deleting application.");
+    }
   } catch (error) {
-    console.error("Error deleting application:", error);
+    console.error("Error soft-deleting application:", error);
   }
 }
 
@@ -587,3 +595,106 @@ overlay.addEventListener("click", closePopup);
 
 // Show the pop-up when the page loads
 document.addEventListener("DOMContentLoaded", showPopup);
+
+
+
+document.addEventListener("DOMContentLoaded", async function() {
+  // Fetch all applications
+  const response = await fetch("http://localhost:3021/api/applications");
+  const applications = await response.json();
+  
+  const homepageContainer = document.getElementById("applications-container");
+  homepageContainer.innerHTML = ""; // Clear the container before rendering
+
+  applications.forEach(app => {
+      if (!app.is_deleted) {
+          const appElement = document.createElement("div");
+          appElement.id = app.id;
+          appElement.classList.add("application-card");
+
+          appElement.innerHTML = `
+              <h3>${app.position}</h3>
+              <p>${app.companyName}</p>
+              <p>${app.status}</p>
+              <button class="delete-btn">Delete</button>
+          `;
+
+          homepageContainer.appendChild(appElement);
+
+          const deleteBtn = appElement.querySelector(".delete-btn");
+          deleteBtn.addEventListener("click", function() {
+              deleteApplication(app.id); // Handle soft delete
+          });
+      }
+  });
+  
+  // Fetch deleted applications for profile page
+  const deletedResponse = await fetch("http://localhost:3021/api/applications/deleted");
+  const deletedApplications = await deletedResponse.json();
+  
+  const profileContainer = document.getElementById("profile-container");
+  profileContainer.innerHTML = ""; // Clear the container before rendering
+
+  deletedApplications.forEach(app => {
+      const appElement = document.createElement("div");
+      appElement.id = app.id;
+      appElement.classList.add("application-card");
+
+      appElement.innerHTML = `
+          <h3>${app.position}</h3>
+          <p>${app.companyName}</p>
+          <p>${app.status}</p>
+          <button class="delete-btn">Delete</button>
+          <button class="restore-btn">Restore</button>
+      `;
+
+      profileContainer.appendChild(appElement);
+
+      // Restore functionality
+      const restoreBtn = appElement.querySelector(".restore-btn");
+      restoreBtn.addEventListener("click", function() {
+          restoreApplication(app.id);
+      });
+
+      const deleteBtn = appElement.querySelector(".delete-btn");
+      deleteBtn.addEventListener("click", function() {
+          deleteApplication(app.id);
+      });
+  });
+});
+
+// Soft delete an application
+async function deleteApplication(appID) {
+  try {
+      const response = await fetch(`http://localhost:3021/api/applications/soft-delete/${appID}`, {
+          method: "PUT",
+      });
+
+      if (!response.ok) {
+          throw new Error(`Failed to delete application: ${response.statusText}`);
+      }
+
+      alert("Application deleted successfully!");
+      location.reload(); // Refresh the page to reflect changes
+  } catch (error) {
+      console.error("Error deleting application:", error);
+  }
+}
+
+// Restore an application
+async function restoreApplication(appID) {
+  try {
+      const response = await fetch(`http://localhost:3021/api/applications/restore/${appID}`, {
+          method: "PUT",
+      });
+
+      if (!response.ok) {
+          throw new Error(`Failed to restore application: ${response.statusText}`);
+      }
+
+      alert("Application restored successfully!");
+      location.reload(); // Refresh the page to reflect changes
+  } catch (error) {
+      console.error("Error restoring application:", error);
+  }
+}
