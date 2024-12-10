@@ -110,12 +110,30 @@
       
       </div>
     </div>
+    <br><br><br><br>
     
+    <!-- Deleted Applications Section -->
+    <div class="activity-section">
+      <div id="deleted-applications">
+          <h2>Deleted Applications (Last 30 Days)</h2>
+  
+          <!-- Application Box for a deleted application -->
+          <div class="status-columns">
+              <div class="status-column" id="deleted-column">
+                  <!-- Example deleted application -->
+                  <div class="application-box" id="app1">
+                      <div class="application-content">
+                          <h4>${application.jobTitle}</h4>
+                          <button class="restore-btn" onclick="restoreApplication('${application.id}')">Restore</button>
+                          <button class="delete-btn" onclick="permanentlyDelete('${application.id}')">Delete Permanently</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
     <!--Link to js file below------------------------------>
     <script src="../scripts/profilepage.js">
     </script>
   </body>
 </html>
-
-
-
