@@ -153,27 +153,26 @@ router.delete('/reminder/:id', async (req, res) => {
   
 
 // Soft delete an application by ID
-router.put('/api/applications/soft-delete/:id', async (req, res) => {
+router.put('/applications/soft-delete/:id', async (req, res) => {
     try {
-        const application = await Application.findByPk(req.params.id);
+        const result = await Application.update(
+            { isDeleted: req.body.isDeleted }, // Only update the isDeleted
+            { where: { id: req.params.id } } // Match the application by ID
+          );
         
-        if (!application) {
-            return res.status(404).json({ message: 'Application not found' });
+          if (result[0] === 0) { // Sequelize returns an array, [0] means no rows were updated
+            return res.status(404).json({ message: "Application not found" });
+          }
+      
+          res.status(200).json({ message: "Application updated successfully" });
+        } catch (error) {
+          console.error("Error updating application:", error);
+          res.status(500).json({ error: "Internal server error" });
         }
-
-        application.is_deleted = true;
-        application.date_deleted = new Date();  
-        await application.save();
-        
-        res.status(200).json({ message: 'Application soft-deleted successfully' });
-    } catch (error) {
-        console.error('Error soft-deleting application:', error);
-        res.status(500).json({ message: 'Internal Server Error' });
-    }
 });
 
 // Fetch deleted applications
-router.get('/api/applications/deleted', async (req, res) => {
+router.get('/applications/deleted', async (req, res) => {
     console.log('Fetching deleted applications...');
     try {
         const deletedApplications = await Application.findAll({
@@ -188,7 +187,7 @@ router.get('/api/applications/deleted', async (req, res) => {
 });
 
 // Restore from trash
-router.put('/api/applications/restore/:id', async (req, res) => {
+router.put('/applications/restore/:id', async (req, res) => {
     try {
         const application = await Application.findByPk(req.params.id);
         
@@ -208,7 +207,7 @@ router.put('/api/applications/restore/:id', async (req, res) => {
 });
 
 // Permanently delete application by ID
-router.delete('/api/applications/:id', async (req, res) => {
+router.delete('/applications/:id', async (req, res) => {
     try {
         const deleted = await Application.destroy({ where: { id: req.params.id } });
         

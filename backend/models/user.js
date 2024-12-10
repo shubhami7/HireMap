@@ -81,7 +81,7 @@ Application.init({
         allowNull: true
     },
     isDeleted: {
-        type: DataTypes.DATE,
+        type: DataTypes.BOOLEAN,
         defaultValue: false,
     },
     // hasStar: {

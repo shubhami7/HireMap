@@ -99,33 +99,37 @@ function dragLeaveTrash(e) {
 }
 
 async function dragDropTrash(e) {
-  e.preventDefault();
-  trashCan.classList.remove("drag-over-trash");
+  // e.preventDefault();
+  // trashCan.classList.remove("drag-over-trash");
 
-  const appID = e.dataTransfer.getData("text/plain");
-  const draggable = document.getElementById(appID);
+  const id = e.dataTransfer.getData("text/plain"); // Retrieve the dragged item's ID
+  const draggable = document.getElementById(id);
 
-  // Remove from DOM
-  if (draggable) {
-    draggable.remove();
-  }
-
-  // Soft delete from the database
   try {
-    const response = await fetch(`http://localhost:3021/api/applications/soft-delete/${appID}`, {
+    // Perform a PUT request to soft-delete the application by setting isDeleted to true
+    const response = await fetch(`http://localhost:3021/applications/soft-delete/${id}`, {
       method: "PUT", // Change method to PUT for soft delete
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ isDeleted: true, dateDeleted: new Date()}), // Update only the status field
     });
 
     if (response.ok) {
+      // If the request was successful, remove the element from the DOM
+      if (draggable) {
+        draggable.remove();
+      }
       alert("Application soft-deleted successfully!");
     } else {
       const result = await response.json();
-      alert(result.message || "Error deleting application.");
+      alert(result.message || "Error soft-deleting application.");
     }
   } catch (error) {
     console.error("Error soft-deleting application:", error);
   }
 }
+
 
 // Add Job Functionality
 const modal = document.getElementById("add-popup");
@@ -262,7 +266,8 @@ function renderApplication(application) {
   applicationBox.addEventListener("dragend", dragEnd);
 
   const statusColumn = document.getElementById(application.status); // Use application.status
-  if (statusColumn) {
+  const deleteStatus = application.isDeleted;
+  if (statusColumn && (deleteStatus !== true)) {
     statusColumn.appendChild(applicationBox);
   }
 
