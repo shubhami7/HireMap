@@ -41,6 +41,7 @@ function appDetails(data) {
   document.getElementById("jobCon").value = data.contacts;
   document.getElementById("jobDesc").value = data.description;
   document.getElementById("applied").value = data.dateApplied;
+  document.getElementById("curStatus").value = data.status;
 }
 
 function getApplicationIdFromURL() {
