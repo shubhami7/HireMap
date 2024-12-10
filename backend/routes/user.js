@@ -156,7 +156,10 @@ router.delete('/reminder/:id', async (req, res) => {
 router.put('/applications/soft-delete/:id', async (req, res) => {
     try {
         const result = await Application.update(
-            { isDeleted: req.body.isDeleted }, // Only update the isDeleted
+            { isDeleted: req.body.isDeleted ,
+              dateDeleted: req.body.dateDeleted  
+            }
+            , // Only update the isDeleted
             { where: { id: req.params.id } } // Match the application by ID
           );
         
