@@ -45,10 +45,6 @@ Application.init({
         unique: true,
         autoIncrement: true,
     },
-    // userId: {
-    //     type: DataTypes.INTEGER, // Foreign key for the User
-    //     allowNull: true
-    // },
     companyName: {
         type: DataTypes.STRING,
     },
@@ -73,9 +69,9 @@ Application.init({
         values: ['interested', 'applied', 'interviewing', 'offer'],
         allowNull: true
     },
-    // dateApplied: {
-    //     type: DataTypes.DATE
-    // },
+    dateApplied: {
+        type: DataTypes.DATE
+    },
     dateDeleted: {
         type: DataTypes.DATE,
         allowNull: true

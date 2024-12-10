@@ -33,14 +33,18 @@ async function fetchAppData(applicationId) {
 
 function appDetails(data) {
 
-  console.log(data);
-
   document.getElementById("company-name").textContent = data.companyName;
   document.getElementById("jobPos").value = data.position;
   document.getElementById("jobLoc").value = data.location;
   document.getElementById("jobCon").value = data.contacts;
   document.getElementById("jobDesc").value = data.description;
   document.getElementById("applied").value = data.dateApplied;
+  document.getElementById("curStatus").value = data.status;
+  const applied = new Date(data.dateApplied); 
+  const formattedDate = applied.toISOString().split('T')[0]; 
+
+  document.getElementById("applied").value = formattedDate;
+
 }
 
 function getApplicationIdFromURL() {

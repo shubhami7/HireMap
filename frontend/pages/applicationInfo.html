@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Information</title>
     <link href="../styles/main.css" rel="stylesheet" />
-    <!-- <script src="../scripts/script.js"></script> -->
 </head>
 
 
@@ -32,22 +31,22 @@
         </div>
         
         <label id="pos">Position: </label>
-        <input type='text' id="jobPos" value=""/><br><br>
+        <input type='text' id="jobPos" value="" readonly /><br><br>
         
         <label id="loc">Location: </label>
-        <input type='text' id="jobLoc" value=""/><br><br>
+        <input type='text' id="jobLoc" value="" readonly/><br><br>
         
         <label id="contacts">Contacts: </label>
-        <input type='text' id="jobCon" value=""/><br><br>
+        <input type='text' id="jobCon" value="" readonly /><br><br>
         
         <label id="description">Description: </label>
-        <input type='text' id="jobDesc" value=""/><br><br>
+        <input type='text' id="jobDesc" value="" readonly /><br><br>
         
         <h2>Status</h2>
-        <input type="text" id="curStatus" value=""/><br><br>
+        <input type="text" id="curStatus" value="" readonly/><br><br>
         
         <label id="date-applied">Date Applied: </label>
-        <input type='datetime-local' id="applied" /><br><br>
+        <input type='date' id="applied" readonly /><br><br>
         
         <!-- Resume and cover letter drop boxes -->
         <label key="resume">Resume: </label>
@@ -69,28 +68,6 @@
   </div>
 </div>
 </div>
-
-<!-- 
-<footer>
-<div class="interview-notes-section">
-    <h2>Interview Notes</h2>
-
-    <div class="interview-note">
-        <h3>Interview Date: <input type="date" id="interview-date" /></h3>
-        <label for="interview-format-1">Interview Format:</label>
-        <select id="interview-format-1">
-            <option value="select">select value</option>
-            <option value="phone">Phone</option>
-            <option value="technical">Technical Exam</option>
-            <option value="onsite">On-Site</option>
-        </select><br><br>
-
-        <label for="interview-questions-1">Questions Asked:</label><br>
-        <textarea id="interview-questions-1" rows="4" placeholder="Notes..."></textarea><br><br>
-    </div>
-</div>
-  </footer> 
--->
   
   <script type="module" src="../scripts/applications.js"></script>
 

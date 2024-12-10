@@ -165,7 +165,6 @@ submitBtn.addEventListener("click", async () => {
   const hasStar = null;
 
   const applicationData = {
-    // id: new Date().getTime(),
     companyName: companyName,
     position: position,
     location: location,
@@ -217,7 +216,7 @@ function renderApplication(application) {
   // Create a new application box
   const applicationBox = document.createElement("div");
   applicationBox.className = "application-box";
-  applicationBox.id = application.id; // Use application.id from the parameter
+  applicationBox.id = application.id; 
   applicationBox.draggable = true;
 
   // Add data-* attributes for sorting
@@ -265,14 +264,14 @@ function renderApplication(application) {
   applicationBox.addEventListener("dragstart", dragStart);
   applicationBox.addEventListener("dragend", dragEnd);
 
-  const statusColumn = document.getElementById(application.status); // Use application.status
+  const statusColumn = document.getElementById(application.status); 
   const deleteStatus = application.isDeleted;
   if (statusColumn && (deleteStatus !== true)) {
     statusColumn.appendChild(applicationBox);
   }
 
   applicationBox.addEventListener("dblclick", () => {
-    window.location.href = `applicationInfo.html?id=${application.id}`; // Use application.id
+    window.location.href = `applicationInfo.html?id=${application.id}`;
   });
 }
 
