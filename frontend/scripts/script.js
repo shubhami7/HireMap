@@ -539,7 +539,7 @@ async function showPopup() {
         listItem.innerHTML = `
                   ${reminder.description} - ${new Date(
           reminder.date
-        ).toLocaleDateString()} 
+        ).toLocaleDateString("en-US", {timeZone: "UTC",})} 
               `;
         reminderList.appendChild(listItem);
       });
