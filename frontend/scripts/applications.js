@@ -33,8 +33,6 @@ async function fetchAppData(applicationId) {
 
 function appDetails(data) {
 
-  console.log(data);
-
   document.getElementById("company-name").textContent = data.companyName;
   document.getElementById("jobPos").value = data.position;
   document.getElementById("jobLoc").value = data.location;
@@ -42,6 +40,11 @@ function appDetails(data) {
   document.getElementById("jobDesc").value = data.description;
   document.getElementById("applied").value = data.dateApplied;
   document.getElementById("curStatus").value = data.status;
+  const applied = new Date(data.dateApplied); // Assume application.dateApplied is from Sequelize
+  const formattedDate = applied.toISOString().split('T')[0]; // Extract YYYY-MM-DD
+
+  document.getElementById("applied").value = formattedDate;
+
 }
 
 function getApplicationIdFromURL() {
