@@ -1,5 +1,6 @@
 const express = require('express');
 const { User, Application, Tip, Reminder, Interview } = require('../models/user');
+const { isDeepStrictEqual } = require('util');
 const router = express.Router();
 
 const checkIDExist = (req, res, next) => {
@@ -179,10 +180,10 @@ router.get('/applications/deleted', async (req, res) => {
     console.log('Fetching deleted applications...');
     try {
         const deletedApplications = await Application.findAll({
-            where: { is_deleted: true },
+            where: { isDeleted: true },
         });
         console.log('Fetched deleted applications:', deletedApplications);
-        res.json(deletedApplications);
+        res.status(200).json(deletedApplications)
     } catch (error) {
         console.error('Error fetching deleted applications:', error);
         res.status(500).json({ message: 'Internal Server Error' });
@@ -192,15 +193,16 @@ router.get('/applications/deleted', async (req, res) => {
 // Restore from trash
 router.put('/applications/restore/:id', async (req, res) => {
     try {
-        const application = await Application.findByPk(req.params.id);
+        const result = await Application.update(
+            {isDeleted: false,
+             dateDeleted: null
+            },
+            {where: {id: req.params.id}}
+        );
         
-        if (!application || application.is_deleted === false) {
-            return res.status(404).json({ message: 'Application not found or not deleted' });
-        }
-        
-        application.is_deleted = false;
-        application.date_deleted = null;
-        await application.save();
+        if (result[0] === 0) { // Sequelize returns an array, [0] means no rows were updated
+            return res.status(404).json({ message: "Application not found" });
+          }
         
         res.status(200).json({ message: 'Application restored successfully' });
     } catch (error) {
@@ -212,11 +214,11 @@ router.put('/applications/restore/:id', async (req, res) => {
 // Permanently delete application by ID
 router.delete('/applications/:id', async (req, res) => {
     try {
-        const deleted = await Application.destroy({ where: { id: req.params.id } });
+        const result = await Application.destroy({ where: { id: req.params.id } });
         
-        if (!deleted) {
-            return res.status(404).json({ message: 'Application not found' });
-        }
+        if (result[0] === 0) { // Sequelize returns an array, [0] means no rows were updated
+            return res.status(404).json({ message: "Application not found" });
+          }
 
         res.status(200).json({ message: 'Application permanently deleted' });
     } catch (error) {
