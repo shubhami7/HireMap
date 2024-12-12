@@ -1,10 +1,12 @@
 async function fetchAppData(applicationId) {
-
   try {
-
-    const response = await fetch(`http://localhost:3021/application/application/${applicationId}`)
+    const response = await fetch(
+      `http://localhost:3021/application/application/${applicationId}`
+    );
     if (!response.ok) {
-      throw new Error(`Failed to fetch application details. Status: ${response.status}`);
+      throw new Error(
+        `Failed to fetch application details. Status: ${response.status}`
+      );
     }
 
     const applicationData = await response.json();
@@ -13,7 +15,7 @@ async function fetchAppData(applicationId) {
     appDetails(applicationData);
 
     // Fetch reminders
-    const reminderResponse = await fetch('http://localhost:3021/reminder');
+    const reminderResponse = await fetch("http://localhost:3021/reminder");
     if (!reminderResponse.ok) {
       throw new Error("Failed to fetch reminders");
     }
@@ -23,16 +25,12 @@ async function fetchAppData(applicationId) {
     // Render the reminders
     reminders.sort((a, b) => new Date(a.date) - new Date(b.date));
     reminders.forEach(renderReminderWithoutDelete);
-
-
   } catch (error) {
     console.error("Error fetching application:", error);
   }
-
 }
 
 function appDetails(data) {
-
   document.getElementById("company-name").textContent = data.companyName;
   document.getElementById("jobPos").value = data.position;
   document.getElementById("jobLoc").value = data.location;
@@ -40,29 +38,41 @@ function appDetails(data) {
   document.getElementById("jobDesc").value = data.description;
   document.getElementById("applied").value = data.dateApplied;
   document.getElementById("curStatus").value = data.status;
-  const applied = new Date(data.dateApplied); 
-  const formattedDate = applied.toISOString().split('T')[0]; 
+  const applied = new Date(data.dateApplied);
+  const formattedDate = applied.toISOString().split("T")[0];
 
   document.getElementById("applied").value = formattedDate;
 
+  // Handle displaying resume path link
+  if (data.resumePath) {
+    const resumeLink = document.createElement("a");
+    resumeLink.href = "http://localhost:3021/" + data.resumePath; // Set the resume path as the href
+    resumeLink.textContent = "Download Resume"; // Set the link text
+    resumeLink.download = data.resumePath.split("/").pop();
+    const resumeContainer = document.getElementById("resume-container");
+    resumeContainer.appendChild(resumeLink);
+  } else {
+    // Handle case where resumePath is not present (optional)
+    document.getElementById("resume-container").textContent =
+      "No resume uploaded";
+  }
 }
 
 function getApplicationIdFromURL() {
   const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get('id'); 
+  return urlParams.get("id");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   // Get the application ID from the URL
   const applicationId = getApplicationIdFromURL();
-  console.log('Fetched Application ID:', applicationId);
-
+  console.log("Fetched Application ID:", applicationId);
 
   if (applicationId) {
-      // Fetch and display the application data
-      fetchAppData(applicationId);
+    // Fetch and display the application data
+    fetchAppData(applicationId);
   } else {
-      alert("Application ID not found in the URL.");
+    alert("Application ID not found in the URL.");
   }
 });
 
@@ -85,13 +95,15 @@ function renderReminderWithoutDelete(reminder) {
   reminderDateP.className = "reminder-date";
 
   const reminderDate = new Date(reminder.date);
-  const reminderToDate = reminderDate.toLocaleDateString('en-US', { timeZone: 'UTC' });
+  const reminderToDate = reminderDate.toLocaleDateString("en-US", {
+    timeZone: "UTC",
+  });
   reminderDateP.textContent = `Deadline: ${reminderToDate}`;
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   if (reminderDate < today) {
-    reminderDateP.style.color = 'red';
+    reminderDateP.style.color = "red";
   }
 
   reminderTextDiv.appendChild(reminderName);
@@ -102,5 +114,6 @@ function renderReminderWithoutDelete(reminder) {
 
   const currReminders = document.getElementById("add-reminder");
   currReminders.appendChild(reminderContainer);
-
 }
+
+//------------------------------------------------------------------------------------------------

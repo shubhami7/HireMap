@@ -69,9 +69,9 @@ async function dragDrop(e) {
       // Send an update request to the backend to update the status
       const response = await fetch(`http://localhost:3021/application/${id}`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        // headers: {
+        //   "Content-Type": "application/pdf",
+        // },
         body: JSON.stringify({ status: newStatus }), // Update only the status field
       });
 
@@ -107,13 +107,16 @@ async function dragDropTrash(e) {
 
   try {
     // Perform a PUT request to soft-delete the application by setting isDeleted to true
-    const response = await fetch(`http://localhost:3021/applications/soft-delete/${id}`, {
-      method: "PUT", // Change method to PUT for soft delete
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ isDeleted: true, dateDeleted: new Date()}), // Update only the status field
-    });
+    const response = await fetch(
+      `http://localhost:3021/applications/soft-delete/${id}`,
+      {
+        method: "PUT", // Change method to PUT for soft delete
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ isDeleted: true, dateDeleted: new Date() }), // Update only the status field
+      }
+    );
 
     if (response.ok) {
       // If the request was successful, remove the element from the DOM
@@ -129,7 +132,6 @@ async function dragDropTrash(e) {
     console.error("Error soft-deleting application:", error);
   }
 }
-
 
 // Add Job Functionality
 const modal = document.getElementById("add-popup");
@@ -159,10 +161,8 @@ submitBtn.addEventListener("click", async () => {
   const location = document.getElementById("jobLocation").value;
   const contacts = document.getElementById("jobContacts").value;
   const status = document.getElementById("status").value;
-  const previousStatus = null;
-  const dateApplied = null;
-  const dateDeleted = null;
-  const hasStar = null;
+  const resumeInput = document.getElementById("resume");
+  const resumeFile = resumeInput.files[0];
 
   const applicationData = {
     companyName: companyName,
@@ -175,12 +175,37 @@ submitBtn.addEventListener("click", async () => {
     previousStatus: null,
     dateDeleted: null,
     hasStar: null,
+    resumePath: null,
   };
 
   try {
-    console.log("data to backend ", JSON.stringify(applicationData));
+    // Upload resume file and get the file path
+    const formData = new FormData();
+    formData.append("resume", resumeFile);
+    const resumeResponse = await fetch("http://localhost:3021/upload-resume", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
 
-    // Save the application to database
+    if (!resumeResponse.ok) {
+      throw new Error("Failed to upload resume");
+    }
+
+    const resumePathResult = await resumeResponse.json();
+    applicationData.resumePath = resumePathResult.filePath; // Set the path
+  } catch (error) {
+    console.error("Error retrieving resume path", error);
+    alert("Failed to upload resume. Please try again.");
+    return; // Exit if there’s an error with the resume upload
+  }
+
+  try {
+    console.log("Data to backend:", JSON.stringify(applicationData));
+
+    // Save the application to the database
     const response = await fetch("http://localhost:3021/application", {
       method: "POST",
       headers: {
@@ -204,10 +229,12 @@ submitBtn.addEventListener("click", async () => {
     document.getElementById("jobDescription").value = "";
     document.getElementById("dateApplied").value = "";
     document.getElementById("deadline").value = "";
+    document.getElementById("resume").value = "";
     document.getElementById("status").value = "interested";
     modal.style.display = "none";
   } catch (error) {
-    console.log("Error adding new application!", error);
+    console.error("Error adding new application!", error);
+    alert("Failed to submit application. Please try again.");
   }
 });
 
@@ -216,7 +243,7 @@ function renderApplication(application) {
   // Create a new application box
   const applicationBox = document.createElement("div");
   applicationBox.className = "application-box";
-  applicationBox.id = application.id; 
+  applicationBox.id = application.id;
   applicationBox.draggable = true;
 
   // Add data-* attributes for sorting
@@ -264,9 +291,9 @@ function renderApplication(application) {
   applicationBox.addEventListener("dragstart", dragStart);
   applicationBox.addEventListener("dragend", dragEnd);
 
-  const statusColumn = document.getElementById(application.status); 
+  const statusColumn = document.getElementById(application.status);
   const deleteStatus = application.isDeleted;
-  if (statusColumn && (deleteStatus !== true)) {
+  if (statusColumn && deleteStatus !== true) {
     statusColumn.appendChild(applicationBox);
   }
 
@@ -551,7 +578,7 @@ async function showPopup() {
         listItem.innerHTML = `
                   ${reminder.description} - ${new Date(
           reminder.date
-        ).toLocaleDateString("en-US", {timeZone: "UTC",})} 
+        ).toLocaleDateString("en-US", { timeZone: "UTC" })} 
               `;
         reminderList.appendChild(listItem);
       });
@@ -599,4 +626,3 @@ overlay.addEventListener("click", closePopup);
 
 // Show the pop-up when the page loads
 document.addEventListener("DOMContentLoaded", showPopup);
-
