@@ -1,3 +1,15 @@
+// Add logout functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const logoutButton = document.getElementById('logout-button');
+  if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+      // Remove user token and redirect to login page
+      sessionStorage.removeItem('userToken');
+      window.location.href = 'login.html';
+    });
+  }
+});
+
 // Add event listeners to each application box
 const boxes = document.querySelectorAll(".application-box");
 const columns = document.querySelectorAll(".status-column");
@@ -43,36 +55,35 @@ function dragEnter(e) {
   e.preventDefault();
   const column = e.target.closest(".status-column");
   if (column) {
-    column.classList.add("drag-over"); // Add a visual highlight to the column
+    column.classList.add("drag-over");
   }
 }
 
 function dragLeave(e) {
   const column = e.target.closest(".status-column");
   if (column) {
-    column.classList.remove("drag-over"); // Remove the highlight
+    column.classList.remove("drag-over");
   }
 }
 
 async function dragDrop(e) {
-  const id = e.dataTransfer.getData("text/plain"); // Get the ID of the dragged application
+  const id = e.dataTransfer.getData("text/plain");
   const draggable = document.getElementById(id);
 
   const column = e.target.closest(".status-column");
   if (column) {
-    column.appendChild(draggable); // Append the dragged element to the new column
-    column.classList.remove("drag-over"); // Remove the highlight
+    column.appendChild(draggable);
+    column.classList.remove("drag-over");
 
-    const newStatus = column.id; // Get the new status from the column ID
+    const newStatus = column.id;
 
     try {
-      // Send an update request to the backend to update the status
       const response = await fetch(`http://localhost:3021/application/${id}`, {
         method: "PUT",
-        // headers: {
-        //   "Content-Type": "application/pdf",
-        // },
-        body: JSON.stringify({ status: newStatus }), // Update only the status field
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ status: newStatus }),
       });
 
       if (!response.ok) {
@@ -87,7 +98,7 @@ async function dragDrop(e) {
 }
 
 function dragOverTrash(e) {
-  e.preventDefault(); // Allows the drop
+  e.preventDefault();
 }
 
 function dragEnterTrash(e) {
@@ -99,27 +110,19 @@ function dragLeaveTrash(e) {
 }
 
 async function dragDropTrash(e) {
-  // e.preventDefault();
-  // trashCan.classList.remove("drag-over-trash");
-
-  const id = e.dataTransfer.getData("text/plain"); // Retrieve the dragged item's ID
+  const id = e.dataTransfer.getData("text/plain");
   const draggable = document.getElementById(id);
 
   try {
-    // Perform a PUT request to soft-delete the application by setting isDeleted to true
-    const response = await fetch(
-      `http://localhost:3021/applications/soft-delete/${id}`,
-      {
-        method: "PUT", // Change method to PUT for soft delete
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ isDeleted: true, dateDeleted: new Date() }), // Update only the status field
-      }
-    );
+    const response = await fetch(`http://localhost:3021/applications/soft-delete/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ isDeleted: true, dateDeleted: new Date() }),
+    });
 
     if (response.ok) {
-      // If the request was successful, remove the element from the DOM
       if (draggable) {
         draggable.remove();
       }
@@ -153,16 +156,12 @@ window.onclick = function (event) {
   }
 };
 
-// let appQuery;
-
 submitBtn.addEventListener("click", async () => {
   const companyName = document.getElementById("companyName").value;
   const position = document.getElementById("position").value;
   const location = document.getElementById("jobLocation").value;
   const contacts = document.getElementById("jobContacts").value;
   const status = document.getElementById("status").value;
-  const resumeInput = document.getElementById("resume");
-  const resumeFile = resumeInput.files[0];
 
   const applicationData = {
     companyName: companyName,
@@ -175,37 +174,11 @@ submitBtn.addEventListener("click", async () => {
     previousStatus: null,
     dateDeleted: null,
     hasStar: null,
-    resumePath: null,
   };
 
   try {
-    // Upload resume file and get the file path
-    const formData = new FormData();
-    formData.append("resume", resumeFile);
-    const resumeResponse = await fetch("http://localhost:3021/upload-resume", {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    });
+    console.log("data to backend ", JSON.stringify(applicationData));
 
-    if (!resumeResponse.ok) {
-      throw new Error("Failed to upload resume");
-    }
-
-    const resumePathResult = await resumeResponse.json();
-    applicationData.resumePath = resumePathResult.filePath; // Set the path
-  } catch (error) {
-    console.error("Error retrieving resume path", error);
-    alert("Failed to upload resume. Please try again.");
-    return; // Exit if there’s an error with the resume upload
-  }
-
-  try {
-    console.log("Data to backend:", JSON.stringify(applicationData));
-
-    // Save the application to the database
     const response = await fetch("http://localhost:3021/application", {
       method: "POST",
       headers: {
@@ -221,7 +194,6 @@ submitBtn.addEventListener("click", async () => {
     const newApplication = await response.json();
     renderApplication(newApplication);
 
-    // Clear form fields and close the modal
     document.getElementById("companyName").value = "";
     document.getElementById("position").value = "";
     document.getElementById("jobLocation").value = "";
@@ -229,60 +201,41 @@ submitBtn.addEventListener("click", async () => {
     document.getElementById("jobDescription").value = "";
     document.getElementById("dateApplied").value = "";
     document.getElementById("deadline").value = "";
-    document.getElementById("resume").value = "";
     document.getElementById("status").value = "interested";
     modal.style.display = "none";
   } catch (error) {
-    console.error("Error adding new application!", error);
-    alert("Failed to submit application. Please try again.");
+    console.log("Error adding new application!", error);
   }
 });
 
-// render application box
 function renderApplication(application) {
-  // Create a new application box
   const applicationBox = document.createElement("div");
   applicationBox.className = "application-box";
   applicationBox.id = application.id;
   applicationBox.draggable = true;
 
-  // Add data-* attributes for sorting
   applicationBox.dataset.dateApplied = application.dateApplied || "";
-  applicationBox.dataset.companyName =
-    application.companyName.toLowerCase() || "";
+  applicationBox.dataset.companyName = application.companyName.toLowerCase() || "";
 
-  // Set inner HTML using application data
   applicationBox.innerHTML = `
     <span class="star-icon" title="Mark as priority">☆</span>
     ${application.companyName}<br><br>• ${application.position}<br>• ${application.location}
   `;
 
-  // Add event listener to toggle priority on the star icon
   const starIcon = applicationBox.querySelector(".star-icon");
   starIcon.addEventListener("click", () => {
     const statusColumn = applicationBox.closest(".status-column");
     if (statusColumn) {
       const isStarred = starIcon.textContent === "★";
-      starIcon.textContent = isStarred ? "☆" : "★"; // Toggle star
-      applicationBox.classList.toggle("priority", !isStarred); // Add or remove the priority class
+      starIcon.textContent = isStarred ? "☆" : "★";
+      applicationBox.classList.toggle("priority", !isStarred);
 
-      // Reorder applications based on priority
-      const boxes = Array.from(
-        statusColumn.querySelectorAll(".application-box")
-      );
+      const boxes = Array.from(statusColumn.querySelectorAll(".application-box"));
+      const priorityBoxes = boxes.filter(box => box.querySelector(".star-icon").textContent === "★");
+      const nonPriorityBoxes = boxes.filter(box => box.querySelector(".star-icon").textContent === "☆");
 
-      // Separate priority and non-priority boxes
-      const priorityBoxes = boxes.filter(
-        (box) => box.querySelector(".star-icon").textContent === "★"
-      );
-      const nonPriorityBoxes = boxes.filter(
-        (box) => box.querySelector(".star-icon").textContent === "☆"
-      );
-
-      // Remove all boxes temporarily
       boxes.forEach((box) => statusColumn.removeChild(box));
 
-      // Append priority boxes first, then non-priority boxes
       priorityBoxes.forEach((box) => statusColumn.appendChild(box));
       nonPriorityBoxes.forEach((box) => statusColumn.appendChild(box));
     }
@@ -293,7 +246,7 @@ function renderApplication(application) {
 
   const statusColumn = document.getElementById(application.status);
   const deleteStatus = application.isDeleted;
-  if (statusColumn && deleteStatus !== true) {
+  if (statusColumn && (deleteStatus !== true)) {
     statusColumn.appendChild(applicationBox);
   }
 
@@ -322,8 +275,6 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// add reminder delete button functionality
-
 function reminderDeleteListeners() {
   const deleteButtons = document.querySelectorAll(".delete-reminder");
 
@@ -334,12 +285,9 @@ function reminderDeleteListeners() {
 
       if (reminderToDelete) {
         try {
-          const response = await fetch(
-            `http://localhost:3021/reminder/${reminderId}`,
-            {
-              method: "DELETE",
-            }
-          );
+          const response = await fetch(`http://localhost:3021/reminder/${reminderId}`, {
+            method: "DELETE",
+          });
 
           if (!response.ok) {
             throw new Error("Failed to delete reminder");
@@ -356,20 +304,17 @@ function reminderDeleteListeners() {
 
 reminderDeleteListeners();
 
-// create and render new reminder
 const reminderSort = [];
 
 remindSubmit.addEventListener("click", async () => {
   const reminderText = document.getElementById("reminder-des").value;
   const reminderDate = document.getElementById("remind-date").value;
 
-  // get data
   const reminderData = {
     description: reminderText,
     date: reminderDate,
   };
 
-  // save data
   try {
     console.log("data to backend ", JSON.stringify(reminderData));
 
@@ -401,9 +346,8 @@ remindSubmit.addEventListener("click", async () => {
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const reminderResponse = await fetch("http://localhost:3021/reminder");
-    const applicationResponse = await fetch(
-      "http://localhost:3021/application"
-    );
+    const applicationResponse = await fetch("http://localhost:3021/application");
+
     if (!reminderResponse.ok) {
       throw new Error("Failed to load reminders");
     }
@@ -420,8 +364,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("Error fetching reminders!", error);
   }
 });
-
-// sort and render the reminders
 
 function sortAndRender(reminder) {
   reminderSort.push(reminder);
@@ -442,7 +384,6 @@ function sortAndRender(reminder) {
   reminderDeleteListeners();
 }
 
-// add reminders to UI
 function renderReminder(reminder) {
   const reminderContainer = document.createElement("div");
   reminderContainer.className = "reminder-container";
@@ -460,8 +401,8 @@ function renderReminder(reminder) {
   const reminderDateP = document.createElement("p");
   reminderDateP.className = "reminder-date";
 
-  const reminderDate = new Date(reminder.date);
-  const reminderToDate = reminderDate.toLocaleDateString("en-US", {
+  const reminderDateObj = new Date(reminder.date);
+  const reminderToDate = reminderDateObj.toLocaleDateString("en-US", {
     timeZone: "UTC",
   });
   reminderDateP.textContent = `Deadline: ${reminderToDate}`;
@@ -469,7 +410,7 @@ function renderReminder(reminder) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  if (reminderDate < today) {
+  if (reminderDateObj < today) {
     reminderDateP.style.color = "red";
   }
 
@@ -492,47 +433,34 @@ function renderReminder(reminder) {
 const sortDropdown = document.getElementById("sort-options");
 
 sortDropdown.addEventListener("change", () => {
-  const sortOption = sortDropdown.value; // Get selected sort option
+  const sortOption = sortDropdown.value;
 
-  // Get all status columns
   const statusColumns = document.querySelectorAll(".status-column");
 
   statusColumns.forEach((column) => {
-    // Get all application boxes within the column
-    const applications = Array.from(
-      column.querySelectorAll(".application-box")
-    );
+    const applications = Array.from(column.querySelectorAll(".application-box"));
 
-    // Sort applications based on the selected option
     applications.sort((a, b) => {
       if (sortOption === "company") {
-        // Alphabetical sort
         return a.dataset.companyName.localeCompare(b.dataset.companyName);
       } else if (sortOption === "date") {
-        // Sort by date applied
-        return (
-          new Date(a.dataset.dateApplied) - new Date(b.dataset.dateApplied)
-        );
+        return new Date(a.dataset.dateApplied) - new Date(b.dataset.dateApplied);
       }
-      return 0; // Default order (no change)
+      return 0;
     });
 
-    // Remove all applications from the column
     applications.forEach((app) => column.removeChild(app));
-
-    // Re-add the applications in the sorted order
     applications.forEach((app) => column.appendChild(app));
   });
 });
 
-// Get references to pop-up elements
+// Popup
 const popup = document.getElementById("popup-container");
 const overlay = document.getElementById("popup-overlay");
 const closeBtn = document.getElementById("popup-close");
 const doNotShowCheckbox = document.getElementById("do-not-show");
 const greetingElement = document.getElementById("popup-greeting");
 
-// Show the pop-up
 document.addEventListener("DOMContentLoaded", () => {
   showPopup();
 });
@@ -542,7 +470,6 @@ async function showPopup() {
 
   if (!doNotShowToday || new Date().toDateString() !== doNotShowToday) {
     try {
-      // Determine the time-based greeting
       const currentHour = new Date().getHours();
       let greeting;
       if (currentHour < 12) {
@@ -554,48 +481,29 @@ async function showPopup() {
       }
       greetingElement.textContent = greeting;
 
-      // Fetch reminders
       const response = await fetch("http://localhost:3021/reminder");
       if (!response.ok) {
         throw new Error("Failed to fetch reminders.");
       }
 
       const reminders = await response.json();
-
-      // Sort reminders by deadline date in ascending order (closest deadlines first)
       reminders.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-      // Limit to 3 reminders
-
       const latestReminders = reminders.slice(0, 3);
 
-      // Populate reminders
       const reminderList = document.getElementById("reminder-list");
-      reminderList.innerHTML = ""; // Clear existing reminders
+      reminderList.innerHTML = "";
       latestReminders.forEach((reminder) => {
         const listItem = document.createElement("li");
-
         listItem.innerHTML = `
-                  ${reminder.description} - ${new Date(
-          reminder.date
-        ).toLocaleDateString("en-US", { timeZone: "UTC" })} 
-              `;
+          ${reminder.description} - ${new Date(reminder.date).toLocaleDateString("en-US", {timeZone: "UTC"})} 
+        `;
         reminderList.appendChild(listItem);
       });
 
-      // Display the pop-up
-      const popup = document.getElementById("popup-container");
-      const overlay = document.getElementById("popup-overlay");
       popup.style.display = "block";
       overlay.style.display = "block";
 
-      // Event listener for close button
-      document.getElementById("popup-close").addEventListener("click", () => {
-        popup.style.display = "none";
-        overlay.style.display = "none";
-      });
-
-      // Event listener for "Do not show today"
+      document.getElementById("popup-close").addEventListener("click", closePopup);
       document.getElementById("do-not-show").addEventListener("change", (e) => {
         if (e.target.checked) {
           localStorage.setItem("doNotShowToday", new Date().toDateString());
@@ -607,22 +515,14 @@ async function showPopup() {
   }
 }
 
-// Close the pop-up
 function closePopup() {
   popup.style.display = "none";
   overlay.style.display = "none";
 
-  // If the checkbox is checked, set a flag in local storage
   if (doNotShowCheckbox.checked) {
     localStorage.setItem("doNotShowToday", new Date().toDateString());
   }
 }
 
-// Event listener for close button
-closeBtn.addEventListener("click", closePopup);
-
-// Event listener for clicking outside the pop-up
 overlay.addEventListener("click", closePopup);
-
-// Show the pop-up when the page loads
 document.addEventListener("DOMContentLoaded", showPopup);
