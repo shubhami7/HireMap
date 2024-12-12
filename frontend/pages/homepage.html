@@ -8,79 +8,74 @@
 </head>
 <body>
   <!-- Header -->
-<!-- Header -->
-<header>
-  <div class="logo">HireMap</div>
-  <!-- Navigation Buttons -->
-  <div class="nav-buttons">
-    <button onclick="window.location.href='homepage.html'">Home</button>
-    <button onclick="window.location.href='profilepage.html'">Profile</button>
-    <button onclick="window.location.href='interviewtipspage.html'">Interview Tips</button>
-  </div>
-</header>
-
+  <header>
+    <div class="logo">HireMap</div>
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button onclick="window.location.href='homepage.html'">Home</button>
+      <button onclick="window.location.href='profilepage.html'">Profile</button>
+      <button onclick="window.location.href='interviewtipspage.html'">Interview Tips</button>
+      <!-- Logout Button -->
+      <button id="logout-button" class="action-button">Logout</button>
+    </div>
+  </header>
 
   <!-- Main Content Layout -->
   <div class="container">
     <!-- Main Tracker Area -->
-  <div class="main-content">
-    <div class="tracker-header">
-      <h1>Application Tracker</h1>
-      <div class="add-trash-buttons">
-        <button id="add-button" class="action-button">Add</button>
-        <button id="trash-can" class="action-button">Drag Here to Delete</button>
-        <div id="add-popup" class="new-job">
-          <div class="new-job-content">
-            <span class="close">&times</span>
-            <p>Please Enter Job Information:</p>
-            <br>
-            <label for="companyName">Company Name:</label>
-            <input type="text" id="companyName" name="companyName" required>
-            <br>
-            <!-- Position Applied For -->
-            <label for="position"><br>Position Applied For:</label>
-            <input type="text" id="position" name="position" required>
-            <br>
+    <div class="main-content">
+      <div class="tracker-header">
+        <h1>Application Tracker</h1>
+        <div class="add-trash-buttons">
+          <button id="add-button" class="action-button">Add</button>
+          <button id="trash-can" class="action-button">Drag Here to Delete</button>
+          <div id="add-popup" class="new-job">
+            <div class="new-job-content">
+              <span class="close">&times;</span>
+              <p>Please Enter Job Information:</p>
+              <br>
+              <label for="companyName">Company Name:</label>
+              <input type="text" id="companyName" name="companyName" required>
+              <br>
+              <!-- Position Applied For -->
+              <label for="position"><br>Position Applied For:</label>
+              <input type="text" id="position" name="position" required>
+              <br>
 
-            <!-- Location -->
-            <label for="jobLocation"><br>Job Location:</label>
-            <input type="text" id="jobLocation" name="jobLocation">
-            <br>
-            <!-- Contacts -->
-            <label for="jobContacts"><br>Important Contacts: <br> (Please Enter Email)</label>
-            <input type="email" id="jobContacts" name="jobContacts">
-            <br>
-            <!-- Job Description -->
-            <label for="jobDescription"><br>Job Description:</label>
-            <input type="text" id="jobDescription" name="jobDescription">
-            <br>
-            <!-- Date Applied -->
-            <label for="dateApplied"><br>Date Applied:</label>
-            <input type="date" id="dateApplied" name="dateApplied" required>
-            <br>
-            <!-- Application Submission Deadline -->
-            <label for="deadline"><br>Application Submission <br> Deadline:</label>
-            <input type="date" id="deadline" name="deadline" required>
-            <br>
-            <!-- Resume Upload -->
-            <label for="resume"><br>Upload Your Resume:</label>
-            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-            <br>
-            <!--Status -->
-            <label for="status"><br>Application Status:</label>
-            <select id="status">
-              <option value="interested">Interested</option>
-              <option value="applied">Applied</option>
-              <option value="interviewing">Interviewing</option>
-              <option value="offer">Offer</option>
+              <!-- Location -->
+              <label for="jobLocation"><br>Job Location:</label>
+              <input type="text" id="jobLocation" name="jobLocation">
+              <br>
+              <!-- Contacts -->
+              <label for="jobContacts"><br>Important Contacts: <br> (Please Enter Email)</label>
+              <input type="email" id="jobContacts" name="jobContacts">
+              <br>
+              <!-- Job Description -->
+              <label for="jobDescription"><br>Job Description:</label>
+              <input type="text" id="jobDescription" name="jobDescription">
+              <br>
+              <!-- Date Applied -->
+              <label for="dateApplied"><br>Date Applied:</label>
+              <input type="date" id="dateApplied" name="dateApplied" required>
+              <br>
+              <!-- Application Submission Deadline -->
+              <label for="deadline"><br>Application Submission <br> Deadline:</label>
+              <input type="date" id="deadline" name="deadline" required>
+              <br>
+              <!--Status -->
+              <label for="status"><br>Application Status:</label>
+              <select id="status">
+                <option value="interested">Interested</option>
+                <option value="applied">Applied</option>
+                <option value="interviewing">Interviewing</option>
+                <option value="offer">Offer</option>
               </select><br><br>
-            <!-- Submit Button -->
-            <button id="submit">Submit</button>
-
-          </div> 
+              <!-- Submit Button -->
+              <button id="submit">Submit</button>
+            </div> 
+          </div>
         </div>
       </div>
-    </div>
 
       <!-- Sorting Dropdown Layout -->
       <div class="sort-container">
@@ -96,19 +91,15 @@
       <div class="status-columns">
         <div class="status-column" id="interested">
           <h3>Interested</h3>
-          
         </div>
         <div class="status-column" id="applied">
           <h3>Applied</h3>
-          
         </div>
         <div class="status-column" id="interviewing">
           <h3>Interviewing</h3>
-          
         </div>
         <div class="status-column" id="offer">
           <h3>Offer</h3>
-          
         </div>
       </div>
     </div>
@@ -124,40 +115,36 @@
 
         <div id="reminder-popup" class="new-reminder">
           <div class="reminder-content">
-            <span class="close-reminder">&times</span>
-
+            <span class="close-reminder">&times;</span>
             <p>Upcoming Date?</p>
             <br>
             <label for="reminder-des">New Reminder:<br></label>
             <input type="text" id="reminder-des" name="reminder-des" required>
-
-          
             <label for="remind-date"><br>Deadline:<br></label>
             <input type="date" id="remind-date" name="remind-date" required><br><br>
-
             <button id="reminder-submit">Submit</button>
           </div>
         </div>
-        <!-- checklist for reminders -->
+
+        <!-- Checklist for reminders -->
         <div id="add-reminder" class="add-reminder">
           <br>
-        </div>  
         </div>
-      </div>
       </div>
     </div>
   </div>
+
   <!-- Popup HTML -->
   <div id="popup-overlay" style="display: none;"></div>
   <div id="popup-container" style="display: none;">
-      <button id="popup-close">&times;</button>
-      <h2 id="popup-greeting">Welcome!</h2>
-      <p>A few reminders:</p>
-      <ul id="reminder-list"></ul>
-      <p>“Stay positive, work hard, and make it happen!”</p>
-      <div class="popup-footer">
-          <label><input type="checkbox" id="do-not-show"> Do not show today</label>
-      </div>
+    <button id="popup-close">&times;</button>
+    <h2 id="popup-greeting">Welcome!</h2>
+    <p>A few reminders:</p>
+    <ul id="reminder-list"></ul>
+    <p>“Stay positive, work hard, and make it happen!”</p>
+    <div class="popup-footer">
+      <label><input type="checkbox" id="do-not-show"> Do not show today</label>
+    </div>
   </div>  
   
   <script src="../scripts/script.js" defer></script>
