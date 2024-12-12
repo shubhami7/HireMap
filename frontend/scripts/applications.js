@@ -52,7 +52,7 @@ function appDetails(data) {
     const resumeContainer = document.getElementById("resume-container");
     resumeContainer.appendChild(resumeLink);
   } else {
-    // Handle case where resumePath is not present (optional)
+    // Handle case where resumePath is not present 
     document.getElementById("resume-container").textContent =
       "No resume uploaded";
   }
