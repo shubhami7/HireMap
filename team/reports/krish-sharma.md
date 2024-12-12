@@ -18,15 +18,15 @@
 
 ### 11/5/2024
 
-- **Integrated IndexedDB in Profile Page**
-  - Replaced `localStorage` with IndexedDB for storing user name and description.
-  - Ensured persistence of user data across sessions.
+- **Integrated SQLite in Profile Page**
+  - Replaced local storage mechanisms with SQLite database for storing user name and description.
+  - Ensured persistent storage of user data in the SQLite database across sessions.
   - **Code Updated:** Profile Page (`profilepage.js`).
   - **Link:** [Commit TBD]
 
 - **Refined Resume and Cover Letter Upload**
-  - Implemented file upload functionality using IndexedDB for resume and cover letter storage.
-  - Added logic to download files directly from IndexedDB.
+  - Implemented file upload functionality, storing resume and cover letter in SQLite.
+  - Added logic to download files directly from the SQLite database.
   - **Code Updated:** Profile Page (`profilepage.js`).
   - **Link:** [Commit TBD]
 
@@ -40,20 +40,21 @@
 
 ### 11/17/2024
 
-- **Connected Drag-and-Drop with IndexedDB**
-  - Updated the drag-and-drop logic to dynamically update the application’s status in IndexedDB.
-  - Ensured deleted applications are removed from both the DOM and IndexedDB.
+- **Connected Drag-and-Drop with SQLite**
+  - Updated drag-and-drop logic so application status changes are persisted in the SQLite database.
+  - Ensured deleted applications are removed from both the DOM and the SQLite database.
   - **Code Updated:** Homepage Drag-and-Drop Feature (`script.js`).
   - **Link:** [Commit TBD]
 
 - **Enhanced Application Info Page**
-  - Linked application details dynamically from IndexedDB to populate fields.
-  - Added event listeners for editing and saving changes to application data.
+  - Linked application details dynamically from the SQLite database to populate fields.
+  - Added event listeners for editing and saving changes directly to the database.
   - **Code Updated:** Application Info Page (`application.js`).
   - **Link:** [Commit TBD]
 
 - **Added Reminder Modal Integration**
-  - Implemented modal for reminders and refined styling for better user experience.
+  - Implemented a modal for reminders, storing reminder data in SQLite.
+  - Refined the UI for a better user experience.
   - **Code Updated:** Homepage Reminders (`script.js`).
   - **Link:** [Commit TBD]
 
@@ -64,7 +65,7 @@
 - **Implemented User Authentication with JWT and Bcrypt**
   - Added secure login and signup functionality using `bcrypt` for password hashing.
   - Created middleware to protect private routes using `jsonwebtoken` for user session validation.
-  - Implemented secure login/logout endpoints for session management.
+  - Implemented secure login/logout endpoints for session management, backed by SQLite user data.
   - **Code Updated:** Backend Login Logic (`index.js`, `routes/auth.js`).
   - **Link:** [Commit TBD]
 
@@ -73,16 +74,15 @@
     - Fetching total applications by status.
     - Calculating average time to transition between application stages.
     - Providing insights into the most common application statuses.
-  - Integrated Sequelize for querying and aggregating data.
+  - Integrated Sequelize queries against the SQLite database for aggregation and analysis.
   - **Code Updated:** Analytics Routes (`routes/analytics.js`).
   - **Link:** [Commit TBD]
 
 - **Enhanced Backend and Database Models**
-  - Updated Sequelize models to support features like:
+  - Updated Sequelize models (on top of SQLite) to support features like:
     - Application tracking with `status` and `lastUpdated` fields.
     - User authentication fields (`email`, `password`).
-    - Relationships between `users`, `applications`, and other models.
+    - Defined relationships between `users`, `applications`, and other models.
   - Refactored backend structure to separate concerns (models, routes, and config).
   - **Code Updated:** Models (`models/user.js`), Database Config (`config/database.js`).
   - **Link:** [Commit TBD]
-
