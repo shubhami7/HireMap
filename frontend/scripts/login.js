@@ -1,98 +1,90 @@
-import { Database } from '../components/indexedDB.js';
-
-// Initialize IndexedDB for storing user credentials
-const db = new Database("appDB");
-await db.openDB();
-
 // DOM elements
-const signinForm = document.getElementById("signinForm");
-const signupForm = document.getElementById("signupForm");
-const signupContainer = document.getElementById("signupContainer");
-const showSignup = document.getElementById("showSignup");
-const showSignin = document.getElementById("showSignin");
+const signinForm = document.getElementById('signinForm');
+const signupForm = document.getElementById('signupForm');
+const signupContainer = document.getElementById('signupContainer');
+const showSignup = document.getElementById('showSignup');
+const showSignin = document.getElementById('showSignin');
 
 // Toggle forms
-showSignup.addEventListener("click", () => {
-  signinForm.parentElement.style.display = "none";
-  signupContainer.style.display = "block";
+showSignup.addEventListener('click', () => {
+    signinForm.parentElement.style.display = 'none';
+    signupContainer.style.display = 'block';
 });
 
-showSignin.addEventListener("click", () => {
-  signupContainer.style.display = "none";
-  signinForm.parentElement.style.display = "block";
+showSignin.addEventListener('click', () => {
+    signupContainer.style.display = 'none';
+    signinForm.parentElement.style.display = 'block';
 });
-
-// Hashing function (for simplicity)
-async function hashPassword(password) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const hash = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(hash))
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-}
 
 // Sign-up logic
-signupForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  const email = document.getElementById("signupEmail").value.trim();
-  const password = document.getElementById("signupPassword").value.trim();
-  const confirmPassword = document.getElementById("signupConfirmPassword").value.trim();
+    const email = document.getElementById('signupEmail').value.trim();
+    const password = document.getElementById('signupPassword').value.trim();
+    const confirmPassword = document.getElementById('signupConfirmPassword').value.trim();
+    const firstName = document.getElementById('signupFirstName') ? document.getElementById('signupFirstName').value.trim() : '';
+    const lastName = document.getElementById('signupLastName') ? document.getElementById('signupLastName').value.trim() : '';
 
-  if (password !== confirmPassword) {
-    alert("Passwords do not match!");
-    return;
-  }
-
-  try {
-    // Check if the user already exists
-    const existingUser = await db.getUserByEmail(email);
-    if (existingUser) {
-      alert("User already exists. Please sign in.");
-      return;
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
     }
 
-    // Hash the password
-    const hashedPassword = await hashPassword(password);
+    try {
+        const response = await fetch('http://localhost:3021/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password, firstName, lastName }),
+        });
 
-    // Add the user to IndexedDB
-    await db.addUser({ email, password: hashedPassword });
-    alert("Sign-up successful! Please sign in.");
-    signupContainer.style.display = "none";
-    signinForm.parentElement.style.display = "block";
-  } catch (error) {
-    console.error("Error signing up:", error);
-  }
+        if (!response.ok) {
+            // When not ok, attempt to read text for better error message
+            const errorText = await response.text();
+            console.error('Sign-up failed:', errorText);
+            alert(errorText || 'Sign-up failed.');
+            return;
+        }
+
+        const data = await response.json();
+        alert('Sign-up successful! Please log in.');
+        signupContainer.style.display = 'none';
+        signinForm.parentElement.style.display = 'block';
+
+    } catch (error) {
+        console.error('Error during sign-up:', error);
+        alert('An error occurred during sign-up. Please try again.');
+    }
 });
 
 // Sign-in logic
-signinForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+signinForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  const email = document.getElementById("signinEmail").value.trim();
-  const password = document.getElementById("signinPassword").value.trim();
+    const email = document.getElementById('signinEmail').value.trim();
+    const password = document.getElementById('signinPassword').value.trim();
 
-  try {
-    // Get the user by email from IndexedDB
-    const user = await db.getUserByEmail(email);
+    try {
+        const response = await fetch('http://localhost:3021/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        });
 
-    if (!user) {
-      alert("User not found. Please sign up.");
-      return;
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Login failed:', errorText);
+            alert(errorText || 'Login failed.');
+            return;
+        }
+
+        const data = await response.json();
+        alert('Login successful!');
+        sessionStorage.setItem('userToken', data.token); // Store JWT
+        window.location.href = './homepage.html'; // Redirect to homepage
+
+    } catch (error) {
+        console.error('Error during login:', error);
+        alert('An error occurred during login. Please try again.');
     }
-
-    // Hash the input password and compare
-    const hashedPassword = await hashPassword(password);
-
-    if (user.password === hashedPassword) {
-      alert("Login successful!");
-      sessionStorage.setItem("userEmail", email); // Store user's email in sessionStorage
-      window.location.href = "./homepage.html"; // Redirect to homepage
-    } else {
-      alert("Invalid email or password.");
-    }
-  } catch (error) {
-    console.error("Error signing in:", error);
-  }
 });
