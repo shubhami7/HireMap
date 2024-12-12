@@ -16,3 +16,15 @@ Present for team meeting Monday (10/21/24) to complete various tasks such as:
 -https://github.com/edwintran235/326-team9/tree/milestone2/problem.md_update
 -https://github.com/edwintran235/326-team9/tree/milestone2/features.md/update/shahab
 -https://github.com/edwintran235/326-team9/blob/main/team/m2/ui-diagrams.md
+
+
+
+### December 12, 2024 (MS4 contributions)
+- implemented pdf file storage, utilizing multer and path imports
+- created backend route to get pdf route from inputted pdf
+- modified existing routes and application model to allow for pdf file upload into model
+- added new html elements for form interactivity into application pages
+- created new local folder to store pdf files
+- added new scripts code for file upload, button interactivity from html, file retrieval and pdf view, and backend route interactivity
+- added comments for all code segments
+- fixed an issue when a teammate wiped all committed code
