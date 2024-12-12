@@ -88,6 +88,9 @@ Application.init({
     dateApplied: {
         type: DataTypes.DATE
     },
+    resumePath: {
+        type: DataTypes.STRING
+    },
     // dateDeleted: {
     //     type: DataTypes.DATE,
     //     allowNull: true
