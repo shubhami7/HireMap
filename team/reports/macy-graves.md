@@ -113,4 +113,4 @@
 
 ## December 11, 2024
 - **Task1**: Record the demo video and upload to github and update my reports file.
-- **Link to Commit**: [Commit on demo and macy-graves.md]()
+- **Link to Commit**: [Commit on demo and macy-graves.md](https://github.com/edwintran235/326-team9/commit/d1fc3d87091ffede9a9fc0d8fb703ceac69519c1)
