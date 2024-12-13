@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'login.html';
     });
   }
+  showPopup(); // Ensure popup is shown on DOMContentLoaded
 });
 
 // Add event listeners to each application box
@@ -162,6 +163,8 @@ submitBtn.addEventListener("click", async () => {
   const location = document.getElementById("jobLocation").value;
   const contacts = document.getElementById("jobContacts").value;
   const status = document.getElementById("status").value;
+  const resumeInput = document.getElementById("resume");
+  const resumeFile = resumeInput.files[0];
 
   const applicationData = {
     companyName: companyName,
@@ -174,10 +177,37 @@ submitBtn.addEventListener("click", async () => {
     previousStatus: null,
     dateDeleted: null,
     hasStar: null,
+    resumePath: null,
   };
 
   try {
-    console.log("data to backend ", JSON.stringify(applicationData));
+    // Upload resume file and get the file path if a resume is uploaded
+    if (resumeFile) {
+      const formData = new FormData();
+      formData.append("resume", resumeFile);
+      const resumeResponse = await fetch("http://localhost:3021/upload-resume", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!resumeResponse.ok) {
+        throw new Error("Failed to upload resume");
+      }
+
+      const resumePathResult = await resumeResponse.json();
+      applicationData.resumePath = resumePathResult.filePath; // Set the path
+    }
+  } catch (error) {
+    console.error("Error retrieving resume path", error);
+    alert("Failed to upload resume. Please try again.");
+    return;
+  }
+
+  try {
+    console.log("Data to backend:", JSON.stringify(applicationData));
 
     const response = await fetch("http://localhost:3021/application", {
       method: "POST",
@@ -201,10 +231,12 @@ submitBtn.addEventListener("click", async () => {
     document.getElementById("jobDescription").value = "";
     document.getElementById("dateApplied").value = "";
     document.getElementById("deadline").value = "";
+    document.getElementById("resume").value = "";
     document.getElementById("status").value = "interested";
     modal.style.display = "none";
   } catch (error) {
-    console.log("Error adding new application!", error);
+    console.error("Error adding new application!", error);
+    alert("Failed to submit application. Please try again.");
   }
 });
 
@@ -246,7 +278,7 @@ function renderApplication(application) {
 
   const statusColumn = document.getElementById(application.status);
   const deleteStatus = application.isDeleted;
-  if (statusColumn && (deleteStatus !== true)) {
+  if (statusColumn && deleteStatus !== true) {
     statusColumn.appendChild(applicationBox);
   }
 
@@ -277,7 +309,6 @@ window.addEventListener("click", function (event) {
 
 function reminderDeleteListeners() {
   const deleteButtons = document.querySelectorAll(".delete-reminder");
-
   deleteButtons.forEach((button) => {
     button.addEventListener("click", async (e) => {
       const reminderToDelete = e.target.closest(".reminder-container");
@@ -423,7 +454,6 @@ function renderReminder(reminder) {
   reminderTextDiv.appendChild(deleteButton);
 
   reminderRow.appendChild(reminderTextDiv);
-
   reminderContainer.appendChild(reminderRow);
 
   return reminderContainer;
@@ -434,7 +464,6 @@ const sortDropdown = document.getElementById("sort-options");
 
 sortDropdown.addEventListener("change", () => {
   const sortOption = sortDropdown.value;
-
   const statusColumns = document.querySelectorAll(".status-column");
 
   statusColumns.forEach((column) => {
@@ -460,10 +489,6 @@ const overlay = document.getElementById("popup-overlay");
 const closeBtn = document.getElementById("popup-close");
 const doNotShowCheckbox = document.getElementById("do-not-show");
 const greetingElement = document.getElementById("popup-greeting");
-
-document.addEventListener("DOMContentLoaded", () => {
-  showPopup();
-});
 
 async function showPopup() {
   const doNotShowToday = localStorage.getItem("doNotShowToday");
@@ -495,7 +520,7 @@ async function showPopup() {
       latestReminders.forEach((reminder) => {
         const listItem = document.createElement("li");
         listItem.innerHTML = `
-          ${reminder.description} - ${new Date(reminder.date).toLocaleDateString("en-US", {timeZone: "UTC"})} 
+          ${reminder.description} - ${new Date(reminder.date).toLocaleDateString("en-US", { timeZone: "UTC" })}
         `;
         reminderList.appendChild(listItem);
       });
@@ -525,4 +550,3 @@ function closePopup() {
 }
 
 overlay.addEventListener("click", closePopup);
-document.addEventListener("DOMContentLoaded", showPopup);
