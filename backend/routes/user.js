@@ -274,4 +274,39 @@ router.delete("/applications/:id", async (req, res) => {
   }
 });
 
+// POST route for creating a new tip
+router.post('/tip', async (req, res) => {
+  try {
+      const { author, company, info, interviewStage, userId } = req.body;
+
+      // Create a new Tip
+      const newTip = await Tip.create({
+          id: userId,
+          author: author,
+          company: company,
+          info: info,
+          interviewStage: interviewStage,
+      });
+
+      // Send the created tip back as a response
+      res.status(201).json(newTip);
+  } catch (error) {
+      console.error('Error creating tip:', error);
+      res.status(500).json({ error: 'An error occurred while creating the tip.' });
+  }
+});
+
+router.get('/tip', async (req, res) => {
+  try {
+      console.log('Fetching tips...');
+      const tips = await Tip.findAll();
+      console.log('Fetched tips:', tips);
+      res.status(200).json(tips);
+  } catch (err) {
+      console.error('Error in /tip route:', err.message);
+      res.status(500).json({ error: 'Internal server error: ' + err.message });
+  }
+});
+
+
 module.exports = router;

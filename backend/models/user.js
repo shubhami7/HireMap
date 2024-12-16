@@ -89,10 +89,10 @@ Tip.init({
     primaryKey: true,
     unique: true,
   },
-  userId: {
-    type: DataTypes.INTEGER, // Foreign key for the User
-  },
   author: {
+    type: DataTypes.STRING,
+  },
+  company: {
     type: DataTypes.STRING,
   },
   info: {
